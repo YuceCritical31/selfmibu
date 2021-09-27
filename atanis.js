@@ -37,5 +37,6 @@ client.login(process.env.token)
 client.on("ready", () => {
   client.channels.cache.get(process.env.sesid).join();//.env kısmında ses kanal id girebilirsiniz!
   });
+   
 
 
