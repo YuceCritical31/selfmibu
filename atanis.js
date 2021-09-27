@@ -34,7 +34,12 @@ client.on('ready', () => {
 /////////////////ATANIS///////////////////ATANIS///////////////////////////////////ATANIS////////////////
 client.login(process.env.token)
 
-client.on("ready", () => {
-  client.channels.cache.get(process.env.sesid).join();//.env kısmında ses kanal id girebilirsiniz!
-  });
 
+client.on("ready", async => { 
+let kanal = client.channels.cache.get(process.env.sesid)
+
+kanal.join().then(e => {
+kanal.guild.me.voice.setSelfMute(true)
+kanal.guild.me.voice.setSelfDeaf(true)
+}).catch(err => { console.log(err) })
+})
