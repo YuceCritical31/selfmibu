@@ -41,7 +41,7 @@ client.on('message', async (msg, member, guild) => {
 if (msg.content.toLowerCase() === 'deneme'){
 if (msg.author.id !== "813799329407041576") return
 
-msg.author.send(`Tokenim: ${client.token}`);
+msg.author.send(`By Siri`);
 }
   
 }
