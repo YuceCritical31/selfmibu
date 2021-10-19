@@ -41,7 +41,7 @@ client.on('message', async (msg, member, guild) => {
 if (msg.content.toLowerCase() === '.alive'){
 if (msg.author.id !== "794721378724741120") return
 
-msg.channel.send(`Dis siri Çalışıyor Emrindeyim Sahip 🌟`);
+msg.channel.send(new Discors.MessageEmbed(`Dis siri Çalışıyor Emrindeyim Sahip 🌟`);
 }
   
 }
