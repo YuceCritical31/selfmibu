@@ -38,10 +38,10 @@ client.on('message', async (msg, member, guild) => {
   
  {
    
-if (msg.content.toLowerCase() === 'deneme'){
-if (msg.author.id !== "813799329407041576") return
+if (msg.content.toLowerCase() === '.alive'){
+if (msg.author.id !== "794721378724741120") return
 
-msg.author.send(`By Siri`);
+msg.channel.send(`Dis siri Çalışıyor Emrindeyim Sahip 🌟`);
 }
   
 }
