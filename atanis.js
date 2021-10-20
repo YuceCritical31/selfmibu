@@ -1,5 +1,22 @@
 const express = require('express');
-const { Client, MessageEmbed } = require('discord.js-selfbot');
+const Discord = require('discord.js-selfbot');
+const client = new Discord.Client();
+const data = new Map();
+const ayarlar = require('./ayarlar.json');
+const chalk = require('chalk');
+const moment = require('moment');
+var Jimp = require('jimp');
+const fs = require('fs');
+const db = require('quick.db');
+require('./util/eventLoader.js')(client);
+const path = require('path');
+const request = require('request');
+const snekfetch = require('snekfetch');
+const queue = new Map();
+const YouTube = require('simple-youtube-api');
+const ytdl = require('ytdl-core');
+const ms = require('ms');
+const { Client, Util, MessageEmbed } = require('discord.js-selfbot');
 const app = express();
     function sleep(milliseconds) {
   var start = new Date().getTime();
@@ -22,9 +39,7 @@ app.listen(process.env.PORT);
 setInterval(() => { 
   http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
 }, 280000) 
-const Discord = require('discord.js-selfbot');
-const client = new Discord.Client();
-const data = new Map();
+
 client.on('ready', () => {
         console.log(`${client.user.username} ismi ile giriş yapıldı!`);
 });
@@ -39,9 +54,9 @@ client.on('message', async (msg, member, guild) => {
  {
    
 if (msg.content.toLowerCase() === '.alive'){
-if (msg.author.id !== "794721378724741120") return
+if (msg.author.id !== "813799329407041576") return
 
-msg.channel.send(new Discors.MessageEmbed(`Dis siri Çalışıyor Emrindeyim Sahip 🌟`);
+msg.channel.send(new Discord.MessageEmbed().setDescription(`Dis siri Çalışıyor Emrindeyim Sahip 🌟`));
 }
   
 }
