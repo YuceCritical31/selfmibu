@@ -33,8 +33,6 @@ app.get("/", (request, response) => {
   console.log(Date.now() + " Hostlandı");
   response.sendStatus(200);
 });
-/////////////////ATANIS///////////////////ATANIS///////////////////////////////////ATANIS////////////////
-/////////////////ATANIS///////////////////ATANIS///////////////////////////////////ATANIS////////////////
 app.listen(process.env.PORT);
 setInterval(() => { 
   http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
@@ -43,10 +41,6 @@ setInterval(() => {
 client.on('ready', () => {
         console.log(`${client.user.username} ismi ile giriş yapıldı!`);
 });
-/////////////////ATANIS///////////////////ATANIS///////////////////////////////////ATANIS////////////////
-/////////////////ATANIS///////////////////ATANIS///////////////////////////////////ATANIS////////////////
-/////////////////ATANIS///////////////////ATANIS///////////////////////////////////ATANIS////////////////
-/////////////////ATANIS///////////////////ATANIS///////////////////////////////////ATANIS////////////////
 client.login(process.env.token)
 
 client.on('message', async (msg, member, guild) => {
@@ -54,7 +48,7 @@ client.on('message', async (msg, member, guild) => {
  {
    
 if (msg.content.toLowerCase() === '.alive'){
-if (msg.author.id !== "813799329407041576") return
+if (msg.author.id !== ayarlar.sahip) return
 
 msg.channel.send(new Discord.MessageEmbed().setDescription(`Dis siri Çalışıyor Emrindeyim Sahip 🌟`));
 }
