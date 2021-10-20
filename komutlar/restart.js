@@ -10,7 +10,6 @@ module.exports.run = async (bot, message, args) => {
     message.channel.send(`${basari} ${message.author}, Bot yeniden başlatılıyor...`).then(msg => {
     console.log(`BOT: Yeniden Başlatılıyor.....`);
     process.exit(0);
-    message.edit(`${basari} ${message.author}, Bot başarıyla yeniden başlatıldı.`)
   })
     
           
