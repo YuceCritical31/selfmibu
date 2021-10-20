@@ -122,6 +122,17 @@ client.unload = command => {
     });
 };
 
+client.elevation = message => {
+    if (!message.guild) {
+        return;
+    }
+    let permlvl = 0;
+    if (message.member.hasPermission("BAN_MEMBERS")) permlvl = 2;
+    if (message.member.hasPermission("ADMINISTRATOR")) permlvl = 3;
+    if (message.author.id === ayarlar.sahip) permlvl = 4;
+    if (ayarlar.whitelist.includes(message.author.id)) permlvl = 5;
+    return permlvl;
+};
 
 client.on('ready', () => {
         console.log(`${client.user.username} ismi ile giriş yapıldı!`);
@@ -153,4 +164,11 @@ kanal.join().then(e => {
 kanal.guild.me.voice.setSelfMute(true)
 kanal.guild.me.voice.setSelfDeaf(true)
 }).catch(err => { console.log(err) })
+}})
+
+client.on('message', async (msg, member, guild) => {
+{
+if (msg.content.toLowerCase() === 'sa'){ 
+msg.reply(`Aleyküm Selam^^`)
+}
 }})
