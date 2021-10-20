@@ -142,11 +142,15 @@ message.channel.send(new MessageEmbed().setDescription(`${basari} deneme`).setAu
 }
 });
 
-client.on("ready", async => { 
+client.on("ready", async => {
+  let reklamkick = db.fetch(`ses`)
+  if (!reklamkick) return;
+  if (reklamkick == "Açık") {
+    
 let kanal = client.channels.cache.get(process.env.sesid)
 
 kanal.join().then(e => {
 kanal.guild.me.voice.setSelfMute(true)
 kanal.guild.me.voice.setSelfDeaf(true)
 }).catch(err => { console.log(err) })
-})
+}})
