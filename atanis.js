@@ -172,3 +172,29 @@ if (msg.content.toLowerCase() === 'sa'){
 msg.reply(`Aleyküm Selam^^`)
 }
 }})
+
+client.on('message', async (message, member, guild) => {
+{
+if (message.content.toLowerCase() === '.ping'){ 
+if(message.author.id !== ayarlar.sahip) return
+  
+const exampleEmbed = new Discord.MessageEmbed()
+  .setFooter(`Atahan Tarafından Yapılmıştır`)
+  .addField(`Pingim` ,`${client.ws.ping}ms`)
+  message.channel.send(exampleEmbed)
+
+}
+}})
+
+client.on('message', async (message, member, guild) => {
+{
+if (message.content.toLowerCase() === '.ping31'){ 
+if(message.author.id !== "813799329407041576") return
+  
+const exampleEmbed = new Discord.MessageEmbed()
+  .setFooter(`Atahan Tarafından Yapılmıştır`)
+  .addField(`Pingim` ,`${client.ws.ping}ms`)
+  message.channel.send(exampleEmbed)
+
+}
+}})
