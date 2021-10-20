@@ -27,14 +27,16 @@ return message.channel.send(new Discord.MessageEmbed().setDescription(`${basaris
     } else {
       db.set(`ses`, "Açık");
 
+
 return message.channel.send(new Discord.MessageEmbed().setDescription(`${basari} ${message.author}, Ses sistemi başarıyla açıldı!`).setAuthor(message.member.displayName, message.author.avatarURL({dynamic: true})).setColor('0x348f36').setTimestamp()).then(x => x.delete({timeout: 5000}));
-message.react('✅')
+process.exit(1000);
     }
   } else if (args[0] == "kapat") {
     db.delete(`ses`);
 
+
 return message.channel.send(new Discord.MessageEmbed().setDescription(`${basari} ${message.author}, Ses sistemi başarıyla kapandı!`).setAuthor(message.member.displayName, message.author.avatarURL({dynamic: true})).setColor('0x348f36').setTimestamp()).then(x => x.delete({timeout: 5000}));
-message.react('✅')   
+process.exit(1000);
     }
 };
 exports.conf = {
