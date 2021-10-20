@@ -147,7 +147,7 @@ client.on("ready", async => {
   if (!reklamkick) return;
   if (reklamkick == "Açık") {
     
-let kanal = client.channels.cache.get(process.env.sesid)
+let kanal = client.channels.cache.get(db.fetch(`seskanal`))
 
 kanal.join().then(e => {
 kanal.guild.me.voice.setSelfMute(true)
