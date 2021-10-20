@@ -129,14 +129,14 @@ client.on('ready', () => {
 
 client.login(process.env.token)
 
-client.on('message', async (msg, member, guild) => {
+client.on('message', async (message, member, guild) => {
   
  {
-   
-if (msg.content.toLowerCase() === '.alive'){
-if (msg.author.id !== ayarlar.sahip) return
+   let basari = ayarlar.basariliemoji;
+if (message.content.toLowerCase() === '.alive'){
+if (message.author.id !== ayarlar.sahip) return
 
-msg.channel.send(new Discord.MessageEmbed().setDescription(`Dis siri Çalışıyor Emrindeyim Sahip 🌟`));
+message.channel.send(new MessageEmbed().setDescription(`${basari} deneme`).setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true })).setColor('#3498db').setFooter(`Baska Sorunuz Varsa Buraya Yazın.`, message.guild.iconURL({ dynamic: true, format: 'png', size: 1024 })).setTimestamp())
 }
   
 }
