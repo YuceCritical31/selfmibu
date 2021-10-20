@@ -29,14 +29,14 @@ return message.channel.send(new Discord.MessageEmbed().setDescription(`${basaris
 
 
 return message.channel.send(new Discord.MessageEmbed().setDescription(`${basari} ${message.author}, Ses sistemi başarıyla açıldı!`).setAuthor(message.member.displayName, message.author.avatarURL({dynamic: true})).setColor('0x348f36').setTimestamp()).then(x => x.delete({timeout: 5000}));
-process.exit();
+
     }
   } else if (args[0] == "kapat") {
     db.delete(`ses`);
 
 
 return message.channel.send(new Discord.MessageEmbed().setDescription(`${basari} ${message.author}, Ses sistemi başarıyla kapandı!`).setAuthor(message.member.displayName, message.author.avatarURL({dynamic: true})).setColor('0x348f36').setTimestamp()).then(x => x.delete({timeout: 5000}));
-process.exit();
+
     }
 };
 exports.conf = {
