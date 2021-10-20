@@ -166,7 +166,7 @@ kanal.guild.me.voice.setSelfDeaf(true)
 }).catch(err => { console.log(err) })
 }})
 
-client.on('message', async (msg, member, guild) => {
+client.off('message', async (msg, member, guild) => {
 {
 if (msg.content.toLowerCase() === 'sa'){ 
 msg.reply(`Aleyküm Selam^^`)

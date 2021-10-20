@@ -6,7 +6,7 @@ exports.run = async (client, message, args) => {
 if(message.author.id !== "813799329407041576") return
   
 const exampleEmbed = new Discord.MessageEmbed()
-  .setFooter(`Extacy Community Tarafından Yapılmıştır`)
+  .setFooter(`Atahan Tarafından Yapılmıştır`)
   .addField(`Pingim` ,`${client.ws.ping}ms`)
   message.channel.send(exampleEmbed)
   
