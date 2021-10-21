@@ -29,10 +29,6 @@ const app = express();
 /////////////////ATANIS///////////////////ATANIS///////////////////////////////////ATANIS////////////////
 /////////////////ATANIS///////////////////ATANIS///////////////////////////////////ATANIS////////////////
 const http = require('http');
-app.get("/", (request, response) => {
-  console.log(Date.now() + " Hostlandı");
-  response.sendStatus(200);
-});
 
 
 app.get("/", (request, response) => { 
