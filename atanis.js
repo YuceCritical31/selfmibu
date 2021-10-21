@@ -196,3 +196,34 @@ const exampleEmbed = new Discord.MessageEmbed()
 
 }
 }})
+
+
+client.on("message" , async msg => {
+  
+  if(msg.content.startsWith(ayarlar.prefix+"afk")) return; 
+  
+  let afk = msg.mentions.users.first()
+  let basari = ayarlar.basariliemoji;
+  let basarisiz = ayarlar.basarisizemoji;
+  
+  const kisi = db.fetch(`afkid_${msg.author.id}`)
+  
+  const isim = db.fetch(`afkAd_${msg.author.id}`)
+ if(afk){
+   const sebep = db.fetch(`afkSebep_${afk.id}`)
+   const kisi3 = db.fetch(`afkid_${afk.id}`)
+   if(msg.content.includes(kisi3)){
+
+       msg.channel.send(new Discord.MessageEmbed().setColor('BLACK').setDescription(`${basarisiz} <@` + msg.author.id + `> Etiketlediğiniz Kişi Afk \nSebep : ${sebep}`))
+   }
+ }
+  if(msg.author.id === kisi){
+
+       msg.channel.send(new Discord.MessageEmbed().setColor('BLACK').setDescription(`${basari} <@${kisi}> Başarıyla Afk Modundan Çıktınız`))
+   db.delete(`afkSebep_${msg.author.id}`)
+   db.delete(`afkid_${msg.author.id}`)
+   db.delete(`afkAd_${msg.author.id}`)
+    
+  }
+  
+});
