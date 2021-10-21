@@ -10,7 +10,7 @@ exports.run = async (client, message, args) => {
 let sebep = args[0]
 if (!sebep) return message.channel.send(new MessageEmbed().setDescription(`${basarisiz} ${message.author}, Bir sebep belirtmelisin.`).setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true })).setColor('0x800d0d').setTimestamp()).then(x => x.delete({timeout: 5000}));
   
-message.channel.send(new MessageEmbed().setDescription(`${basarili} ${message.author}, Başarıyla afk modu açıldı.`).setAuthor(message.member.displayName, message.author.avatarURL({dynamic: true})).setColor('0x348f36').setTimestamp()).then(x => x.delete({timeout: 5000}));
+message.channel.send(new MessageEmbed().setDescription(`${basarili} ${message.author}, Başarıyla \`${sebep}\` sebebiyle afk oldunuz.`).setAuthor(message.member.displayName, message.author.avatarURL({dynamic: true})).setColor('0x348f36').setTimestamp()).then(x => x.delete({timeout: 5000}));
 db.set(`afk`, "Açık")
 db.set(`afk_sebep`, sebep)
 };
