@@ -164,10 +164,12 @@ kanal.guild.me.voice.setSelfDeaf(true)
 
 client.on('message', async (message, member, guild) => {
 let afk = db.fetch(`afk`)
+let sebep = db.fetch(`afk_sebep`)
   
 if (!afk) return
+if (afk === "Açık")
 if(message.channel.type === "dm") {
-message.reply(new MessageEmbed().setDescription(`${client.user} Şu anda AFK'dır lütfen rahatsız etmeyiniz.`).setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true })).setColor('#3498db').setFooter(`Atahan SelfBot`, message.guild.iconURL({ dynamic: true, format: 'png', size: 1024 })).setTimestamp()).then(x => x.delete({timeout: 5000}));
+message.reply(new MessageEmbed().setDescription(`${client.user} Şu anda ${sebep} Sebebinden AFK'dır lütfen rahatsız etmeyiniz.`).setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true })).setColor('#3498db').setFooter(`Atahan SelfBot`).setTimestamp()).then(x => x.delete({timeout: 5000}));
 
 }})
 
@@ -196,27 +198,3 @@ const exampleEmbed = new Discord.MessageEmbed()
 
 }
 }})
-
-
-client.on("message" , async msg => {
-  
-  if(msg.content.startsWith(ayarlar.prefix+"afk")) return; 
-  
-  let afk = msg.mentions.users.first()
-  let basari = ayarlar.basariliemoji;
-  let basarisiz = ayarlar.basarisizemoji;
-  
-  const kisi = db.fetch(`afkid_${msg.author.id}`)
-  
-  const isim = db.fetch(`afkAd_${msg.author.id}`)
- if(afk){
-   const sebep = db.fetch(`afkSebep_${afk.id}`)
-   const kisi3 = db.fetch(`afkid_${afk.id}`)
-   if(msg.content.includes(kisi3)){
-
-       msg.channel.send(new Discord.MessageEmbed().setColor('BLACK').setDescription(`${basarisiz} <@` + msg.author.id + `> Etiketlediğiniz Kişi Afk \nSebep : ${sebep}`))
-   }
- }
-}
-  
-);

@@ -29,10 +29,7 @@ exports.run = async (client, message, args) => {
     let sebep = args.join(" ");
     let kullanıcı = message.guild.members.cache.get(message.author.id);
     await db.set(`afkSebep_${message.author.id}_${message.guild.id}`, sebep);
-    await db.set(
-      `afkid_${message.author.id}`,
-      message.author.id
-    );
+    
     const ramo = await db.fetch(
       `afkSebep_${message.author.id}`
     );

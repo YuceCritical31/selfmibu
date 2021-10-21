@@ -11,28 +11,7 @@ const ms = require('parse-ms');
 
   
   if(message.author.bot) return;
-  if(!message.guild) return;
-  
-  if(await db.fetch(`afk_${message.author.id}`)) {
-    let zamans = await db.fetch(`afk_süre_${message.author.id}`);
-    let zaman = ms(Date.now() - zamans);
 
-     var REASON = await db.fetch(`afk_${message.author.id}`);
-
-    let zamant = await db.fetch(`afk_süre_${message.author.id}`);
-    let sa = ms(Date.now() - zamant);
-    db.delete(`afk_${message.author.id}`);
-    db.delete(`afk_süre_${message.author.id}`);
-    db.delete(`afkSebep_${message.author.id}`)
-    db.delete(`afkid_${message.author.id}`)
-    db.delete(`afkAd_${message.author.id}`)
-    const muah2  = new Discord.MessageEmbed()
-    .setDescription(`${message.author.tag} adlı kullanıcı artık AFK değil`)
-    .setColor("#00ff88")
-    message.channel.send(muah2)
-
-  
-  }
   
   if (talkedRecently.has(message.author.id)) {
     return;
