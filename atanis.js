@@ -217,7 +217,7 @@ client.on("message" , async msg => {
        msg.channel.send(new Discord.MessageEmbed().setColor('BLACK').setDescription(`${basarisiz} <@` + msg.author.id + `> Etiketlediğiniz Kişi Afk \nSebep : ${sebep}`))
    }
  }
-  if(msg.author.id === kisi){
+  if(msg.author.id === kisi){ 
 
        msg.channel.send(new Discord.MessageEmbed().setColor('BLACK').setDescription(`${basari} <@${kisi}> Başarıyla Afk Modundan Çıktınız`))
    db.delete(`afkSebep_${msg.author.id}`)
