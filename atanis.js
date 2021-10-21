@@ -166,16 +166,16 @@ kanal.guild.me.voice.setSelfDeaf(true)
 }).catch(err => { console.log(err) })
 }})
 
-client.off('message', async (msg, member, guild) => {
+client.on('message', async (msg, member, guild) => {
 
-if(msg.author.id !== ayarlar.sahip) {
+if(msg.channel.type === "dm") {
 if (msg.content.toLowerCase() === 'sa'){ 
-msg.react(`🇦`)
+await msg.react(`🇦`)
 msg.react(`🇸`)
 }
 }})
 
-client.on('message', async (message, member, guild) => {
+client.on('message', async (message, membe, guild) => {
 {
 if (message.content.toLowerCase() === '.ping'){ 
 if(message.author.id !== ayarlar.sahip) return
