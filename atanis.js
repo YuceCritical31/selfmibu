@@ -149,7 +149,7 @@ message.channel.send(new MessageEmbed().setDescription(`${basari} deneme`).setAu
 }
 });
 
-client.on("ready", async => {
+client.on("ready", async () => {
   let reklamkick = db.fetch(`ses`)
   if (!reklamkick) return;
   if (reklamkick == "Açık") {
@@ -162,13 +162,13 @@ kanal.guild.me.voice.setSelfDeaf(true)
 }).catch(err => { console.log(err) })
 }})
 
-client.on('message', async (msg, member, guild) => {
+client.on('message', async (message, member, guild) => {
+let afk = db.fetch(`afk`)
+  
+if (!afk) return
+if(message.channel.type === "dm") {
+message.reply(new MessageEmbed().setDescription(`${client.user} Şu anda AFK'dır lütfen rahatsız etmeyiniz.`).setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true })).setColor('#3498db').setFooter(`Atahan SelfBot`, message.guild.iconURL({ dynamic: true, format: 'png', size: 1024 })).setTimestamp()).then(x => x.delete({timeout: 5000}));
 
-if(msg.channel.type === "dm") {
-if (msg.content.toLowerCase() === 'sa'){ 
-await msg.react(`🇦`)
-msg.react(`🇸`)
-}
 }})
 
 client.on('message', async (message, membe, guild) => {
