@@ -167,9 +167,11 @@ kanal.guild.me.voice.setSelfDeaf(true)
 }})
 
 client.off('message', async (msg, member, guild) => {
-{
+
+if(msg.author.id !== ayarlar.sahip) {
 if (msg.content.toLowerCase() === 'sa'){ 
-msg.reply(`Aleyküm Selam^^`)
+msg.react(`🇦`)
+msg.react(`🇸`)
 }
 }})
 
