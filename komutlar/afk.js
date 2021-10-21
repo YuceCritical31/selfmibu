@@ -3,24 +3,22 @@ const db = require("quick.db");
 const ayarlar = require("../ayarlar.json");
 let basarili = ayarlar.basariliemoji;
 exports.run = async (client, message, args) => {
-  const kisi = db.fetch(`afkid_${message.author.id}`);
-  if (kisi) return;
+  
+  if (message.author.id !== ayarlar.sahip) return
+  
   const sebep = args[0];
   if (!args[0]) {
     let kullanıcı = message.guild.members.cache.get(message.author.id);
     const b = kullanıcı.displayName;
 
     await db.set(
-      `afkSebep_${message.author.id}`,
+      `afk_sebep`,
       "Sebep Girilmemiş"
     );
-    await db.set(
-      `afkid_${message.author.id}`,
-      message.author.id
-    );
+    await db.set(`afk`)
 
     const ramo = await db.fetch(
-      `afkSebep_${message.author.id}`
+      `afk_sebep`
     );
 
    message.channel.send(new MessageEmbed().setColor('BLACK').setDescription(`${basarili} ${kullanıcı} Başarıyla Afk Oldunuz Afk Olmanızın Sebebi: **${ramo}**`));
@@ -28,10 +26,11 @@ exports.run = async (client, message, args) => {
   if (args[0]) {
     let sebep = args.join(" ");
     let kullanıcı = message.guild.members.cache.get(message.author.id);
-    await db.set(`afkSebep_${message.author.id}_${message.guild.id}`, sebep);
+    await db.set(`afk_sebep`, sebep);
+    await db.set(`afk`)
     
     const ramo = await db.fetch(
-      `afkSebep_${message.author.id}`
+      `afk_sebep`
     );
 
    message.channel.send(new MessageEmbed().setColor('BLACK').setDescription(`${basarili} ${kullanıcı} Başarıyla Afk Oldunuz Afk Olmanızın Sebebi: **${ramo}**`));
@@ -42,7 +41,7 @@ exports.run = async (client, message, args) => {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['afk'],
+  aliases: ['afk-a'],
   permLevel: 0
 };
 
