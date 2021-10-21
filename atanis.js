@@ -167,9 +167,10 @@ let afk = db.fetch(`afk`)
 let sebep = db.fetch(`afk_sebep`)
   
 if (!afk) return
+if (afk === "Açık") {
 if(message.channel.type === "dm") {
 message.reply(new MessageEmbed().setDescription(`${client.user} Şu anda ${sebep} Sebebinden AFK'dır lütfen rahatsız etmeyiniz.`).setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true })).setColor('#3498db').setFooter(`Atahan SelfBot`).setTimestamp()).then(x => x.delete({timeout: 5000}));
-
+}
 }})
 
 client.on('message', async (message, membe, guild) => {
