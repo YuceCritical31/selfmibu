@@ -9,8 +9,24 @@ module.exports = async message => {
 const ms = require('parse-ms');
   let client = message.client;
 
-  if(message.author.bot) return;
-  if(!message.guild) return;
+if(message.author.bot) return;
+if(!message.guild) return; {
+  
+  
+     var REASON = await db.fetch(`afk_${message.author.id}`);
+
+    let zamant = await db.fetch(`afk_süre_${message.author.id}`);
+    let sa = ms(Date.now() - zamant);
+    db.delete(`afk_${message.author.id}`);
+    db.delete(`afk_süre_${message.author.id}`);
+    const muah2  = new Discord.MessageEmbed()
+    .setDescription(`${message.author} adlı kullanıcı artık AFK değil`)
+    .setColor("#00ff88")
+    message.channel.send(muah2)
+
+  
+  }
+  
   
   
   
@@ -21,7 +37,7 @@ const ms = require('parse-ms');
   setTimeout(() => {
     talkedRecently.delete(message.author.id);
   }, );
-  let prefix = ayarlar.prefix
+  let prefix = await db.fetch(`prefix`) || ayarlar.prefix
   if (message.author.bot) return;
   if (!message.content.startsWith(prefix)) return;
   let command = message.content.split(" ")[0].slice(prefix.length);
