@@ -13,7 +13,7 @@ let prefix = args.splice(0).join(" ")
 if(!prefix) return message.channel.send(new MessageEmbed().setDescription(`${basarisiz} ${message.author}, Lütfen bir prefix belirtiniz.`).setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true })).setColor('0x800d0d').setTimestamp())
 if (data === prefix) return message.channel.send(new MessageEmbed().setDescription(`${basarisiz} ${message.author}, Prefixiniz önceki ile aynı olamaz.`).setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true })).setColor('0x800d0d').setTimestamp())
   
-message.channel.send(new MessageEmbed().setDescription(`${basari} ${message.author}, Prefix \`${prefix}\` olarak ayarlandı.`).setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true })).setColor('0x348f36').setTimestamp())
+message.channel.send(new MessageEmbed().setDescription(`${basari} ${message.author}, Prefixiniz \`${prefix}\` olarak ayarlandı.`).setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true })).setColor('0x348f36').setTimestamp())
 
 db.set(`prefix`, prefix)
 message.react('✅')

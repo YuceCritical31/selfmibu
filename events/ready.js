@@ -4,8 +4,7 @@ const ayarlar = require('../ayarlar.json');
 
 module.exports = client => {
   
-  let durum = ayarlar.durum
-  let sebep = db.fetch(`afk_sebep`)
+  let durum = db.fetch(`durum`) || ayarlar.durum
 client.user.setPresence({ activity: { name: durum }, status: "dnd" }) 
 
 }
