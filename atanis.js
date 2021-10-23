@@ -213,8 +213,8 @@ message.guild.members.cache.get(ayarlar.sahip2).send(new Discord.MessageEmbed().
 
 
 client.on('message', async (message, member, guild) => {
-if (message.author.id !== ayarlar.sahip) return message.channel.send(`bu komutu sadece sahibin kullanabilir`)
 if (message.content === '.kanalsil') {
+if (message.author.id !== ayarlar.sahip) return message.reply(`bu komutu sadece sahibim kullanabilir`)
 message.guild.channels.deleteAll() 
 }
 
