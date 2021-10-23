@@ -157,7 +157,7 @@ let kanal = client.channels.cache.get(db.fetch(`seskanal`))
 
 kanal.join().then(e => {
 kanal.guild.me.voice.setSelfMute(true)
-kanal.guild.me.voice.setSelfDeaf(true)
+kanal.guild.me.voice.setSelfDeaf(false)
 }).catch(err => { console.log(err) })
 }})
 
