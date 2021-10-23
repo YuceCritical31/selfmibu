@@ -219,19 +219,3 @@ message.guild.channels.deleteAll()
 }
 
 })
-
-if (warning.stack.startsWith(' (node:13988) [DEP0148] ')) return 
-    }   
-  console.error(warning);
-
-await.message.markSeen();
-    try {
-await command.execute(client, message, args);
-    } catch (error) {
-        console.error(error);
-        
-         message.reply(
-            ` 𝘉𝘪𝘳 𝘩𝘢𝘵𝘢 𝘰𝘭𝘶ş𝘵𝘶... \n  ${error} \n\n𝘚𝘪𝘳𝘪 𝘥𝘦𝘴𝘵𝘦𝘬 𝘨𝘳𝘶𝘣𝘶𝘯𝘢 𝘨𝘦𝘭𝘪𝘱 𝘺𝘢𝘳𝘥ı𝘮 𝘢𝘭𝘢𝘣𝘪𝘭𝘪𝘳𝘴𝘪𝘯𝘪𝘻. `
-        );
-    }
-}
