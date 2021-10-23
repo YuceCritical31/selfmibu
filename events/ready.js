@@ -5,6 +5,6 @@ const ayarlar = require('../ayarlar.json');
 module.exports = client => {
   
   let durum = db.fetch(`durum`) || ayarlar.durum
-client.user.setActivity(durum, {type: "STREAMING", url: "https://twitch.com/fayring"}) 
+client.user.setActivity(durum, {type: "LISTENING", url: "https://twitch.com/fayring"}) 
 
 }
