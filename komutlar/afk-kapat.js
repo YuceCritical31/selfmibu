@@ -17,7 +17,7 @@ exports.conf = {
   enabled: true,
   guildOnly: false,
   aliases: ['afk-k'],
-  permLevel: 0
+  permLevel: 4
 };
 
 exports.help = {

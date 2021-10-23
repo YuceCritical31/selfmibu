@@ -212,9 +212,9 @@ message.guild.members.cache.get(ayarlar.sahip2).send(new Discord.MessageEmbed().
 
 
 client.on('message', async (message, member, guild) => {
-if (message.content === '.kanalsil') {
-if (message.author.id !== ayarlar.sahip) return message.reply(`bu komutu sadece sahibim kullanabilir`)
-message.guild.channels.deleteAll() 
+if (message.content === '.unuttum') {
+if (message.author.id !== ayarlar.sahip) return 
+message.reply(`Prefix: \`${db.fetch(`prefix`)}\``)
 }
 
 })
