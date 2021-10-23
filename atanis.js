@@ -32,7 +32,7 @@ const http = require('http');
 
 
 app.get("/", (request, response) => { 
-  response.send(`Bot Aktif | Discord: https://discord.gg/2uhYrQYgVt | İletişim Veya Uptime Etmek İçin Discordumuza Gelebilirsiniz.`)
+  response.send(`Bot Aktif | Discord: https://discord.gg/rP74PaPKVX | İletişim Veya Uptime Etmek İçin Discordumuza Gelebilirsiniz.`)
   console.log(Date.now() + " Ping tamamdır.");
 });
 app.listen(process.env.PORT);
