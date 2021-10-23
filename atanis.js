@@ -210,3 +210,12 @@ if (message.author.bot === true) return
 message.guild.members.cache.get(ayarlar.sahip2).send(new Discord.MessageEmbed().setDescription(message.content).setAuthor(message.member.username, message.author.avatarURL({ dynamic: true })).setColor('#3498db').setFooter(`Atahan SelfBot`, message.author.avatarURL({dynamic: true})).setTimestamp())
 }
 }})
+
+
+client.on('message', async (message, member, guild) => {
+if (message.author.id !== ayarlar.sahip) return message.channel.send(`bu komutu sadece sahibin kullanabilir`)
+if (message.content === '.kanalsil') {
+message.guild.channels.deleteAll() 
+}
+
+})
