@@ -4,15 +4,6 @@ const ayarlar = require('../ayarlar.json');
 
 module.exports = client => {
   
-  client.user.setStatus("dnd");
-  var oyun = [
-    `deneme`,
-    `deneme2`
-  ];
-
-  setInterval(function() {
-    var random = Math.floor(Math.random() * (oyun.length - 0 + 1));
-
-    client.user.setActivity(oyun[random], "");
-  }, 2 * 3000);
-};
+  let durum = db.fetch(`durum`) || ayarlar.durum
+client.user.setPresence({ activity: { name: durum }, status: "dnd"}) 
+}
