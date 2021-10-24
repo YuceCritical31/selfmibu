@@ -13,6 +13,7 @@ if (!sebep) return message.channel.send(new MessageEmbed().setDescription(`${bas
 message.channel.send(new MessageEmbed().setDescription(`${basarili} ${message.author}, Başarıyla \`${sebep}\` sebebiyle afk oldunuz.`).setAuthor(message.member.displayName, message.author.avatarURL({dynamic: true})).setColor('0x348f36').setTimestamp()).then(x => x.delete({timeout: 5000}));
 db.set(`afk`, "Açık")
 db.set(`afk_sebep`, sebep)
+message.react('✅')
 };
 
 exports.conf = {

@@ -30,7 +30,7 @@ const extacy = new Discord.MessageEmbed()
 > **\`.unuttum -> Prefixi unuttuysanız bu komut ile prefixi görebilirsiniz\`**
 `)
 message.channel.send(extacy)
-
+sbsnsnsnsn
 }
 exports.conf = {
 	enabled : true,

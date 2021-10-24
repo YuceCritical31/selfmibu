@@ -13,7 +13,7 @@ if (!data) return message.channel.send(new MessageEmbed().setDescription(`${basa
 
 message.channel.send(new MessageEmbed().setDescription(`${basari} ${message.author}, Durumunuz başarıyla sıfırlandı.`).setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true })).setColor('0x348f36').setTimestamp())
 db.delete(`durum`)
-
+message.react('✅')
 };
 
 exports.conf = {

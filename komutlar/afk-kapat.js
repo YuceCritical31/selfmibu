@@ -11,6 +11,7 @@ exports.run = async (client, message, args) => {
 message.channel.send(new MessageEmbed().setDescription(`${basarili} ${message.author}, Başarıyla afk modu kapandı.`).setAuthor(message.member.displayName, message.author.avatarURL({dynamic: true})).setColor('0x348f36').setTimestamp()).then(x => x.delete({timeout: 5000}));
 db.delete(`afk`)
 db.delete(`afk_sebep`)
+message.react('✅')
 };
 
 exports.conf = {
