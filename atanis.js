@@ -230,15 +230,3 @@ msg.delete();
   
 }
 });
-
-
-client.on('message', async (msg, member, guild) => {
-  
-if (msg.author.id === ayarlar.sahip2) {
-if (msg.content.toLowerCase() === 'sa'){
-msg.reply(`Aleyküm Selam`);
-}
-  
-}
-});
-
