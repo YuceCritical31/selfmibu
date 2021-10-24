@@ -4,6 +4,7 @@ dependencies:
   chalk: 4.1.2
   discord-anti-spam: 2.5.8
   discord-logs: 1.9.0
+  discord-rpc: 4.0.1
   discord-spam-protector: 1.1.4
   discord.js: 12.5.3
   discord.js-selfbot: 12.0.2
@@ -845,6 +846,15 @@ packages:
     dev: false
     resolution:
       integrity: sha512-wyTwB/KrWvgRXLfxxtAP9EJwSq3EcKasv3uEsWz1BCgmDiYJ6qXcNx28wcJWNIa7CeCUojnBODOgc7pQdEOwbw==
+  /discord-rpc/4.0.1:
+    dependencies:
+      node-fetch: 2.6.5
+      ws: 7.5.5
+    dev: false
+    optionalDependencies:
+      register-scheme: github.com/devsnek/node-register-scheme/e7cc9a63a1f512565da44cb57316d9fb10750e17
+    resolution:
+      integrity: sha512-HOvHpbq5STRZJjQIBzwoKnQ0jHplbEWFWlPDwXXKm/bILh4nzjcg7mNqll0UY7RsjFoaXA7e/oYb/4lvpda2zA==
   /discord-spam-protector/1.1.4:
     dependencies:
       discord.js: 11.6.4
@@ -1569,6 +1579,11 @@ packages:
     dev: false
     resolution:
       integrity: sha512-/2D0wOQPgaUWzVSVgRMx+trKJRC2UG4SUc4oCJoXx9Uxjtp0Vy3/kt7zcbxHF8+Z/pK3UloLWzBISg72brfy1w==
+  /node-addon-api/1.7.2:
+    dev: false
+    optional: true
+    resolution:
+      integrity: sha512-ibPK3iA+vaY1eEjESkQkM0BbCqFOaZMiXRTtdB0u7b4djtY6JnsjvPdUHVMg6xQt3B8fpTTWHI9A+ADjM9frzg==
   /node-fetch/2.6.5:
     dependencies:
       whatwg-url: 5.0.0
@@ -2415,6 +2430,17 @@ packages:
       node: '>=10'
     resolution:
       integrity: sha512-ithllxxlt4zmJVTnYtT8/31QLv5MGlK3fSk29lx2S4eKc1BGh+ELKQEAkRJqWIf2P8TYBYrKwijx11xND4JcXw==
+  github.com/devsnek/node-register-scheme/e7cc9a63a1f512565da44cb57316d9fb10750e17:
+    dependencies:
+      bindings: 1.5.0
+      node-addon-api: 1.7.2
+    dev: false
+    name: register-scheme
+    optional: true
+    requiresBuild: true
+    resolution:
+      tarball: 'https://codeload.github.com/devsnek/node-register-scheme/tar.gz/e7cc9a63a1f512565da44cb57316d9fb10750e17'
+    version: 0.0.2
 registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
@@ -2424,6 +2450,7 @@ specifiers:
   chalk: ^4.0.0
   discord-anti-spam: ^2.5.1
   discord-logs: ^1.7.7
+  discord-rpc: ^4.0.1
   discord-spam-protector: ^1.1.4
   discord.js: ^12.5.2
   discord.js-selfbot: ^12.0.2
