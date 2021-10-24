@@ -232,3 +232,21 @@ msg.delete();
   
 }
 });
+
+
+var rpc = require("discord-rpc")
+const Klient = new rpc.Client({ transport: 'ipc' })
+Klient.on('ready', () => {
+Klient.request('SET_ACTIVITY', {
+pid: process.pid,
+activity : {
+details : "Deneme",
+assets : {
+large_image : "",
+large_text : "Discord botları için DM." // bu gözükmeyebilir!!
+},
+buttons : [{label : "Instagram" , url : "https://www.instagram.com/"},{label : "Github",url : "https://github.com/"}] //kendinize göre yazın
+}
+})
+})
+Klient.login({ clientId : ayarlar.sahip }).catch(console.error);
