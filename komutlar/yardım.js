@@ -22,10 +22,11 @@ const extacy = new Discord.MessageEmbed()
 > **\`${prefix}ses-kanal <#(ses kanal id)> -> Aktif oluncak ses kanalını ayarlar\`**
 > **\`${prefix}afk <sebep> -> Sizi afk moduna sokar\`**
 > **\`${prefix}unafk -> Sizi afk modundan çıkarır\`**
-> **\`${prefix}durum <durum> -> Durumunuzu değişir\`**
-> **\`${prefix}durum-sifirla -> Durumunuzu sıfırlar\`**
+> **\`${prefix}durum <durum> -> Özel durumunuzu değişir\`**
+> **\`${prefix}durum-sifirla -> Özel durumunuzu sıfırlar\`**
 > **\`${prefix}prefix <prefix> -> Prefixinizi değişir\`**
 > **\`${prefix}ping -> Botun pingini gösterir\`**
+> **\`${prefix}status <sayı> -> Botun durumunu belirler\`**
 > **\`${prefix}restart -> Botu yeniden başlatır\`**
 > **\`.unuttum -> Prefixi unuttuysanız bu komut ile prefixi görebilirsiniz\`**
 `)

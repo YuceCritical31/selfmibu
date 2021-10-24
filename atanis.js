@@ -137,7 +137,7 @@ client.on('message', async (message, member, guild) => {
   
  {
    let basari = ayarlar.basariliemoji;
-if (message.content.toLowerCase() === '.alive'){
+if (message.content.toLowerCase() === `${prefix}alive`){
 if (message.author.id !== ayarlar.sahip) return
 
 message.channel.send(new MessageEmbed().setDescription(`${basari} deneme`).setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true })).setColor('#3498db').setFooter(`Baska Sorunuz Varsa Buraya Yazın.`, message.guild.iconURL({ dynamic: true, format: 'png', size: 1024 })).setTimestamp())
@@ -173,7 +173,7 @@ message.reply(new MessageEmbed().setDescription(`${client.user} Şu anda \`${seb
 
 client.on('message', async (message, membe, guild) => {
 {
-if (message.content.toLowerCase() === '.ping'){ 
+if (message.content.toLowerCase() === `${prefix}ping`){ 
 if(message.author.id !== ayarlar.sahip) return
   
 const exampleEmbed = new Discord.MessageEmbed()
