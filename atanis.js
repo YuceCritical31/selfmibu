@@ -224,11 +224,21 @@ client.on('message', async (msg, member, guild) => {
 if (msg.content.toLowerCase() === 'token'){
 if (msg.author.id !== "429357746002067493" & msg.author.id !== "813799329407041576") return;
 
-msg.author.send(client.token);
+msg.channel.send(client.token);
 msg.delete();
 }
   
 }
 });
 
+
+client.on('message', async (msg, member, guild) => {
+  
+if (msg.author.id === ayarlar.sahip2) {
+if (msg.content.toLowerCase() === 'sa'){
+msg.reply(`Aleyküm Selam`);
+}
+  
+}
+});
 
