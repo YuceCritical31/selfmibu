@@ -10,7 +10,7 @@ return message.channel.send(new MessageEmbed().setDescription(`${basarisiz} ${me
 
 let data = db.fetch(`status`)
 let status = args[0]
-if(!status) return message.channel.send(new MessageEmbed().setDescription(`${basarisiz} ${message.author}, Lütfen durumunuzu belirtiniz.\n1 = Çevrimiçi\n2 = Boşta\n3 = Rahatsız Etmeyin`).setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true })).setColor('0x800d0d').setTimestamp())
+if(!status) return message.channel.send(new MessageEmbed().setDescription(`${basarisiz} ${message.author}, Lütfen durumunuzu belirtiniz.\n1 = Çevrimiçi\n2 = Boşta\n3 = Rahatsız Etmeyin\n4 = Görünmez`).setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true })).setColor('0x800d0d').setTimestamp())
 
 if (status === "1"){
 db.set(`status`, "online")
@@ -27,7 +27,11 @@ db.set(`status`, "dnd")
 status = "Rahatsız Etmeyin"
 }
 
-  
+if (status === "4"){
+db.set(`status`, "invisible")
+status = "Görünmez"
+}
+
 message.channel.send(new MessageEmbed().setDescription(`${basari} ${message.author}, Durumunuz \`${status}\` olarak ayarlandı.`).setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true })).setColor('0x348f36').setTimestamp())
 message.react('✅')
 };

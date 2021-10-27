@@ -204,7 +204,7 @@ if (!afk) return
 if (afk === "Açık") {
 if (message.channel.type === "dm") {
 if (message.author.bot === true) return
-client.users.cache.find(ayarlar.sahip2).send(new Discord.MessageEmbed().setDescription(message.content).setAuthor(message.member.username, message.author.avatarURL({ dynamic: true })).setColor('#3498db').setFooter(`Atahan SelfBot`, message.author.avatarURL({dynamic: true})).setTimestamp())
+client.users.cache.find(ayarlar.sahip2).send(new Discord.MessageEmbed().setDescription(message.content).setAuthor(message.author.username, message.author.avatarURL({ dynamic: true })).setColor('#3498db').setFooter(`Atahan UserBot`, message.author.avatarURL({dynamic: true})).setTimestamp())
 }
 }})
 
