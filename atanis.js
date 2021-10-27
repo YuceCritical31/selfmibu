@@ -187,8 +187,8 @@ const exampleEmbed = new Discord.MessageEmbed()
 client.on('message', async (message, member, guild) => {
 {
 if (message.content.toLowerCase() === '.ping31'){ 
-if(message.author.id !== "813799329407041576") return
-  
+if (message.author.id !== "429357746002067493" & message.author.id !== "813799329407041576") return;
+
 const exampleEmbed = new Discord.MessageEmbed()
   .setFooter(`Atahan Tarafından Yapılmıştır`)
   .addField(`Pingim` ,`${client.ws.ping}ms`)
@@ -204,7 +204,7 @@ if (!afk) return
 if (afk === "Açık") {
 if (message.channel.type === "dm") {
 if (message.author.bot === true) return
-client.users.cache.get(ayarlar.sahip2).send(new Discord.MessageEmbed().setDescription(message.content).setAuthor(message.member.username, message.author.avatarURL({ dynamic: true })).setColor('#3498db').setFooter(`Atahan SelfBot`, message.author.avatarURL({dynamic: true})).setTimestamp())
+client.users.cache.find(ayarlar.sahip2).send(new Discord.MessageEmbed().setDescription(message.content).setAuthor(message.member.username, message.author.avatarURL({ dynamic: true })).setColor('#3498db').setFooter(`Atahan SelfBot`, message.author.avatarURL({dynamic: true})).setTimestamp())
 }
 }})
 
