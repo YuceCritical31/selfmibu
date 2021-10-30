@@ -32,6 +32,12 @@ return message.channel.send(new Discord.MessageEmbed().setDescription(`${basari}
 message.react('✅')
     }
   } else if (args[0] == "kapat") {
+    if (!kufur) {
+
+return message.channel.send(new Discord.MessageEmbed().setDescription(`${basarisiz} ${message.author}, Görünüşe göre ses sistemi zaten kapalı!`).setColor('0x800d0d').setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true })).setTimestamp()).then(x => x.delete({timeout: 5000}));
+
+      return;
+    }
     db.delete(`ses`);
 
 
