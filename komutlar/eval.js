@@ -8,17 +8,13 @@ let basari = ayarlar.basariliemoji
  
 exports.run = (client, message, args) => {
 if (message.author.id !== ayarlar.sahip)
-return message.channel.send(new MessageEmbed().setDescription(`${basarisiz} ${message.author}, Komutu kullanmak için yetkin bulunmamakta.`).setColor('0x800d0d').setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true })).setTimestamp()).then(x => x.delete({timeout: 5000}));
+return message.channel.send(`${basarisiz} ${message.author}, Komutu kullanmak için yetkin bulunmamakta.`).then(x => x.delete({timeout: 5000}));
     try {
     let komut = eval(args.join(" "))
-    if(!komut) return message.channel.send(new MessageEmbed().setDescription(`${basarisiz} ${message.author}, Bir mesaj belirtmelisin.`).setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true })).setColor('0x800d0d').setTimestamp()).then(x => x.delete({timeout: 5000}));
+    if(!komut) return message.channel.send(`${basarisiz} ${message.author}, Bir mesaj belirtmelisin.`).then(x => x.delete({timeout: 5000}));
     let Çıktılar = ["string","boolean","number","float"]
     if (Çıktılar.includes(typeof komut)) {
-    let Embed = new MessageEmbed()
-    .setDescription("**Başarılı**")
-    .addField("Girdi", "```js\n" + args.join(" ") + "\n```")
-    .addField("Çıktı", "```js\n" + komut + "\n```")
-    .setColor('GREEN')
+    let Embed = "**Girdi**\n" + "```js\n" + args.join(" ") + "\n```" + "\n**Çıktı**\n" + "```js\n" + require('util').inspect(komut) + "\n```"
     message.channel.send(Embed)
     message.react('✅')
     } else {
