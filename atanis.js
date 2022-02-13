@@ -176,7 +176,7 @@ client.on('message', async (message, membe, guild) => {
 if (message.content.toLowerCase() === `${prefix}ping`){ 
 if(message.author.id !== ayarlar.sahip) return
   
-const exampleEmbed = `Pingim: ${client.ws.ping}ms`
+const exampleEmbed = `Pingim: **${client.ws.ping}**ms`
   message.channel.send(exampleEmbed)
 
 }
