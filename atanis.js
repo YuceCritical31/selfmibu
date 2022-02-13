@@ -167,7 +167,7 @@ if (!afk) return
 if (afk === "Açık") {
 if (message.content === `${client.user}`) {
 if (message.author.bot === true) return
-message.reply(new MessageEmbed().setDescription(`${client.user} Şu anda \`${sebep}\` Sebebinden AFK'dır lütfen rahatsız etmeyiniz.`).setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true })).setColor('#3498db').setFooter(`Atahan UserBot`).setTimestamp()).then(x => x.delete({timeout: 10000}));
+message.reply(`${client.user} Şu anda \`${sebep}\` Sebebinden AFK'dır lütfen rahatsız etmeyiniz.`).then(x => x.delete({timeout: 10000}));
 }
 }})
 
@@ -176,9 +176,7 @@ client.on('message', async (message, membe, guild) => {
 if (message.content.toLowerCase() === `${prefix}ping`){ 
 if(message.author.id !== ayarlar.sahip) return
   
-const exampleEmbed = new Discord.MessageEmbed()
-  .setFooter(`Atahan Tarafından Yapılmıştır`)
-  .addField(`Pingim` ,`${client.ws.ping}ms`)
+const exampleEmbed = `Pingim: ${client.ws.ping}ms`
   message.channel.send(exampleEmbed)
 
 }

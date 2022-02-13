@@ -13,11 +13,7 @@ exports.run = async(client, message, args) => {
 
 
 
-const extacy = new Discord.MessageEmbed()
-.setTitle(`Atahan UserBot Yardım`)
-.setFooter('Atahan Tarafından Yapılmıştır.')
-.setThumbnail(message.author.avatarURL({ dynamic: true, format: 'png', size: 1024 }))
-.setDescription(`
+const extacy = `
 > **\`${prefix}ses Aç/Kapat -> Ses sitemini Açar/Kapatır\`**
 > **\`${prefix}ses-kanal <#(ses kanal id)> -> Aktif oluncak ses kanalını ayarlar\`**
 > **\`${prefix}afk <sebep> -> Sizi afk moduna sokar\`**
@@ -29,7 +25,7 @@ const extacy = new Discord.MessageEmbed()
 > **\`${prefix}status <sayı> -> Botun durumunu belirler\`**
 > **\`${prefix}restart -> Botu yeniden başlatır\`**
 > **\`.unuttum -> Prefixi unuttuysanız bu komut ile prefixi görebilirsiniz\`**
-`)
+`
 message.channel.send(extacy)
 message.react('✅')
 }
