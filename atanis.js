@@ -140,7 +140,7 @@ client.on('message', async (message, member, guild) => {
 if (message.content.toLowerCase() === `${prefix}alive`){
 if (message.author.id !== ayarlar.sahip) return
 
-message.channel.send(new MessageEmbed().setDescription(`${basari} deneme`).setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true })).setColor('#3498db').setFooter(`Baska Sorunuz Varsa Buraya Yazın.`, message.guild.iconURL({ dynamic: true, format: 'png', size: 1024 })).setTimestamp())
+message.channel.send(`${basari} deneme`)
 }
   
 }
