@@ -13,7 +13,7 @@ let durum = args.splice(0).join(" ")
 if(!durum) return message.channel.send(new MessageEmbed().setDescription(`${basarisiz} ${message.author}, Lütfen durumunuzu belirtiniz.`).setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true })).setColor('0x800d0d').setTimestamp())
 if (data === durum) return message.channel.send(new MessageEmbed().setDescription(`${basarisiz} ${message.author}, Durumunuz önceki ile aynı olamaz.`).setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true })).setColor('0x800d0d').setTimestamp())
   
-message.channel.send(new MessageEmbed().setDescription(`${basari} ${message.author}, Durumunuz \`${durum}\` olarak ayarlandı.`).setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true })).setColor('0x348f36').setTimestamp())
+message.channel.send(`${basari} ${message.author}, Durumunuz \`${durum}\` olarak ayarlandı.`)
 
 db.set(`durum`, durum)
 message.react('✅')

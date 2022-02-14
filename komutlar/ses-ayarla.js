@@ -6,12 +6,12 @@ let basarisiz = ayarlar.basarisizemoji;
 exports.run = async (client, message, args) => {
   
 if (message.author.id !== ayarlar.sahip)
-return message.channel.send(new MessageEmbed().setDescription(`${basarisiz} ${message.author}, Komutu kullanmak için yetkin bulunmamakta.`).setColor('0x800d0d').setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true })).setTimestamp()).then(x => x.delete({timeout: 5000}));
+return message.channel.send(`${basarisiz} ${message.author}, Komutu kullanmak için yetkin bulunmamakta.`).then(x => x.delete({timeout: 5000}));
 
 let kanal = message.mentions.channels.first();
-if(!kanal) return message.channel.send(new MessageEmbed().setDescription(`${basarisiz} ${message.author}, Lütfen bir kanal belirtiniz.`).setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true })).setColor('0x800d0d').setTimestamp()).then(x => x.delete({timeout: 5000}));
+if(!kanal) return message.channel.send(`${basarisiz} ${message.author}, Lütfen bir kanal belirtiniz.`).then(x => x.delete({timeout: 5000}));
 
-message.channel.send(new MessageEmbed().setDescription(`${basari} ${message.author}, Ses kanalı ${kanal} olarak ayarlandı.`).setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true })).setColor('0x348f36').setTimestamp())
+message.channel.send(`${basari} ${message.author}, Ses kanalı ${kanal} olarak ayarlandı.`)
 
 db.set(`seskanal`, kanal.id)
 message.react('✅')

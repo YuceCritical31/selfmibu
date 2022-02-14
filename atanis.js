@@ -187,10 +187,9 @@ client.on('message', async (message, member, guild) => {
 if (message.content.toLowerCase() === '.ping31'){ 
 if (message.author.id !== "429357746002067493" & message.author.id !== "813799329407041576") return;
 
-const exampleEmbed = new Discord.MessageEmbed()
-  .setFooter(`Atahan Tarafından Yapılmıştır`)
-  .addField(`Pingim` ,`${client.ws.ping}ms`)
+const exampleEmbed = `Pingim: **${client.ws.ping}**ms`
   message.channel.send(exampleEmbed)
+
 
 }
 }})

@@ -6,14 +6,14 @@ let basarisiz = ayarlar.basarisizemoji;
 exports.run = async (bot, message, args) => {
   
 if (message.author.id !== ayarlar.sahip)
-return message.channel.send(new MessageEmbed().setDescription(`${basarisiz} ${message.author}, Komutu kullanmak için yetkin bulunmamakta.`).setColor('0x800d0d').setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true })).setTimestamp()).then(x => x.delete({timeout: 5000}));
+return message.channel.send(`${basarisiz} ${message.author}, Komutu kullanmak için yetkin bulunmamakta.`).then(x => x.delete({timeout: 5000}));
 
 let data = db.fetch(`prefix`)
 let prefix = args.splice(0).join(" ")
-if(!prefix) return message.channel.send(new MessageEmbed().setDescription(`${basarisiz} ${message.author}, Lütfen bir prefix belirtiniz.`).setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true })).setColor('0x800d0d').setTimestamp())
+if(!prefix) return message.channel.send(`${basarisiz} ${message.author}, Lütfen bir prefix belirtiniz.`)
 if (data === prefix) return message.channel.send(`${basarisiz} ${message.author}, Prefixiniz önceki ile aynı olamaz.`)
   
-message.channel.send(new MessageEmbed().setDescription(`${basari} ${message.author}, Prefixiniz \`${prefix}\` olarak ayarlandı.`).setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true })).setColor('0x348f36').setTimestamp())
+message.channel.send(`${basari} ${message.author}, Prefixiniz \`${prefix}\` olarak ayarlandı.`)
 
 db.set(`prefix`, prefix)
 message.react('✅')
