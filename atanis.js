@@ -150,8 +150,6 @@ client.on("ready", async () => {
   let reklamkick = db.fetch(`ses`)
   if (!reklamkick) return;
   if (reklamkick == "Açık") {
-  if(!kanal.join) { db.delete(`ses`) & db.delete(`seskanal`)
-                  console.log('ses kanalına girilemiyor bu yüzden ses sitemi sıfırlandı')}
     
 let kanal = client.channels.cache.get(db.fetch(`seskanal`))
 

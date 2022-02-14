@@ -20,7 +20,7 @@ message.react('✅')
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ["ses-kanali","voice-channel","ses-ayar"],
+  aliases: ["ses-kanali","voice-channel","ses-ayar","ses-ayarla"],
   permLevel: 4
 };
 
