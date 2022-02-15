@@ -24,6 +24,7 @@ const extacy = `
 > **\`${prefix}ping -> Botun pingini gösterir\`**
 > **\`${prefix}status <sayı> -> Botun durumunu belirler\`**
 > **\`${prefix}restart -> Botu yeniden başlatır\`**
+> **\`${prefix}spam <sayı> <mesaj> -> Belirtilen mesajı belirtilen sayı ile spamlar\`**
 > **\`.unuttum -> Prefixi unuttuysanız bu komut ile prefixi görebilirsiniz\`**
 `
 message.channel.send(extacy)
