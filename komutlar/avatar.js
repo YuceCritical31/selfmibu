@@ -4,12 +4,19 @@ const db = require('quick.db')
 
 
 exports.run = function(client, message, args) {
-         
-  let basarisiz = ayarlar.basarisizemoji;
   
-const user = message.mentions.users.first() || message.guild.members.cache.get(args[0]);
+if (message.author.id !== ayarlar.sahip) return
+         
+let basarisiz = ayarlar.basarisizemoji;
+let basari = ayarlar.basariliemoji;
+let user = message.mentions.users.first() || message.guild.members.cache.get(args[0]);
 
-return message.channel.send(user.avatarURL({ dynamic: true, format: 'png', size: 1024 }))
+if(!user) {user = message.author}
+  
+else message.channel.send(`${basarisiz} ${message.author}, Hatalı Kullanıcı\ID girdiniz.`)
+
+message.channel.send(user.avatarURL({ dynamic: true, format: 'png', size: 1024 }))
+message.react('✅')
 };
 
 exports.conf = {
