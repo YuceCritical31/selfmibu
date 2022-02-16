@@ -9,11 +9,10 @@ if (message.author.id !== ayarlar.sahip) return
          
 let basarisiz = ayarlar.basarisizemoji;
 let basari = ayarlar.basariliemoji;
-let user = message.mentions.users.first() || message.guild.members.cache.get(args[0]);
-
-if(!user) {user = message.author}
+let user;
+if(message.mentions.users.first) {user = message.mentions.users.first();}
   
-else message.channel.send(`${basarisiz} ${message.author}, Hatalı Kullanıcı\ID girdiniz.`)
+else {user = message.author}
 
 message.channel.send(user.avatarURL({ dynamic: true, format: 'png', size: 1024 }))
 message.react('✅')
