@@ -8,22 +8,23 @@ if(message.author.id !== ayarlar.sahip) return
   
 let basari = ayarlar.basariliemoji
 let basarisiz = ayarlar.basarisizemoji
-let channel = message.channel;
+let channel = message.channel
 let member = message.author
 
 if(!args[0]) return message.channel.send(`${basarisiz} ${message.author}, Bir sayı belirtmelisin!`)
   
 
+var i = 0;
 message.delete();
 channel.messages.fetch().then(x => {
-x.filter(a => a.author.id === member.id).map(a => a)(args[0]).forEach(s => {
+x.filter(a => a.author.id === member.user.id).map(a => a).slice(0, args[0]).forEach(s => {
+i++
 s.delete();
-
-message.channel.send(`${basari} ${message.author}, **${args[0]}** Mesaj siliniyor.`);
-
+if(i === x.filter(a => a.author.id === member.user.id).map(a => a).slice(0, args[0]).length) {
+return message.channel.send(`${basari} ${message.author}, **${i}** Mesaj siliniyor.`);
+}
 });
 });
-
 
 };
 exports.conf = {
