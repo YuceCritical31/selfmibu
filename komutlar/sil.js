@@ -13,14 +13,14 @@ let member = message.author
 
 if(!args[0]) return message.channel.send(`${basarisiz} ${message.author}, Bir sayı belirtmelisin!`)
   
-var i = args[0];
+
 message.delete();
 channel.messages.fetch().then(x => {
-x.filter(a => a.author.id === member.id).map(a => a).slice(args[0]).forEach(s => {
+x.filter(a => a.author.id === member.id).map(a => a)(args[0]).forEach(s => {
 s.delete();
-if(i === x.filter(a => a.author.id === member.id).map(a => a).slice(args[0]).length) {
-return message.channel.send(`${basari} ${message.author}, **${i}** Mesaj siliniyor.`);
-}
+
+message.channel.send(`${basari} ${message.author}, **${args[0]}** Mesaj siliniyor.`);
+
 });
 });
 
