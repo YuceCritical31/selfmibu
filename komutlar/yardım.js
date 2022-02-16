@@ -25,6 +25,7 @@ const extacy = `
 > **\`${prefix}status <sayı> -> Botun durumunu belirler\`**
 > **\`${prefix}restart -> Botu yeniden başlatır\`**
 > **\`${prefix}spam <sayı> <mesaj> -> Belirtilen mesajı belirtilen sayı ile spamlar\`**
+> **\`${prefix}av -> Etiketlediğiniz veya id sini girdiğiniz kişinin avatarını görüntüliyebilirsiniz\`**
 > **\`.unuttum -> Prefixi unuttuysanız bu komut ile prefixi görebilirsiniz\`**
 `
 message.channel.send(extacy)
