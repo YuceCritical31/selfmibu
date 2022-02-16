@@ -2,7 +2,7 @@ const Discord = require('discord.js-selfbot');
 const ayarlar = require('../ayarlar.json');
 
 exports.run = async (client, message, args)=> {
-if(message.author == ayarlar.sahip);
+if(message.author !== ayarlar.sahip) return
 //Atahan Tarafından Yapılmıştır
 let basarisiz = ayarlar.basarisizemoji;
 let basari = ayarlar.basariliemoji;
@@ -44,7 +44,7 @@ message.react('✅')
   enabled: true,
   guildOnly: false,
   aliases: ['av','pp'],
-  permLevel: 0
+  permLevel: 4
 };
 
 exports.help = {
