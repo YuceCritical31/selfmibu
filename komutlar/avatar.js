@@ -9,12 +9,21 @@ if (message.author.id !== ayarlar.sahip) return
          
 let basarisiz = ayarlar.basarisizemoji;
 let basari = ayarlar.basariliemoji;
-let user = message.mentions.users.first() || message.guild.members.cache.get(args[0]);
+let muser = message.mentions.users.first()
+let user = message.mentions.users.first() || client.users.fetch(userid);
 
+let userid;
+if(isNaN(args[0])){
+  if(!muser){
+    userid = message.author.id;
+  }else{
+    userid = muser.id;
+  }
+}else{
+  userid = args[0];
+}
 if(!user) {user = message.author}
   
-else message.channel.send(`${basarisiz} ${message.author}, Hatalı Kullanıcı\ID girdiniz.`)
-
 message.channel.send(user.avatarURL({ dynamic: true, format: 'png', size: 1024 }))
 message.react('✅')
 };
