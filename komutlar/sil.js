@@ -6,15 +6,17 @@ exports.run = async (client, message, args) => {
 
 if(message.author.id !== ayarlar.sahip) return
   
+let basari = ayarlar.basariliemoji
+let basarisiz = ayarlar.basarisizemoji
 let channel = message.channel;
-if(!args[0]) return message.channel.send('Bir kullanıcıyı etiketlemelisin.');
-if(!message.mentions.members.first()) return message.channel.send('Etiketlediğin kullanıcıyı bulamıyorum.');
+if(!args[0]) return message.channel.send(`${basarisiz} ${message.author}, Bir kullanıcıyı etiketlemelisin.`);
 let member = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
-if(!member) return message.channel.send('Etiketlediğin kullanıcıyı bulamıyorum.');
 if(args[1]) {
-if(!message.mentions.channels.first()) return message.channel.send('Etiketlediğin kanalı bulamıyorum.');
+if(!message.mentions.channels.first()) return message.channel.send(`${basarisiz} ${message.author}, Etiketlediğin kanalı bulamıyorum.`);
 channel = message.mentions.channels.first();
 };
+if(!message.member.hasPermission("MANAGE_MESSAGES") & !args[1]) {member = message.author}
+  
 var i = 0;
 message.delete();
 channel.messages.fetch().then(x => {
@@ -22,7 +24,7 @@ x.filter(a => a.author.id === member.user.id).map(a => a).slice(0, 100).forEach(
 i++
 s.delete();
 if(i === x.filter(a => a.author.id === member.user.id).map(a => a).slice(0, 100).length) {
-return message.channel.send(`**${i}** mesaj silinecek.`);
+return message.channel.send(`${basari} ${message.author}, **${i}** Mesaj siliniyor.`);
 }
 });
 });
