@@ -194,6 +194,7 @@ const exampleEmbed = `Pingim: **${client.ws.ping}**ms`
 }
 }})
 
+
 client.on('message', async (message, member, guild) => {
 let afk = db.fetch(`afk`)
   
