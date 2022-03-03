@@ -15,7 +15,7 @@ exports.run = async(client, message, args) => {
 
 const extacy = `
 > **\`${prefix}ses Aç/Kapat -> Ses sitemini Açar/Kapatır\`**
-> **\`${prefix}ses-kanal <#(ses kanal id)> -> Aktif oluncak ses kanalını ayarlar\`**
+> **\`${prefix}ses-kanal <ses kanal id> -> Aktif oluncak ses kanalını ayarlar\`**
 > **\`${prefix}afk <sebep> -> Sizi afk moduna sokar\`**
 > **\`${prefix}unafk -> Sizi afk modundan çıkarır\`**
 > **\`${prefix}durum <durum> -> Özel durumunuzu değişir\`**
@@ -24,6 +24,7 @@ const extacy = `
 > **\`${prefix}ping -> Botun pingini gösterir\`**
 > **\`${prefix}status <sayı> -> Botun durumunu belirler\`**
 > **\`${prefix}restart -> Botu yeniden başlatır\`**
+
 > **\`${prefix}spam <sayı> <mesaj> -> Belirtilen mesajı belirtilen sayı ile spamlar\`**
 > **\`${prefix}av -> Etiketlediğiniz veya id sini girdiğiniz kişinin avatarını görüntüliyebilirsiniz\`**
 > **\`.unuttum -> Prefixi unuttuysanız bu komut ile prefixi görebilirsiniz\`**

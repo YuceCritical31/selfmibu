@@ -2,7 +2,7 @@ const Discord = require('discord.js-selfbot');
 const ayarlar = require('../ayarlar.json')
 ///spammer by planta
  
-exports.off = (client, message, args) => {
+exports.run = (client, message, args) => {
   if (message.author.id == ayarlar.sahip) {
       let basarisiz = ayarlar.basarisizemoji
       let sayi = args[0];
