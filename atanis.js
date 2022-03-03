@@ -133,18 +133,6 @@ client.on('ready', () => {
 
 client.login(process.env.token)
 
-client.on('message', async (message, member, guild) => {
-  
- {
-   let basari = ayarlar.basariliemoji;
-if (message.content.toLowerCase() === `${prefix}alive`){
-if (message.author.id !== ayarlar.sahip) return
-
-message.channel.send(`${basari} deneme`)
-}
-  
-}
-});
 
 client.on("ready", async () => {
   let reklamkick = db.fetch(`ses`)
