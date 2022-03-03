@@ -195,20 +195,20 @@ const exampleEmbed = `Pingim: **${client.ws.ping}**ms`
 }})
 
 
-client.on('message', async (message, member, guild) => {
-let afk = db.fetch(`afk`)
-  
-if (!afk) return
-if (afk === "Açık") {
-if (message.channel.type === "dm") {
-if (message.author.bot === true) return
-client.users.cache.find(ayarlar.sahip2).send(new Discord.MessageEmbed().setDescription(message.content).setAuthor(message.author.username, message.author.avatarURL({ dynamic: true })).setColor('#3498db').setFooter(`Atahan UserBot`, message.author.avatarURL({dynamic: true})).setTimestamp())
+client.on('message', async (message, member, args) => {
+if (message.content.toLowerCase() === `${prefix}spam`) {
+if (message.author.id == ayarlar.sahip) {}
+      let basarisiz = ayarlar.basarisizemoji
+      let sayi = args[0];
+      let mesaj = args.slice(1).join(' ');
+   
+if (mesaj.length < 1) return message.reply(`${basarisiz} Kralım Spamlamam İçin Bişe Yazmalısınız.`);
+   message.delete();
+for (var i = 0; i < sayi; i++)
+{
+  client.users.cache.get('792386991504621600').send(mesaj)
 }
-  
-if (message.content === `${client.user}`) {
-if (message.author.id !== ayarlar.sahip) return 
-message.author.send(new Discord.MessageEmbed().setDescription(message.content).setAuthor(message.author.username, message.author.avatarURL({ dynamic: true })).setColor('#3498db').setFooter(`Atahan UserBot`, message.author.avatarURL({dynamic: true})).setTimestamp())
-}
+
 }})
 
 
