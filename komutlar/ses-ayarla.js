@@ -7,13 +7,16 @@ exports.run = async (client, message, args) => {
   
 if (message.author.id == ayarlar.sahip) {
 
+let data
+let kanal2 = client.channels.cache.get(args[0])
 let kanal = message.mentions.channels.first()
-if(client.channels.cache.get(args[0])) return
-if(!kanal) return message.channel.send(`${basarisiz} ${message.author}, Lütfen bir kanal belirtiniz.`).then(x => x.delete({timeout: 5000}));
+if(kanal) {data = kanal.id}
+if(kanal2) {data = args[0]}
+if(!data) return message.channel.send(`${basarisiz} ${message.author}, Lütfen bir kanal belirtiniz.`).then(x => x.delete({timeout: 5000}));
 
-message.channel.send(`${basari} ${message.author}, Ses kanalı ${kanal} olarak ayarlandı.`)
+message.channel.send(`${basari} ${message.author}, Ses kanalı <#${data}> olarak ayarlandı.`)
 
-db.set(`seskanal`, kanal.id)
+db.set(`seskanal`, data)
 message.react('✅')
 }}
 
