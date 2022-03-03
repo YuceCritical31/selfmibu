@@ -4,6 +4,7 @@ const ayarlar = require('../ayarlar.json')
  
 exports.run = (client, message, args) => {
   if (message.author.id == ayarlar.sahip) {
+      let kullanıcı = message.guild.member()
       let basarisiz = ayarlar.basarisizemoji
       let sayi = args[0];
       let mesaj = args.slice(1).join(' ');
@@ -12,7 +13,7 @@ if (mesaj.length < 1) return message.channel.send(`${basarisiz} ${message.author
    message.delete();
 for (var i = 0; i < sayi; i++)
 {
-message.channel.send(mesaj)
+kullanıcı.send(mesaj)
 }
 
 }};
