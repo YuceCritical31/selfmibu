@@ -4,12 +4,12 @@ const ayarlar = require('../ayarlar.json')
  
 exports.run = (client, message, args) => {
   if (message.author.id == ayarlar.sahip) {
-      let kullanıcı = client.users.cache.get(args[0])
+      let kullanıcı = client.users.cache.get(args[0]) || message.mentions.members.first()
       let basarisiz = ayarlar.basarisizemoji
       let sayi = args[1];
       let mesaj = args.slice(2).join(' ');
 
-if (!kullanıcı) return message.channel.send(`${basarisiz} ${message.author}, Bir kullanıcı .`) 
+if (!kullanıcı) return message.channel.send(`${basarisiz} ${message.author}, Bir kullanıcı etiketle/ID gir.`) 
 if (mesaj.length < 1) return message.channel.send(`${basarisiz} ${message.author}, Kralım Spamlamam İçin Bişe Yazmalısınız.`);
    message.delete();
 for (var i = 0; i < sayi; i++)
