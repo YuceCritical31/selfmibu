@@ -165,7 +165,7 @@ if (message.content.toLowerCase() === `${prefix}ping`){
 if(message.author.id !== ayarlar.sahip) return
   
 const exampleEmbed = `Pingim: **${client.ws.ping}**ms`
-  message.channel.send(exampleEmbed)
+  message.channel.send(exampleEmbed).then(x => x.delete({timeout: 5000 }))
 
 }
 }})
