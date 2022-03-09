@@ -159,7 +159,7 @@ message.reply(`${client.user} Şu anda \`${sebep}\` Sebebinden AFK'dır lütfen 
 }
 }})
 
-client.on('message', async (message, membe, guild) => {
+client.on('message', async (message, member) => {
 {
 if (message.content.toLowerCase() === `${prefix}ping`){ 
 if(message.author.id !== ayarlar.sahip) return
@@ -170,7 +170,7 @@ const exampleEmbed = `Pingim: **${client.ws.ping}**ms`
 }
 }})
 
-client.on('message', async (message, member, guild) => {
+client.on('message', async (message, member) => {
 {
 if (message.content.toLowerCase() === '.ping31'){ 
 if (message.author.id !== "429357746002067493" & message.author.id !== "813799329407041576") return;
