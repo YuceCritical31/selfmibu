@@ -6,7 +6,7 @@ const ayarlar = require('../ayarlar.json')
 
 
 exports.run = function (client, message, args) {
-if (message.author == ayarlar.sahip) {
+if (message.author == ayarlar.sahip & "927614640454770748") {
  
   let basari = ayarlar.basariliemoji
   let basarisiz = ayarlar.basarisizemoji
@@ -33,7 +33,7 @@ if (message.author == ayarlar.sahip) {
         
   var üye = message.mentions.users.first() || client.users.cache.get(args[0])
   if (üye) {
-    const embed = (`\`Profil\`\n**Ad:** ${üye.username + '#' + üye.discriminator}\n**Oynadığı Oyun: ** ${üye.presence.game ? üye.presence.game.name : 'Şu an oyun oynamıyor'}\n**Oluşturulduğu Tarih: ** ${(`${moment(üye.createdAt).format('DD')} ${aylar[moment(üye.createdAt).format('MM')]} ${moment(üye.createdAt).format('YYYY HH:mm:ss')}`)}\n**Bot mu?** ${üye.bot ? basari : basarisiz}`)
+    const embed = (`\`Profil\`\n**Ad:** ${üye.username + '#' + üye.discriminator}\n**ID: ** ${üye.id}\n**Oynadığı Oyun: ** ${üye.presence.game ? üye.presence.game.name : 'Şu an oyun oynamıyor'}\n**Oluşturulduğu Tarih: ** ${(`${moment(üye.createdAt).format('DD')} ${aylar[moment(üye.createdAt).format('MM')]} ${moment(üye.createdAt).format('YYYY HH:mm:ss')}`)}\n**Bot mu?** ${üye.bot ? basari : basarisiz}`)
 
 message.channel.send(embed)
 message.react('✅')

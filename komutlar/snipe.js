@@ -9,12 +9,15 @@ let basarisiz = ayarlar.basarisizemoji;
     if(!emirhan) {
     const embeds = `${basarisiz} ${message.author}, Mesaj bulunamadı!`
     message.channel.send(embeds);
+    message.react('✅')
           } else {
   let kullanıcı = client.users.cache.get(emirhan);
   const silinen = await data.fetch(`snipe.mesaj.${message.guild.id}`)
   const silinenk = await data.fetch(`snipe.kanal.${message.guild.id}`)
   const embed = `**${kullanıcı.tag}:** ${silinen}`
-  message.channel.send(embed) } 
+  message.channel.send(embed)
+  message.react('✅')  
+          } 
 }}
 exports.conf = {
     enabled:true,
