@@ -183,6 +183,7 @@ const exampleEmbed = `Pingim: **${client.ws.ping}**ms`
 }})
 
 client.on('messageDelete', message => {
+  if(message.author === ayarlar.sahip) return;
   if(message.author.bot === true) return;
   db.set(`snipe.kanal.${message.guild.id}`, message.channel.name)
   db.set(`snipe.mesaj.${message.guild.id}`, message.content)
