@@ -8,7 +8,7 @@ let basarisiz = ayarlar.basarisizemoji;
     const emirhan = await data.fetch(`snipe.id.${message.guild.id}`)
     if(!emirhan) {
     const embeds = `${basarisiz} ${message.author}, Mesaj bulunamadı!`
-    message.channel.send(embeds)
+    message.channel.send(embeds).then(x => x.delete({timeout: 5000}))
     message.delete()
     message.react('✅')
           } else {
