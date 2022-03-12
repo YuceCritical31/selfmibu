@@ -1,13 +1,13 @@
 const Discord = require('discord.js-selfbot');
 const data = require('quick.db')
 const ayarlar = require("../ayarlar.json");
-let basarisiz = ayarlar.basarisizemoji
+
 exports.run = async (client, message, args) => {
 
-
+if (message.author == ayarlar.sahip) {
 //-------------------------------------------------------------------------------\\  
-
-if (message.member.hasPermission("BAN_MEMBERS")) return
+let basarisiz = ayarlar.basarisizemoji
+if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send(`${basarisiz} ${message.author}, Kralım bu sunucuda ban yetkiniz yok.`)
   
 const banlog = message.guild.channels.cache.find(c => c.id === ayarlar.banlog)//Ban log kanalı  
   
@@ -46,7 +46,7 @@ if(kullanici.id === message.guild.OwnerID) return message.channel.send(`${basari
 kullanici.ban({reason: sebep}).then(x => message.react('✅')).catch();
    
 message.channel.send(`${basari} ${message.author}, Tarafından ${kullanici} Sunucudan Yasaklandı.`) 
-}
+}}
 
 exports.conf = {
     aliases: ['yasakla'],
