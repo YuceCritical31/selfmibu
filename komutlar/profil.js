@@ -32,15 +32,17 @@ if (message.author == ayarlar.sahip) {
         
         var durm = (Durum == "online" ? ("Çevrimiçi") : (Durum == "offline" ? ("Çevrimdışı") : (Durum == "idle" ? ("Boşta") : (Durum == "dnd" ? ("Rahatsız Etmeyin") : ("Bilinmiyor/bulunamadı.")))))
   
-  var üye = message.mentions.users.first();
+  var üye = message.mentions.users.first() || client.users.cache.get(args[0])
   if (üye) {
-    const embed = (`\`Profil\`\n**Ad:** ${üye.username}\n**ID: ** ${üye.id}\n**Son Mesaj: ** ${üye.lastMessage}\n**Son Mesaj İD: ** ${üye.lastMessageID}\n**Oynadığı Oyun: ** ${üye.presence.game ? üye.presence.game.name : 'Şu an oyun oynamıyor'}\n**Durum** ${durm}\n**Oluşturulduğu Tarih: ** ${(`${moment(üye.createdAt).format('DD')} ${aylar[moment(üye.createdAt).format('MM')]} ${moment(üye.createdAt).format('YYYY HH:mm:ss')}`)}\n**Bot mu?** ${üye.bot ? basari : basarisiz}`)
+    const embed = (`\`Profil\`\n**Ad:** ${üye.username + '#' + üye.discriminator}\n**Oynadığı Oyun: ** ${üye.presence.game ? üye.presence.game.name : 'Şu an oyun oynamıyor'}\n**Durum** ${durm}\n**Oluşturulduğu Tarih: ** ${(`${moment(üye.createdAt).format('DD')} ${aylar[moment(üye.createdAt).format('MM')]} ${moment(üye.createdAt).format('YYYY HH:mm:ss')}`)}\n**Bot mu?** ${üye.bot ? basari : basarisiz}`)
 
 message.channel.send(embed)
+message.react('✅')
   } else {
-const embed = (`\`Profil\`\n**Ad:** ${message.author.username + '#' + message.author.discriminator}\n**ID: ** ${message.author.id}\n**Son Mesaj: ** ${message.author.lastMessage}\n**Son Mesaj İD: ** ${message.author.lastMessageID}\n**Oynadığı Oyun: ** ${message.author.presence.game ? message.author.presence.game.name : 'Şu an oyun oynamıyor'}\n**Durum** ${durm}\n**Oluşturulduğu Tarih: ** ${(`${moment(message.author.createdAt).format('DD')} ${aylar[moment(message.author.createdAt).format('MM')]} ${moment(message.author.createdAt).format('YYYY HH:mm:ss')}`)}\n**Bot mu?** ${message.author.bot ? basari : basarisiz}`)
+const embed = (`\`Profil\`\n**Ad:** ${message.author.username + '#' + message.author.discriminator}\n**ID: ** ${message.author.id}\n**Oynadığı Oyun: ** ${message.author.presence.game ? message.author.presence.game.name : 'Şu an oyun oynamıyor'}\n**Durum** ${durm}\n**Oluşturulduğu Tarih: ** ${(`${moment(message.author.createdAt).format('DD')} ${aylar[moment(message.author.createdAt).format('MM')]} ${moment(message.author.createdAt).format('YYYY HH:mm:ss')}`)}\n**Bot mu?** ${message.author.bot ? basari : basarisiz}`)
 
 message.channel.send(embed)
+message.react('✅')
   
   }
   
