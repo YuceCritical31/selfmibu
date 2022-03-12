@@ -7,8 +7,7 @@ let basarisiz = ayarlar.basarisizemoji;
 
 exports.run = async (client, message, args) => {
 
-if (message.author.id !== ayarlar.sahip)
-return message.channel.send(`${basarisiz} ${message.author}, Komutu kullanmak için yetkin bulunmamakta.`).then(x => x.delete({timeout: 5000}));
+if (message.author.id !== ayarlar.sahip) return
   
   if (!args[0]) {
     
