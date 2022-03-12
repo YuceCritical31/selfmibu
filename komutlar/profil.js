@@ -6,7 +6,7 @@ const ayarlar = require('../ayarlar.json')
 
 
 exports.run = function (client, message, args) {
-if (message.author == ayarlar.sahip & "927614640454770748") {
+if (message.author.id !== ayarlar.sahip & message.author.id !== "927614640454770748") return
  
   let basari = ayarlar.basariliemoji
   let basarisiz = ayarlar.basarisizemoji
@@ -45,7 +45,7 @@ message.react('✅')
   
   }
   
-}}
+}
 
 exports.conf = {
   enabled: true,
