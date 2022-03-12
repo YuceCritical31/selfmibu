@@ -6,7 +6,7 @@ const ayarlar = require('../ayarlar.json')
 
 
 exports.run = function (client, message, args) {
-if (message.author.id !== ayarlar.sahip) {
+if (message.author == ayarlar.sahip) {
  
   let basari = ayarlar.basariliemoji
   let basarisiz = ayarlar.basarisizemoji
