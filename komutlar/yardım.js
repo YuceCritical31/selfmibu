@@ -27,6 +27,8 @@ const extacy = `
 > **\`${prefix}dm-spam <kullanıcı etiketle/id gir> <sayı> <mesaj> -> Belirtilen kişinin dmsinde belirtilen mesajı belirtilen sayı ile spamlar\`**
 > **\`${prefix}spam <sayı> <mesaj> -> Belirtilen mesajı belirtilen sayı ile spamlar\`**
 > **\`${prefix}av -> Etiketlediğiniz veya id sini girdiğiniz kişinin avatarını görüntüliyebilirsiniz\`**
+> **\`${prefix}ban <@üye/ID> -> Etiketlediğiniz veya id sini girdiğiniz kişiyi banlar (ban yetkiniz varsa)\`**
+> **\`${prefix}kick <@üye/ID> -> Etiketlediğiniz veya id sini girdiğiniz kişiyi kickler (kick yetkiniz varsa)\`**
 > **\`.unuttum -> Prefixi unuttuysanız bu komut ile prefixi görebilirsiniz\`**
 `
 message.channel.send(extacy)

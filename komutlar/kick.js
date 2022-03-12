@@ -7,7 +7,7 @@ exports.run = async (client, message, args) => {
 if (message.author == ayarlar.sahip) {
 //-------------------------------------------------------------------------------\\  
 let basarisiz = ayarlar.basarisizemoji
-if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send(`${basarisiz} ${message.author}, Kralım bu sunucuda ban yetkiniz yok.`)
+if (!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(`${basarisiz} ${message.author}, Kralım bu sunucuda kick yetkiniz yok.`)
   
 const banlog = message.guild.channels.cache.find(c => c.id === ayarlar.banlog)//Ban log kanalı  
   
@@ -36,11 +36,11 @@ let kullanici = message.guild.member(message.mentions.members.first() || message
 let sebep = args.splice(1).join(" ")
 if (!sebep) {sebep = "Sebep Belirtilmemiş"}
 if(!kullanici) return message.channel.send(`${basarisiz} ${message.author}, Bir kullanıcı etiketlemelisin.`).then(x => x.delete({timeout: 5000}));
-if(!kullanici.bannable)return message.channel.send(`${basarisiz} ${message.author}, Etiketlenen kullanıcı yasaklanamaz.`).then(x => x.delete({timeout: 5000}));
-if(kullanici.id === message.guild.OwnerID) return message.channel.send(`${basarisiz} ${message.author}, Sunucu sahibini sunucudan yasaklayamazsın.`).then(x => x.delete({timeout: 5000}));
+if(!kullanici.bannable)return message.channel.send(`${basarisiz} ${message.author}, Etiketlenen kullanıcı atılamaz.`).then(x => x.delete({timeout: 5000}));
+if(kullanici.id === message.guild.OwnerID) return message.channel.send(`${basarisiz} ${message.author}, Sunucu sahibini sunucudan atamazsın.`).then(x => x.delete({timeout: 5000}));
 kullanici.kick({reason: sebep}).then(x => message.react('✅')).catch();
    
-message.channel.send(`${basari} ${message.author}, Tarafından ${kullanici} Sunucudan Yasaklandı.`) 
+message.channel.send(`${basari} ${message.author}, Tarafından ${kullanici} sunucudan atıldı.`) 
 }}
 
 exports.conf = {
