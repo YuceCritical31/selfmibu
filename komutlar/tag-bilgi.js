@@ -8,14 +8,14 @@ module.exports.run= async(client, message, args) => {
   
 
 const tag = args.slice(0).join(" ")
-if(!tag) return message.channel.send(`${basarisiz} ${message.author}, Bir tag belirt!`).then
+if(!tag) return message.channel.send(`${basarisiz} ${message.author}, Bir tag belirt!`).then(x => x.delete({timeout: 5000}))
 const sonuc = message.guild.members.cache.filter(mr => mr.user.username.includes(tag)).size
 
-message.channel.send(`${basari} ${message.author}, Belirtilen taga sahip bu sunucuda `+sonuc+` kişi var!`)
+message.channel.send(`${basari} ${message.author}, Belirtilen taga sahip bu sunucuda `+ `**${sonuc}**` +` kişi var!`)
 message.react('✅')
 }
 module.exports.conf = {
-aliases: ["bul","tag-bilgi"]
+aliases: ["bul","tag-bilgi","tag-bul"]
 }
 
 module.exports.help = {

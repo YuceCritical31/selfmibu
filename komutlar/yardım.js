@@ -29,6 +29,8 @@ const extacy = `
 > **\`${prefix}av -> Etiketlediğiniz veya id sini girdiğiniz kişinin avatarını görüntüliyebilirsiniz\`**
 > **\`${prefix}ban <@üye/ID> -> Etiketlediğiniz veya id sini girdiğiniz kişiyi banlar (ban yetkiniz varsa)\`**
 > **\`${prefix}kick <@üye/ID> -> Etiketlediğiniz veya id sini girdiğiniz kişiyi kickler (kick yetkiniz varsa)\`**
+> **\`${prefix}profil <@üye/ID> -> Etiketlediğiniz veya id sini girdiğiniz kişinin hesap bişgilerini gösterir\`**
+> **\`${prefix}tag-bul <tag> -> Belirtilen tagı sunucuda taratır ve kaç kişide olduğunu söyler\`**
 > **\`.unuttum -> Prefixi unuttuysanız bu komut ile prefixi görebilirsiniz\`**
 `
 message.channel.send(extacy)
