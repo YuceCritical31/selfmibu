@@ -7,7 +7,7 @@ let basarisiz = ayarlar.basarisizemoji;
 
 exports.run = async (client, message, args) => {
 
-if (message.author.id !== ayarlar.sahip) return
+if (message.author.id !== ayarlar.sahip) {
   
   if (!args[0]) {
     
@@ -43,7 +43,7 @@ return message.channel.send(`${basarisiz} ${message.author}, Görünüşe göre 
 return message.channel.send(`${basari} ${message.author}, Ses sistemi başarıyla kapandı!`).then(x => x.delete({timeout: 5000}));
 message.react('✅')
     }
-};
+}}
 exports.conf = {
   enabled: true,
   guildOnly: true,

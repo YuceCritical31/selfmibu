@@ -1,4 +1,4 @@
-const { Discord, MessageEmbed } = require("discord.js-selfbot");
+const Discord = require("discord.js-selfbot");
 const db = require("quick.db");
 const ayarlar = require("../ayarlar.json");
 let basari = ayarlar.basariliemoji;
