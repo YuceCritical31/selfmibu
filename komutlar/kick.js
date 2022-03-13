@@ -9,7 +9,7 @@ if (message.author.id === ayarlar.sahip) {
 let basarisiz = ayarlar.basarisizemoji
 if (!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(`${basarisiz} ${message.author}, Kralım bu sunucuda kick yetkiniz yok.`)
   
-const banlog = message.guild.channels.cache.find(c => c.id === ayarlar.banlog)//Ban log kanalı  
+const banlog = message.guild.channels.cache.find(c => c.id === ayarlar.kicklog)//Ban log kanalı  
   
 //-------------------------------------------------------------------------------\\
 
@@ -34,7 +34,6 @@ let aylar = tumaylar;
 let basari = ayarlar.basariliemoji
 let kullanici = message.guild.member(message.mentions.members.first() || message.guild.members.cache.get(args[0]));
 let sebep = args.splice(1).join(" ")
-if (!sebep) {sebep = "Sebep Belirtilmemiş"}
 if(!kullanici) return message.channel.send(`${basarisiz} ${message.author}, Bir kullanıcı etiketlemelisin.`).then(x => x.delete({timeout: 5000}));
 if(!kullanici.bannable)return message.channel.send(`${basarisiz} ${message.author}, Etiketlenen kullanıcı atılamaz.`).then(x => x.delete({timeout: 5000}));
 if(kullanici.id === message.guild.OwnerID) return message.channel.send(`${basarisiz} ${message.author}, Sunucu sahibini sunucudan atamazsın.`).then(x => x.delete({timeout: 5000}));

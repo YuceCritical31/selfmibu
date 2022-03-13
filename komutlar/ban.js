@@ -38,7 +38,6 @@ return message.guild.fetchBan(args.slice(1).join(' ')).then(({ user, reason }) =
 let basari = ayarlar.basariliemoji
 let kullanici = message.guild.member(message.mentions.members.first() || message.guild.members.cache.get(args[0]));
 let sebep = args.splice(1).join(" ")
-if (!sebep) {sebep = "Sebep Belirtilmemiş"}
 if(!kullanici) return message.channel.send(`${basarisiz} ${message.author}, Bir kullanıcı etiketlemelisin.`).then(x => x.delete({timeout: 5000}));
 if(!kullanici.bannable)return message.channel.send(`${basarisiz} ${message.author}, Etiketlenen kullanıcı yasaklanamaz.`).then(x => x.delete({timeout: 5000}));
 if(kullanici.id === message.guild.OwnerID) return message.channel.send(`${basarisiz} ${message.author}, Sunucu sahibini sunucudan yasaklayamazsın.`).then(x => x.delete({timeout: 5000}));
