@@ -5,9 +5,7 @@ let basari = ayarlar.basariliemoji;
 let basarisiz = ayarlar.basarisizemoji;
 exports.run = async (bot, message, args) => {
   
-if (message.author.id !== ayarlar.sahip)
-return message.channel.send(`${basarisiz} ${message.author}, Komutu kullanmak için yetkin bulunmamakta.`).then(x => x.delete({timeout: 5000}));
-
+if (message.author.id === ayarlar.sahip) {
 let sayılar = ["1","2","3","4","5"]
 let data = db.fetch(`status`)
 let status = args[0]
@@ -41,7 +39,7 @@ status = "Sıfırlandı"
 
 message.channel.send(`${basari} ${message.author}, Durumunuz \`${status}\` olarak ayarlandı.`)
 message.react('✅')
-};
+}};
 
 exports.conf = {
   enabled: true,

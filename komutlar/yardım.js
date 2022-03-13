@@ -5,7 +5,7 @@ const db = require("quick.db")
 
 exports.run = async(client, message, args) => {
   
-  if (message.author.id !== ayarlar.sahip) return
+  if (message.author.id === ayarlar.sahip) {
 
     let prefix = db.fetch(`prefix`) || ayarlar.prefix
     let basarili = ayarlar.basariliemoji;
@@ -32,11 +32,12 @@ const extacy = `
 > **\`${prefix}profil <@üye/ID> -> Etiketlediğiniz veya id sini girdiğiniz kişinin hesap bişgilerini gösterir\`**
 > **\`${prefix}tag-bul <tag> -> Belirtilen tagı sunucuda taratır ve kaç kişide olduğunu söyler\`**
 > **\`${prefix}snipe -> Sunucudaki son silinen mesajı görüntülersiniz\`**
+> **\`${prefix}sil <sayı> -> Belirtilen sayıda kendi mesajlarınızı siler\`**
 > **\`.unuttum -> Prefixi unuttuysanız bu komut ile prefixi görebilirsiniz\`**
 `
 message.channel.send(extacy)
 message.react('✅')
-}
+}};
 exports.conf = {
 	enabled : true,
 	guildOnly : false,

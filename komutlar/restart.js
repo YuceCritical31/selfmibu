@@ -5,13 +5,15 @@ let basari = ayarlar.basariliemoji;
 let basarisiz = ayarlar.basarisizemoji;
 
 module.exports.run = async (bot, message, args) => {
-    if (message.author.id === ayarlar.sahip)    message.channel.send(`${basari} ${message.author}, Bot yeniden başlatılıyor...`).then(msg => {
+    if (message.author.id === ayarlar.sahip) {
+      
+    message.channel.send(`${basari} ${message.author}, Bot yeniden başlatılıyor...`).then(msg => {
     console.log(`BOT: Yeniden Başlatılıyor.....`);
     process.exit(0);
   })
     
           
-}
+}}
 module.exports.conf = {
   enabled: true,
   guildOnly: false,

@@ -5,7 +5,7 @@ let basari = ayarlar.basariliemoji;
 let basarisiz = ayarlar.basarisizemoji;
 exports.run = async (client, message, args) => {
   
-if (message.author.id == ayarlar.sahip) {
+if (message.author.id === ayarlar.sahip) {
 
 let data
 let kanal2 = client.channels.cache.get(args[0])

@@ -7,7 +7,7 @@ let basarisiz = ayarlar.basarisizemoji;
 
 exports.run = async (client, message, args) => {
 
-if (message.author.id !== ayarlar.sahip) {
+if (message.author.id === ayarlar.sahip) {
   
   if (!args[0]) {
     
