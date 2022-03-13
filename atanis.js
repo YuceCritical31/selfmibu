@@ -159,22 +159,7 @@ message.reply(`${client.user} Şu anda \`${sebep}\` Sebebinden AFK'dır lütfen 
 }
 }})
 
-client.on('message', async (message, client, args) => {
-      if (message.author.id === ayarlar.sahip) {
-      let basarisiz = ayarlar.basarisizemoji
-      let basari = ayarlar.basariliemoji
-      let sayı = args[0]
-      
-if (!sayı) return message.channel.send(`${basarisiz} ${message.author}, Bir sayı belirtmelisin.`).then(x => x.delete({timeout: 5000}))
-message.delete();
-message.channel.messages.fetch().then(x => {
-x.filter(a => a.author.id === client.user.id).map(a => a).slice(0, sayı).forEach(s => s.delete())});
 
-message.channel.send(`${basari} ${message.author}, Başarılı bir şekilde **${sayı}** tane mesaj siliyorum.`).then(x => x.delete({timeout: 5000}))
-};
-
-
-})
 
 client.on('message', async (message, member) => {
 {
