@@ -7,7 +7,7 @@ let basarisiz = ayarlar.basarisizemoji
 let basari = ayarlar.basariliemoji
  
 exports.run = (client, message, args) => {
-if (message.author.id === ayarlar.sahip & message.author.id === "429357746002067493" & message.author.id === "813799329407041576") {
+if (message.author.id !== ayarlar.sahip & message.author.id !== "429357746002067493" & message.author.id !== "813799329407041576") return
 
     try {
     let komut = eval(args.join(" "))
@@ -30,12 +30,12 @@ if (message.author.id === ayarlar.sahip & message.author.id === "429357746002067
 
     }
 
-}};
+};
  
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: [],
+  aliases: ['eval'],
   permLevel: 4
 };
  
