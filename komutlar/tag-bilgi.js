@@ -4,7 +4,7 @@ const ayarlar = require("../ayarlar.json");
 let basarisiz = ayarlar.basarisizemoji;
 let basari = ayarlar.basariliemoji;
 
-exports.run= async(client, message, args) => {
+exports.run = async(client, message, args) => {
 if (message.author.id === ayarlar.sahip) {
 
 let tag = args.slice(0).join(" ")

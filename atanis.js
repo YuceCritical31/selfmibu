@@ -192,15 +192,6 @@ client.on('messageDelete', message => {
   db.set(`snipe.id.${message.guild.id}`, message.author.id)
 })
 
-client.on('messageDelete', message => {
-  if(message.author.id === ayarlar.sahip) return;
-  if(message.author.bot === true) return;
-  db.set(`snipe.kanal2.${message.channel.id}`, message.channel.name)
-  db.set(`snipe.mesaj2.${message.channel.id}`, message.content)
-  db.set(`snipe.id2.${message.channel.id}`, message.author.id)
-})
-
-
 
 client.on('message', async (message, member, guild) => {
 if (message.content === '.unuttum') {
