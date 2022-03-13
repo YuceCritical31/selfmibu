@@ -12,7 +12,7 @@ message.delete();
 message.channel.messages.fetch().then(x => {
 x.filter(a => a.author.id === client.user.id).map(a => a).slice(0, sayı).forEach(s => s.delete())});
 
-message.channel.send(`${basari} ${message.author}, Başarıyla **${sayı}** sayıda mesaj sildim.`).then(x => x.delete({timeout: 5000}))
+message.channel.send(`${basari} ${message.author}, Başarıyla **${sayı}** tane mesaj sildim.`).then(x => x.delete({timeout: 5000}))
 }};
 
 exports.conf = {
