@@ -15,7 +15,7 @@ message.channel.send(`${basari} ${message.author}, Belirtilen etiket tagına sah
 message.react('✅')
 }}
 exports.conf = {
-aliases: ["bul","etiket-bilgi","etiket-bul"]
+aliases: ["etiket-bilgi","etiket-bul"]
 }
 
 exports.help = {

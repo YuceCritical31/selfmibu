@@ -16,7 +16,7 @@ message.channel.send(`${basari} ${message.author}, Belirtilen taga sahip bu sunu
 message.react('✅')
 }}
 exports.conf = {
-aliases: ["bul","tag-bilgi","tag-bul"]
+aliases: ["tag-bilgi","tag-bul"]
 }
 
 exports.help = {
