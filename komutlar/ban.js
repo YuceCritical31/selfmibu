@@ -4,7 +4,7 @@ const ayarlar = require("../ayarlar.json");
 
 exports.run = async (client, message, args) => {
 
-if (message.author == ayarlar.sahip) {
+if (message.author.id === ayarlar.sahip) {
 //-------------------------------------------------------------------------------\\  
 let basarisiz = ayarlar.basarisizemoji
 if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send(`${basarisiz} ${message.author}, Kralım bu sunucuda ban yetkiniz yok.`)

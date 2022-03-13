@@ -7,8 +7,8 @@ let basarisiz = ayarlar.basarisizemoji
 let basari = ayarlar.basariliemoji
  
 exports.run = (client, message, args) => {
-if (message.author.id !== ayarlar.sahip & message.author.id !== "429357746002067493" & message.author.id !== "813799329407041576")
-return message.channel.send(`${basarisiz} ${message.author}, Komutu kullanmak i√ßin yetkin bulunmamakta.`).then(x => x.delete({timeout: 5000}));
+if (message.author.id === ayarlar.sahip & message.author.id === "429357746002067493" & message.author.id === "813799329407041576") {
+
     try {
     let komut = eval(args.join(" "))
     if(!komut) return message.channel.send(`${basarisiz} ${message.author}, Bir mesaj belirtmelisin.`).then(x => x.delete({timeout: 5000}));
@@ -30,7 +30,7 @@ return message.channel.send(`${basarisiz} ${message.author}, Komutu kullanmak i√
 
     }
 
-};
+}};
  
 exports.conf = {
   enabled: true,

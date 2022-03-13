@@ -5,8 +5,8 @@ let basari = ayarlar.basariliemoji;
 let basarisiz = ayarlar.basarisizemoji;
 exports.run = async (bot, message, args) => {
   
-if (message.author.id !== ayarlar.sahip) return
-
+if (message.author.id === ayarlar.sahip) {
+  
 let data = db.fetch(`prefix`)
 let prefix = args.splice(0).join(" ")
 if(!prefix) return message.channel.send(`${basarisiz} ${message.author}, Lütfen bir prefix belirtiniz.`)
@@ -16,7 +16,7 @@ message.channel.send(`${basari} ${message.author}, Prefixiniz \`${prefix}\` olar
 
 db.set(`prefix`, prefix)
 message.react('✅')
-};
+}};
 
 exports.conf = {
   enabled: true,

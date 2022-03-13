@@ -3,7 +3,7 @@ const ayarlar = require('../ayarlar.json')
 ///spammer by planta
  
 exports.run = (client, message, args) => {
-  if (message.author.id == ayarlar.sahip) {
+  if (message.author.id === ayarlar.sahip) {
       let kullanıcı = client.users.cache.get(args[0]) || message.mentions.members.first()
       let basarisiz = ayarlar.basarisizemoji
       let sayi = args[1];

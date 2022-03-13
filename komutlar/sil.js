@@ -2,7 +2,7 @@ const Discord = require('discord.js-selfbot');
 const ayarlar = require('../ayarlar.json');
  
 exports.run = (client, message, args) => {
-  if (message.author.id == ayarlar.sahip) {
+  if (message.author.id === ayarlar.sahip) {
       let basarisiz = ayarlar.basarisizemoji
       let basari = ayarlar.basariliemoji
       let sayı = args[0]
@@ -12,7 +12,7 @@ message.delete();
 message.channel.messages.fetch().then(x => {
 x.filter(a => a.author.id === client.user.id).map(a => a).slice(0, sayı).forEach(s => s.delete())});
 
-message.channel.send(`${basari} ${message.author}, Başarıyla **${sayı}** tane mesaj sildim.`).then(x => x.delete({timeout: 5000}))
+message.channel.send(`${basari} ${message.author}, Başarılı bir şekilde **${sayı}** tane mesaj siliyorum.`).then(x => x.delete({timeout: 5000}))
 }};
 
 exports.conf = {

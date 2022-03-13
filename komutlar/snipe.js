@@ -4,7 +4,7 @@ const ayarlar = require('../ayarlar.json');
 let basarisiz = ayarlar.basarisizemoji;
 
    exports.run = async(client, message, args) => {
-     if (message.author == ayarlar.sahip) {
+     if (message.author.id === ayarlar.sahip) {
     const emirhan = await data.fetch(`snipe.id.${message.guild.id}`)
     if(!emirhan) {
     const embeds = `${basarisiz} ${message.author}, Mesaj bulunamadı!`
