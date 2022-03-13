@@ -9,10 +9,7 @@ exports.run = (client, message, args) => {
       
 if (!sayı) return message.channel.send(`${basarisiz} ${message.author}, Bir sayı belirtmelisin.`).then(x => x.delete({timeout: 5000}))
 message.delete();
-message.channel.messages.fetch().then(x => {
-x.filter(a => a.author.id === client.user.id).map(a => a).slice(0, sayı).forEach(s => s.delete())});
-
-message.channel.send(`${basari} ${message.author}, Başarılı bir şekilde **${sayı}** tane mesaj siliyorum.`).then(x => x.delete({timeout: 5000}))
+message.channel.send(`${basari} ${message.author}, Başarılı **${sayı}** mesaj siliniyor...`).then(x => x.delete({timeout: 5000}))
 }};
 
 exports.conf = {
