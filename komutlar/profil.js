@@ -33,12 +33,12 @@ if (message.author == ayarlar.sahip) {
         
   var üye = message.mentions.users.first() || client.users.cache.get(args[0])
   if (üye) {
-    const embed = (`\`Profil\`\n**Ad:** ${üye.username + '#' + üye.discriminator}\n**ID: ** ${üye.id}\n**Oynadığı Oyun: ** ${üye.presence.game ? üye.presence.game.name : 'Şu an oyun oynamıyor'}\n**Oluşturulduğu Tarih: ** ${(`${moment(üye.createdAt).format('DD')} ${aylar[moment(üye.createdAt).format('MM')]} ${moment(üye.createdAt).format('YYYY HH:mm:ss')}`)}\n**Bot mu?** ${üye.bot ? basari : basarisiz}`)
+    const embed = (`\`Profil\`\n**Ad:** ${üye.tag}\n**ID: ** ${üye.id}\n**Oynadığı Oyun: ** ${üye.presence.game.name}\n**Oluşturulduğu Tarih: ** ${(`${moment(üye.createdAt).format('DD')} ${aylar[moment(üye.createdAt).format('MM')]} ${moment(üye.createdAt).format('YYYY HH:mm:ss')}`)}\n**Bot mu?** ${üye.bot ? basari : basarisiz}`)
 
 message.channel.send(embed)
 message.react('✅')
   } else {
-const embed = (`\`Profil\`\n**Ad:** ${message.author.username + '#' + message.author.discriminator}\n**ID: ** ${message.author.id}\n**Oynadığı Oyun: ** ${message.author.presence.game ? message.author.presence.game.name : 'Şu an oyun oynamıyor'}\n**Oluşturulduğu Tarih: ** ${(`${moment(message.author.createdAt).format('DD')} ${aylar[moment(message.author.createdAt).format('MM')]} ${moment(message.author.createdAt).format('YYYY HH:mm:ss')}`)}\n**Bot mu?** ${message.author.bot ? basari : basarisiz}`)
+const embed = (`\`Profil\`\n**Ad:** ${message.author.tag}\n**ID: ** ${message.author.id}\n**Oynadığı Oyun: ** ${message.author.presence.game ? message.author.presence.game.name : 'Şu an oyun oynamıyor'}\n**Oluşturulduğu Tarih: ** ${(`${moment(message.author.createdAt).format('DD')} ${aylar[moment(message.author.createdAt).format('MM')]} ${moment(message.author.createdAt).format('YYYY HH:mm:ss')}`)}\n**Bot mu?** ${message.author.bot ? basari : basarisiz}`)
 
 message.channel.send(embed)
 message.react('✅')
