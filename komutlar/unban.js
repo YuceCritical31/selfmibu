@@ -3,30 +3,22 @@ const db = require('quick.db');
 const moment = require('moment');
 const ayarlar = require('../ayarlar.json');
 exports.run = async (client , message, args) => {
-  
+
+  if (message.author.id === ayarlar.sahip) {
     
   let basari = ayarlar.basariliemoji;
   let basarisiz = ayarlar.basarisizemoji;  
-   const user = message.mentions.members.first()
-
-    let member = user || args[0]
-
+  let kullanıcı = message.mentions.members.first() || client.users.cache.get(args[0])
     
-    const banlılar = await message.guild.fetchBans(true)
+    let banlılar = await message.guild.fetchBans(true)
     
-    const banlımember = banlılar.find(m => `${m.user.username}#${m.user.discriminator}` === member || m.user.id === member)
-    
-    let sebep = args.slice(1).join(' ');
+    let banlımember = banlılar.find(m => `${m.user.username}#${m.user.discriminator}` === kullanıcı || m.user.id === kullanıcı)
 
-    if(!banlımember) return message.channel.send(`${basarisiz} Lütfen Banı Açılcak Bir Kullanıcı İD Belirtin.`).setColor('0x800d0d').setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true })).setTimestamp()).then(x => x.delete({timeout: 5000}));
-   
-    if(!sebep) return message.channel.send(new MessageEmbed().setDescription(`${basarisiz} Lütfen Bir Sebep Belirtin.`).setColor('0x800d0d').setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true })).setTimestamp()).then(x => x.delete({timeout: 5000}));
+    if(!banlımember) return message.channel.send(`${basarisiz} ${message.author}, Lütfen banı açılcak bir kullanıcı İD belirtin.`).then(x => x.delete({timeout: 5000}));
   
-    if(!sebep) sebep = `bir sebep belirtilmemiş`
-
     try{
       
-    message.channel.send(new MessageEmbed().setDescription(`${basari} **${banlımember.user}** Kullanıcısı **${message.author}** Tarafından **${sebep}** Nedeniyle banı kaldırıldı.`).setColor('0x348f36').setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true })).setTimestamp())
+    message.channel.send(`${basari} ${message.author}, Başarıyla **${banlımember.user}** kullanıcısının banını kaldırdım.`)
     message.guild.members.unban(banlımember.user)
     message.react('✅');
    
@@ -35,24 +27,7 @@ exports.run = async (client , message, args) => {
     
     }
    
-let tumaylar = {
-"01": "Ocak",  
-"02": "Şubat", 
-"03": "Mart",  
-"04": "Nisan",  
-"05": "Mayıs", 
-"06": "Haziran", 
-"07": "Temmuz",
-"08": "Ağustos", 
-"09": "Eylül", 
-"10": "Ekim", 
-"11": "Kasım", 
-"12": "Aralık", 
-}
-let aylar = tumaylar;  
-moment.locale("tr");
-  banlog.send(new MessageEmbed().setAuthor(message.member.displayName, message.author.avatarURL({dynamic: true})).setColor('RANDOM').setTimestamp().setDescription(`**Sunucudan Yasaklanması Açıldı!**\n**Banı Açan Yetkili:** ${message.author} (\`${message.author.id}\`)\n**Banı Açılan Üye:** ${banlımember.user.tag} (\`${banlımember.user.id}\`)\n**Sebep:** \`${sebep}\`\n**Tarih:** \`${moment(Date.now()).add(3,"hours").format("HH:mm:ss DD MMMM YYYY")}\` `));
-}
+}};
   exports.conf = {
   enabled: true,
   guildOnly: false,
