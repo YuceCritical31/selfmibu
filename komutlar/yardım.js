@@ -47,11 +47,11 @@ const extacy = `
 > **\`${prefix}profil <@üye/ID> -> Etiketlediğiniz veya id sini girdiğiniz kişinin hesap bişgilerini gösterir\`**
 > 
 > **\`${prefix}tag-bul <tag> -> Belirtilen tagı sunucuda taratır ve kaç kişide olduğunu söyler\`**
-> 
+>  
 > **\`${prefix}etiket-bul <tag> -> Belirtilen etiket tagını sunucuda taratır ve kaç kişide olduğunu söyler\`**
->
+> 
 > **\`${prefix}bul <tag> <etiket tag> -> Belirtilen tagları sunucuda taratır ve hem tagı ve etiket tagını taşınyanların kaç kişi olduğunu söyler\`**
->
+> 
 > **\`${prefix}snipe -> Sunucudaki son silinen mesajı görüntülersiniz\`**
 > 
 > **\`${prefix}sil <sayı> -> Belirtilen sayıda kendi mesajlarınızı siler\`**
