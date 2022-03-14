@@ -6,10 +6,10 @@ exports.run = (client, message, args) => {
       let basarisiz = ayarlar.basarisizemoji
       let basari = ayarlar.basariliemoji
       let sayı = args[0]
-      let mesaj = args.slice(1).join(" ")
-      let kanal = message.channel.messages.fetch()
+      let kanal = message.channel.messages.fetch
 
-if (mesaj) {kanal = message.channel.messages.fetch(a => a.name.includes(mesaj))}
+if (sayı < 1) return message.channel.send(`${basarisiz} ${message.author}, **1** adetten az mesaj silemem!`).then(x => x.delete({timeout: 5000}));
+if (sayı > 100) return message.channel.send(`${basarisiz} ${message.author}, **100** adetten fazla mesaj silemem!`).then(x => x.delete({timeout: 5000}));
 if (!sayı) return message.channel.send(`${basarisiz} ${message.author}, Bir sayı belirtmelisin.`).then(x => x.delete({timeout: 5000}))
 message.delete();
 kanal.then(x => {
