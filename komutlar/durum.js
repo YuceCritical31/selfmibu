@@ -16,7 +16,7 @@ message.channel.send(`${basari} ${message.author}, Durumunuz \`${durum}\` olarak
     console.log(`BOT: Yeniden Başlatılıyor.....`);
     process.exit(0);
   })
-
+  
 db.set(`durum`, durum)
 message.react('✅')
 }};

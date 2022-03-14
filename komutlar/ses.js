@@ -27,7 +27,7 @@ return message.channel.send(`${basarisiz} ${message.author}, Görünüşe göre 
       db.set(`ses`, "Açık");
 
 
-return message.channel.send(`${basari} ${message.author}, Ses sistemi kapanıyor biraz bekleyin...`).then(msg => {
+return message.channel.send(`${basari} ${message.author}, Ses sistemi açılıyor biraz bekleyin...`).then(msg => {
     console.log(`BOT: Yeniden Başlatılıyor.....`);
     process.exit(0);
   })
@@ -43,7 +43,7 @@ return message.channel.send(`${basarisiz} ${message.author}, Görünüşe göre 
     db.delete(`ses`);
 
 
-return message.channel.send(`${basari} ${message.author}, Ses sistemi `).then(msg => {
+return message.channel.send(`${basari} ${message.author}, Ses sistemi kapanıyor biraz bekleyin...`).then(msg => {
     console.log(`BOT: Yeniden Başlatılıyor.....`);
     process.exit(0);
   })

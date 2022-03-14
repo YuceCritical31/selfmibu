@@ -14,7 +14,7 @@ message.channel.send(`${basari} ${message.author}, Durumunuz sıfırlanıyor bir
     console.log(`BOT: Yeniden Başlatılıyor.....`);
     process.exit(0);
   })
-
+  
 db.delete(`durum`)
 message.react('✅')
 }};

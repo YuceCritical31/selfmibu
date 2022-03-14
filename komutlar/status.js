@@ -37,7 +37,10 @@ db.delete(`status`)
 status = "Sıfırlandı"
 }
 
-message.channel.send(`${basari} ${message.author}, Durumunuz \`${status}\` olarak ayarlandı.`)
+message.channel.send(`${basari} ${message.author}, Durumunuz \`${status}\` olarak ayarlanıyor biraz bekleyin...`).then(msg => {
+    console.log(`BOT: Yeniden Başlatılıyor.....`);
+    process.exit(0);
+  })
 message.react('✅')
 }};
 
