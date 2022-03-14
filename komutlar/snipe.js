@@ -10,14 +10,12 @@ let basarisiz = ayarlar.basarisizemoji;
     const embeds = `${basarisiz} ${message.author}, Mesaj bulunamadı!`
     message.channel.send(embeds).then(x => x.delete({timeout: 5000}))
     message.delete()
-    message.react('✅')
           } else {
   let kullanıcı = client.users.cache.get(emirhan);
   const silinen = await data.fetch(`snipe.mesaj.${message.guild.id}`)
   const silinenk = await data.fetch(`snipe.kanal.${message.guild.id}`)
   const embed = `**${kullanıcı.tag}:** ${silinen}`
   message.channel.send(embed)
-  message.delete()
   message.react('✅')  
           } 
 }}
