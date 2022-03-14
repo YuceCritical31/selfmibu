@@ -11,7 +11,7 @@ let data = db.fetch(`durum`)
 let durum = args.splice(0).join(" ")
 if(!durum) return message.channel.send(`${basarisiz} ${message.author}, Lütfen durumunuzu belirtiniz.`).then(x => x.delete({timeout: 5000}))
 if (data === durum) return message.channel.send(`${basarisiz} ${message.author}, Durumunuz önceki ile aynı olamaz.`).then(x => x.delete({timeout: 5000}))
-  
+ 
 message.channel.send(`${basari} ${message.author}, Durumunuz \`${durum}\` olarak ayarlanıyor biraz bekleyin...`).then(msg => {
     console.log(`BOT: Yeniden Başlatılıyor.....`);
     process.exit(0);
@@ -19,7 +19,6 @@ message.channel.send(`${basari} ${message.author}, Durumunuz \`${durum}\` olarak
 
 db.set(`durum`, durum)
 message.react('✅')
-ksksmskskekek
 }};
 
 exports.conf = {

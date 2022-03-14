@@ -27,7 +27,10 @@ return message.channel.send(`${basarisiz} ${message.author}, Görünüşe göre 
       db.set(`ses`, "Açık");
 
 
-return message.channel.send(`${basari} ${message.author}, Ses sistemi başarıyla açıldı!`).then(x => x.delete({timeout: 5000}));
+return message.channel.send(`${basari} ${message.author}, Ses sistemi kapanıyor biraz bekleyin...`).then(msg => {
+    console.log(`BOT: Yeniden Başlatılıyor.....`);
+    process.exit(0);
+  })
 message.react('✅')
     }
   } else if (args[0] == "kapat") {
@@ -40,7 +43,10 @@ return message.channel.send(`${basarisiz} ${message.author}, Görünüşe göre 
     db.delete(`ses`);
 
 
-return message.channel.send(`${basari} ${message.author}, Ses sistemi başarıyla kapandı!`).then(x => x.delete({timeout: 5000}));
+return message.channel.send(`${basari} ${message.author}, Ses sistemi `).then(msg => {
+    console.log(`BOT: Yeniden Başlatılıyor.....`);
+    process.exit(0);
+  })
 message.react('✅')
     }
 }}

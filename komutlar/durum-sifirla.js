@@ -10,13 +10,13 @@ if (message.author.id === ayarlar.sahip) {
 let data = db.fetch(`durum`)
 if (!data) return message.channel.send(`${basarisiz} ${message.author}, Durumunuz zaten sıfırlanmış.`).then(x => x.delete({timeout: 5000}));
 
-db.delete(`durum`)
-message.react('✅')
 message.channel.send(`${basari} ${message.author}, Durumunuz sıfırlanıyor biraz bekleyin...`).then(msg => {
     console.log(`BOT: Yeniden Başlatılıyor.....`);
     process.exit(0);
   })
 
+db.delete(`durum`)
+message.react('✅')
 }};
 
 exports.conf = {

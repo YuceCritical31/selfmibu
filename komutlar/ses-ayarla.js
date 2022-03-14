@@ -8,13 +8,23 @@ exports.run = async (client, message, args) => {
 if (message.author.id === ayarlar.sahip) {
 
 let data
+let kufur = await db.fetch(`ses`);
 let kanal2 = client.channels.cache.get(args[0])
 let kanal = message.mentions.channels.first()
 if(kanal) {data = kanal.id}
 if(kanal2) {data = args[0]}
 if(!data) return message.channel.send(`${basarisiz} ${message.author}, Lütfen bir kanal belirtiniz.`).then(x => x.delete({timeout: 5000}));
 
+if (kufur) {
+message.channel.send(`${basari} ${message.author}, Ses kanalı <#${data}> olarak ayarlanıyor biraz bekleyin...`).then(msg => {
+    console.log(`BOT: Yeniden Başlatılıyor.....`);
+    process.exit(0);
+  })
+}
+  
+if (!kufur) {
 message.channel.send(`${basari} ${message.author}, Ses kanalı <#${data}> olarak ayarlandı.`)
+}
 
 db.set(`seskanal`, data)
 message.react('✅')
