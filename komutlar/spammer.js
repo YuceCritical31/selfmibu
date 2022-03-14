@@ -1,4 +1,4 @@
-const Discord = require('discord.js-selfbot');
+ const Discord = require('discord.js-selfbot');
 const ayarlar = require('../ayarlar.json')
 ///spammer by planta
  

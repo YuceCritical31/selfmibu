@@ -9,7 +9,7 @@ exports.run = (client, message, args) => {
       let mesaj = args.slice(1).join(" ")
       let kanal = message.channel.messages.fetch()
 
-if (mesaj) {kanal = message.channel.messages.fetch(a =)}
+if (mesaj) {kanal = message.channel.messages.fetch(a => a.name.includes(mesaj))}
 if (!sayı) return message.channel.send(`${basarisiz} ${message.author}, Bir sayı belirtmelisin.`).then(x => x.delete({timeout: 5000}))
 message.delete();
 kanal.then(x => {
