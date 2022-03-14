@@ -43,7 +43,7 @@ if(!kullanici.bannable)return message.channel.send(`${basarisiz} ${message.autho
 if(kullanici.id === message.guild.OwnerID) return message.channel.send(`${basarisiz} ${message.author}, Sunucu sahibini sunucudan yasaklayamazsın.`).then(x => x.delete({timeout: 5000}));
 kullanici.ban({reason: sebep}).then(x => message.react('✅')).catch();
    
-message.channel.send(`${basari} ${message.author}, Tarafından ${kullanici} Sunucudan Yasaklandı.`) 
+message.channel.send(`${basari} ${message.author}, Başarıyla ${kullanici} adlı kullanıcı sunucudan yasaklandı.`) 
 }}
 
 exports.conf = {
