@@ -7,7 +7,7 @@ exports.run = async (client, message, args) => {
 if (message.author.id === ayarlar.sahip) {
 //-------------------------------------------------------------------------------\\  
 let basarisiz = ayarlar.basarisizemoji
-if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send(`${basarisiz} ${message.author}, Kralım bu sunucuda ban yetkiniz yok.`)
+if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send(`${basarisiz} ${message.author}, Kralım bu sunucuda ban yetkiniz yok.`).then(x => x.delete({timeout: 5000}))
   
 const banlog = message.guild.channels.cache.find(c => c.id === ayarlar.banlog)//Ban log kanalı  
   

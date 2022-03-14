@@ -9,8 +9,8 @@ if (message.author.id === ayarlar.sahip) {
   
 let data = db.fetch(`prefix`)
 let prefix = args.splice(0).join(" ")
-if(!prefix) return message.channel.send(`${basarisiz} ${message.author}, Lütfen bir prefix belirtiniz.`)
-if (data === prefix) return message.channel.send(`${basarisiz} ${message.author}, Prefixiniz önceki ile aynı olamaz.`)
+if(!prefix) return message.channel.send(`${basarisiz} ${message.author}, Lütfen bir prefix belirtiniz.`).then(x => x.delete({timeout: 5000}))
+if (data === prefix) return message.channel.send(`${basarisiz} ${message.author}, Prefixiniz önceki ile aynı olamaz.`).then(x => x.delete({timeout: 5000}))
   
 message.channel.send(`${basari} ${message.author}, Prefixiniz \`${prefix}\` olarak ayarlandı.`)
 

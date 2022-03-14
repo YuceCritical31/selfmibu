@@ -34,7 +34,7 @@ message.react('✅')
 
 }
 }catch{
-  message.channel.send(`${basarisiz} ${message.author}, Hatalı kullanıcı veya ID girdiniz!`)
+  message.channel.send(`${basarisiz} ${message.author}, Hatalı kullanıcı veya ID girdiniz!`).then(x => x.delete({timeout: 5000}))
   return;
 }
 

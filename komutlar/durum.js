@@ -9,13 +9,17 @@ if (message.author.id === ayarlar.sahip) {
   
 let data = db.fetch(`durum`)
 let durum = args.splice(0).join(" ")
-if(!durum) return message.channel.send(`${basarisiz} ${message.author}, Lütfen durumunuzu belirtiniz.`)
-if (data === durum) return message.channel.send(`${basarisiz} ${message.author}, Durumunuz önceki ile aynı olamaz.`)
+if(!durum) return message.channel.send(`${basarisiz} ${message.author}, Lütfen durumunuzu belirtiniz.`).then(x => x.delete({timeout: 5000}))
+if (data === durum) return message.channel.send(`${basarisiz} ${message.author}, Durumunuz önceki ile aynı olamaz.`).then(x => x.delete({timeout: 5000}))
   
-message.channel.send(`${basari} ${message.author}, Durumunuz \`${durum}\` olarak ayarlandı.`)
+message.channel.send(`${basari} ${message.author}, Durumunuz \`${durum}\` olarak ayarlanıyor biraz bekleyin...`).then(msg => {
+    console.log(`BOT: Yeniden Başlatılıyor.....`);
+    process.exit(0);
+  })
 
 db.set(`durum`, durum)
 message.react('✅')
+ksksmskskekek
 }};
 
 exports.conf = {
