@@ -7,13 +7,8 @@ exports.run = async (client, message, args) => {
       let basarisiz = ayarlar.basarisizemoji
       let sayi = args[0];
       let mesaj = args[1];
-      let mesaj2 = args.slice(2).join(' ');
-   
-if (mesaj.length < 1) return message.channel.send(`${basarisiz} ${message.author}, Kralım Spamlamam İçin Bişe Yazmalısınız.`).then(x => x.delete({timeout: 5000}))
    message.delete();
-for (var i = 0; i < sayi; i++)
-{
-function sleep(milliseconds) {
+    function sleep(milliseconds) {
   var start = new Date().getTime();
   for (var i = 0; i < 1e7; i++) {
     if (new Date().getTime() - start > milliseconds) {
@@ -21,9 +16,13 @@ function sleep(milliseconds) {
     }
   }
 }
-message.channel.send(mesaj)
-await sleep(5000)
-message.channel.senf(mesaj2)
+
+for (var i = 0; i < sayi; i++)
+{
+message.channel.send('aga u-4 al')
+await sleep(7000)
+message.channel.send('aga u-4 aç')
+await sleep(7000)
 }
 
 }};
