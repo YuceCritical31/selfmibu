@@ -8,8 +8,6 @@ exports.run = async(client, message, args) => {
       let sayi = args[0];
       let mesaj = args.slice(1).join(' ');
 
-if (isNaN(sayi)) return message.channel.send(`${basarisiz} ${message.author}, .aga-spam <sayı> şeklinde yazınız.`).then(x => x.delete({timeout: 5000}))
-   message.delete();
     function sleep(milliseconds) {
   var start = new Date().getTime();
   for (var i = 0; i < 1e7; i++) {
@@ -18,13 +16,14 @@ if (isNaN(sayi)) return message.channel.send(`${basarisiz} ${message.author}, .a
     }
   }
 }
+
+if (isNaN(sayi)) return message.channel.send(`${basarisiz} ${message.author}, .spam <sayı> <mesaj> şeklinde yazınız.`).then(x => x.delete({timeout: 5000}))
+message.delete();
 for (var i = 0; i < sayi; i++)
 {
 message.channel.send('aga u-4 al')
-await sleep(2000)
 message.channel.send('aga u-4 aç')
-}
-
+}  
 }};
 
 exports.conf = {
