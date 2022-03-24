@@ -13,8 +13,16 @@ if (mesaj.length < 1) return message.channel.send(`${basarisiz} ${message.author
    message.delete();
 for (var i = 0; i < sayi; i++)
 {
+function sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if (new Date().getTime() - start > milliseconds) {
+      break;
+    }
+  }
+}
 message.channel.send(mesaj)
-
+await sleep(5000)
 message.channel.senf(mesaj2)
 }
 
