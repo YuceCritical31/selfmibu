@@ -7,7 +7,8 @@ exports.run = (client, message, args) => {
       let basarisiz = ayarlar.basarisizemoji
       let sayi = args[0];
       let mesaj = args.slice(1).join(' ');
-   
+
+if (isNaN(sayi)) return message.channel.send(`${basarisiz} ${message.author}, .spam <`)
 if (mesaj.length < 1) return message.channel.send(`${basarisiz} ${message.author}, Kralım Spamlamam İçin Bişe Yazmalısınız.`).then(x => x.delete({timeout: 5000}))
    message.delete();
 for (var i = 0; i < sayi; i++)
