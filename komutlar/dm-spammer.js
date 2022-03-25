@@ -9,7 +9,8 @@ exports.run = (client, message, args) => {
       let sayi = args[1];
       let mesaj = args.slice(2).join(' ');
 
-if (!kullanıcı) return message.channel.send(`${basarisiz} ${message.author}, Bir kullanıcı etiketle/ID gir.`).then(x => x.delete({timeout: 5000})) 
+if (!kullanıcı) return message.channel.send(`${basarisiz} ${message.author}, Bir kullanıcı etiketle/ID gir.`).then(x => x.delete({timeout: 5000}))
+if ((sayi)) return
 if (mesaj.length < 1) return message.channel.send(`${basarisiz} ${message.author}, Kralım Spamlamam İçin Bişe Yazmalısınız.`);
    message.delete();
 for (var i = 0; i < sayi; i++)
