@@ -155,7 +155,7 @@ if (!afk) return
 if (afk === "Açık") {
 if (message.content === `${client.user}`) {
 if (message.author.bot === true) return
-message.reply(`${client.user} Şu anda \`${sebep}\` Sebebinden AFK'dır lütfen rahatsız etmeyiniz.`).then(x => x.delete({timeout: 10000}));
+message.reply(`${client.user} Şu anda \`${sebep}\` Sebebinden AFK'dır lütfen rahatsız etmeyiniz.`).then(x => x.delete({timeout: 5000}));
 }
 }})
 
