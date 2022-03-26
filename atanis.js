@@ -147,15 +147,15 @@ kanal.guild.me.voice.setSelfDeaf(true)
 }).catch(err => { console.log(err) })
 }})
 
-client.on('message', async (message, member, guild) => {
+client.on('message', (message, member, guild) => {
 let afk = db.fetch(`afk`)
 let sebep = db.fetch(`afk_sebep`)
   
 if (!afk) return
 if (afk === "Açık") {
-if (message.content === `${client.user}`) {
+if (message.content === `<@!${client.user.id}>`) {
 if (message.author.bot === true) return
-message.channel.send(`${mesaage.author}, ${client.user} Şu anda \`${sebep}\` Sebebinden AFK'dır lütfen rahatsız etmeyiniz.`).then(x => x.delete({timeout: 5000}));
+message.reply(`${client.user} Şu anda \`${sebep}\` Sebebinden AFK'dır lütfen rahatsız etmeyiniz.`).then(x => x.delete({timeout: 5000}));
 }
 }})
 
