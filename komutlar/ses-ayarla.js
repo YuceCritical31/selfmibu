@@ -13,6 +13,7 @@ let kanal2 = client.channels.cache.get(args[0])
 let kanal = message.mentions.channels.first()
 if(kanal) {data = kanal.id}
 if(kanal2) {data = args[0]}
+if(client.channels.cache.get(data).type !== "voice") return message.channel.send(`${basarisiz} ${message.author}, Girdiğiniz <#${data}> kanalı bir ses kanalı değil.`).then(x => x.delete({timeout: 5000}));
 if(!data) return message.channel.send(`${basarisiz} ${message.author}, Lütfen bir kanal belirtiniz.`).then(x => x.delete({timeout: 5000}));
 
 if (kufur) {
