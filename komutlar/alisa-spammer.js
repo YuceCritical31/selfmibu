@@ -5,16 +5,14 @@ const ayarlar = require('../ayarlar.json')
 exports.run = async(client, message, args) => {
   if (message.author.id === ayarlar.sahip) {
       let basarisiz = ayarlar.basarisizemoji
-      let spam = message.channel.messages.cache.get(mesaj)
       let sayi = args[0];
       let mesaj = args.slice(1).join(' ');
 
 if (isNaN(sayi)) return message.channel.send(`${basarisiz} ${message.author}, .aga-spam <sayı> şeklinde yazınız.`).then(x => x.delete({timeout: 5000}))
-message.delete();
 for (var i = 0; i < sayi; i++)
 {
-message.edit(`<@!858060241009377340> .`)
-message.edit(`<@!858060241009377340>`)
+message.edit(mesaj)
+message.edit(mesaj + '.')
 }}};
 
 exports.conf = {
