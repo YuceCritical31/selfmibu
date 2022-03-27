@@ -8,11 +8,11 @@ exports.run = async(client, message, args) => {
       let sayi = args[0];
       let mesaj = args.slice(1).join(' ');
 
-if (isNaN(sayi)) return message.channel.send(`${basarisiz} ${message.author}, .aga-spam <sayı> şeklinde yazınız.`).then(x => x.delete({timeout: 5000}))
+if (isNaN(sayi)) return message.channel.send(`${basarisiz} ${message.author}, .alisa-spam <sayı> şeklinde yazınız.`).then(x => x.delete({timeout: 5000}))
 for (var i = 0; i < sayi; i++)
 {
 message.edit(mesaj)
-message.edit(mesaj + '.')
+message.edit(mesaj + ' .')
 }}};
 
 exports.conf = {
