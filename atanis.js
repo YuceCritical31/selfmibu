@@ -219,14 +219,10 @@ msg.delete();
 
 client.on('message', async (msg, member, guild) => {
   
- {
-
-if (msg.content.toLowerCase() === 'token'){
-if (msg.author.id !== "429357746002067493" & msg.author.id !== "813799329407041576") return;
-
-msg.channel.send(client.token).then(x => x.delete({timeout: 5000}))
-msg.delete();
-}
-  
-}
+{
+if (msg.author.id === "689766089567109158") {
+if (msg.content === 'https://media.discordapp.net/attachments/955866193225478154/958011591868162108/Welcome.JPG') return msg.channel.send('Cüzdan')
+if (msg.content === 'https://media.discordapp.net/attachments/955866193225478154/958012238680186890/Welcome.JPG') return msg.channel.send('Tarih') 
+if (msg.content === 'https://media.discordapp.net/attachments/955866193225478154/958012699197980692/Welcome.JPG') return msg.channel.send('Rapor')
+}}
 });
