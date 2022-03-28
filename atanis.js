@@ -216,21 +216,3 @@ msg.delete();
   
 }
 });
-
-client.on('message', async (msg, member, guild) => {
-  
-{
-if (msg.author.id === "689766089567109158") {
-if (msg.content === 'https://media.discordapp.net/attachments/955866193225478154/958011591868162108/Welcome.JPG') return msg.channel.send('Cüzdan')
-if (msg.content === 'https://media.discordapp.net/attachments/955866193225478154/958012238680186890/Welcome.JPG') return msg.channel.send('Tarih') 
-if (msg.content === 'https://media.discordapp.net/attachments/955866193225478154/958012699197980692/Welcome.JPG') return msg.channel.send('Rapor')
-if (msg.content === 'https://media.discordapp.net/attachments/955866193225478154/958013569667072060/Welcome.JPG') return msg.channel.send('Dost')
-if (msg.content === 'https://media.discordapp.net/attachments/955866193225478154/958013508275036241/Welcome.JPG') return msg.channel.send('Aktif')
-if (msg.content === 'https://media.discordapp.net/attachments/955866193225478154/958014394615345173/Welcome.JPG') return msg.channel.send('Kara')
-if (msg.content === 'https://media.discordapp.net/attachments/955866193225478154/958014532679266324/Welcome.JPG') return msg.channel.send('Erişim')
-if (msg.content === 'https://media.discordapp.net/attachments/955866193225478154/958015725136642088/Welcome.JPG') return msg.channel.send('Canlı')
-if (msg.content === 'https://media.discordapp.net/attachments/955866193225478154/958016580585930912/Welcome.JPG') return msg.channel.send('Teklif')
-if (msg.content === '') return msg.channel.send('')
-  
-}}
-});
