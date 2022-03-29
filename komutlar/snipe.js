@@ -5,16 +5,16 @@ let basarisiz = ayarlar.basarisizemoji;
 
    exports.run = async(client, message, args) => {
      if (message.author.id === ayarlar.sahip) {
-    const emirhan = await data.fetch(`snipe.id.${message.guild.id}`)
+    let emirhan = await data.fetch(`snipe.id.${message.guild.id}`)
     if(!emirhan) {
-    const embeds = `${basarisiz} ${message.author}, Mesaj bulunamadı!`
+    let embeds = `${basarisiz} ${message.author}, Mesaj bulunamadı!`
     message.channel.send(embeds).then(x => x.delete({timeout: 5000}))
     message.delete()
           } else {
   let kullanıcı = client.users.cache.get(emirhan);
-  const silinen = await data.fetch(`snipe.mesaj.${message.guild.id}`)
-  const silinenk = await data.fetch(`snipe.kanal.${message.guild.id}`)
-  const embed = `**${kullanıcı.tag}:** ${silinen}`
+  let silinen = await data.fetch(`snipe.mesaj.${message.guild.id}`)
+  let silinenk = await data.fetch(`snipe.kanal.${message.guild.id}`)
+  let embed = `**${kullanıcı.tag}:** ${silinen}`
   message.channel.send(embed)
   message.react('✅')  
           } 
