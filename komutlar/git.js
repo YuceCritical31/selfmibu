@@ -5,6 +5,9 @@ const ayarlar = require('../ayarlar.json');
 exports.run = async (client, message, emoji, args) => {
   
 if (message.author.id === ayarlar.sahip) {
+  
+if (!message.member.hasPermission("MENAGE_MEMBERS")) return message.channel.send(`${basarisiz} ${message.author}, Kralım bu sunucuda \`ÜYELERİ YÖNET\` yetkiniz yok.`).then(x => x.delete({timeout: 5000}))
+  
     let basarili = ayarlar.basariliemoji;
     let basarisiz = ayarlar.basarisizemoji;
     let uye = message.mentions.members.first() || client.users.cache.get(args[0])
