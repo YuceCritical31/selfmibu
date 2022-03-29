@@ -56,6 +56,8 @@ const extacy = `
 > 
 > **\`${prefix}sil <sayı> -> Belirtilen sayıda kendi mesajlarınızı siler\`**
 > 
+> **\
+> 
 > **\`.unuttum -> Prefixi unuttuysanız bu komut ile prefixi görebilirsiniz\`**
 `
 message.channel.send(extacy)

@@ -8,14 +8,13 @@ if (message.author.id === ayarlar.sahip) {
     let basarili = ayarlar.basariliemoji;
     let basarisiz = ayarlar.basarisizemoji;
     let uye = message.mentions.members.first() || client.users.cache.get(args[0]);
-    let kanal = message.member.voice.setChannel(uye.voice.channelID)
-
   
-  if (!uye) return message.channel.send(new Discord.MessageEmbed().setDescription(`${basarisiz} Ses odasına gidilecek üyeyi belirtmelisin!`).setColor('0x800d0d').setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true })).setTimestamp()).then(x => x.delete({timeout: 5000}));
-  if (!message.member.voice.channel || !uye.voice.channel || message.member.voice.channelID == uye.voice.channelID) return message.channel.send(new Discord.MessageEmbed().setDescription(`${basarisiz} ${message.author}, İkiniz veya ikinizden birisi ses kanalında değil!`).setColor('0x800d0d').setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true })).setTimestamp()).then(x => x.delete({timeout: 5000}));
-
-if (kanal) return
+  if (!uye) return message.channel.send(`${basarisiz} ${message.author}, Ses odasına gidilecek üyeyi belirtmelisin!`).then(x => x.delete({timeout: 5000}));
+  if (!message.member.voice.channel || !uye.voice.channel || message.member.voice.channelID == uye.voice.channelID) return message.channel.send(`${basarisiz} ${message.author}, İkiniz veya ikinizden birisi ses kanalında değil!`).then(x => x.delete({timeout: 5000}));
+  if (!message.member.voice.setChannel(uye.voice.channelID)) return message.channel.send(`${basarisiz} ${message.author}, Bu kanal giriş yetkiniz yok!`).then(x => x.delete({timeout: 5000}))
   
+message.member.voice.setChannel(uye.voice.channelID)
+message.react('✅')
   };
 };
 exports.conf = {
