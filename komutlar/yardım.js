@@ -58,6 +58,8 @@ const extacy = `
 > 
 > **\`${prefix}git <@üye/ID> -> Belirtilen kullanıcın ses odasına girer\`**
 > 
+> **\`${prefix}çek <@üye/ID> -> Belirtilen kullanıcıyı ses odanıza çeker\`**
+> 
 > **\`.unuttum -> Prefixi unuttuysanız bu komut ile prefixi görebilirsiniz\`**
 `
 message.channel.send(extacy)

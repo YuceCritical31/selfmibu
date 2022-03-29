@@ -24,7 +24,6 @@ exports.conf = {
   enabled: true,
   guildOnly: true,
   aliases: [],
-  kategori: "Yetkili Komutları",
   permLevel: 0
 }
 
