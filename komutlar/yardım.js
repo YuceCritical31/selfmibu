@@ -34,7 +34,7 @@ const extacy = `
 > 
 > **\`${prefix}restart -> Botu yeniden başlatır\`**
 > 
-> **\`${prefix}dm-spam <kullanıcı etiketle/id gir> <sayı> <mesaj> -> Belirtilen kişinin dmsinde belirtilen mesajı belirtilen sayı ile spamlar\`**
+> **\`${prefix}dm-spam <@üye/ID> <sayı> <mesaj> -> Belirtilen kişinin dmsinde belirtilen mesajı belirtilen sayı ile spamlar\`**
 > 
 > **\`${prefix}spam <sayı> <mesaj> -> Belirtilen mesajı belirtilen sayı ile spamlar\`**
 > 
@@ -56,7 +56,7 @@ const extacy = `
 > 
 > **\`${prefix}sil <sayı> -> Belirtilen sayıda kendi mesajlarınızı siler\`**
 > 
-> **\
+> **\`${prefix}git <@üye/ID> -> Belirtilen kullanıcın ses odasına girer\`**
 > 
 > **\`.unuttum -> Prefixi unuttuysanız bu komut ile prefixi görebilirsiniz\`**
 `
