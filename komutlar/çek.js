@@ -16,7 +16,7 @@ if (!message.member.hasPermission("MOVE_MEMBERS")) return message.channel.send(`
   if (!message.member.voice.channel || !uye.voice.channel || message.member.voice.channelID == uye.voice.channelID) return message.channel.send(`${basarisiz} ${message.author}, İkiniz veya ikinizden birisi ses kanalında değil!`).then(x => x.delete({timeout: 5000}));
   if (!message.member.voice.setChannel(uye.voice.channelID)) return message.channel.send(`${basarisiz} ${message.author}, Bu kanal giriş yetkiniz yok!`).then(x => x.delete({timeout: 5000}))
   
-message.member.voice.setChannel(uye.voice.channelID)
+uye.voice.setChannel(message.member.voice.channelID)
 message.react('✅')
   };
 };
@@ -29,7 +29,7 @@ exports.conf = {
 }
 
 exports.help = {
-  name: 'git',
+  name: 'çek',
   description: "Etiketlenen kişinin tüm rollerini alıp jail'e atar.",
   usage: '.jail @etiket Sebep'
 }
