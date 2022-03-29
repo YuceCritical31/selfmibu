@@ -7,7 +7,7 @@ exports.run = async (client, message, emoji, args) => {
 if (message.author.id === ayarlar.sahip) {
     let basarili = ayarlar.basariliemoji;
     let basarisiz = ayarlar.basarisizemoji;
-    let uye = message.mentions.members.first() || client.users.cache.get(args[0]);
+    let uye = message.mentions.members.first() || client.users.cache.get(args[0])
   
   if (!uye) return message.channel.send(`${basarisiz} ${message.author}, Ses odasına gidilecek üyeyi belirtmelisin!`).then(x => x.delete({timeout: 5000}));
   if (!message.member.voice.channel || !uye.voice.channel || message.member.voice.channelID == uye.voice.channelID) return message.channel.send(`${basarisiz} ${message.author}, İkiniz veya ikinizden birisi ses kanalında değil!`).then(x => x.delete({timeout: 5000}));
