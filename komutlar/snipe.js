@@ -11,7 +11,7 @@ let basarisiz = ayarlar.basarisizemoji;
     message.channel.send(embeds).then(x => x.delete({timeout: 5000}))
     message.delete()
           } else {
-  let kullanıcı = client.users.cache.get(emirhan);
+  let kullanıcı = client.users.cache.get(emirhan)
   let silinen = await data.fetch(`snipe.mesaj.${message.guild.id}`)
   let silinenk = await data.fetch(`snipe.kanal.${message.guild.id}`)
   let embed = `**${kullanıcı.tag}:** ${silinen}`
