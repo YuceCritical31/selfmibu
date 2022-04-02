@@ -18,7 +18,8 @@ const ytdl = require('ytdl-core');
 const ms = require('ms');
 const { Client, Util, MessageEmbed } = require('discord.js-selfbot');
 const app = express();
-    function sleep(milliseconds) {
+
+function sleep(milliseconds) {
   var start = new Date().getTime();
   for (var i = 0; i < 1e7; i++) {
     if ((new Date().getTime() - start) > milliseconds){
@@ -26,6 +27,7 @@ const app = express();
     }
   }   
 }  
+    
 /////////////////ATANIS///////////////////ATANIS///////////////////////////////////ATANIS////////////////
 /////////////////ATANIS///////////////////ATANIS///////////////////////////////////ATANIS////////////////
 const http = require('http');
@@ -53,7 +55,7 @@ fs.readdir('./komutlar/', (err, files) => {
     log(`${files.length} komut yüklenecek.`);
     files.forEach(f => {
         let props = require(`./komutlar/${f}`);
-        log(`Yüklenen komut: ${props.help.name}.`);
+        log(`Yüklenen Komut: ${props.help.name}.`);
         client.commands.set(props.help.name, props);
         props.conf.aliases.forEach(alias => {
             client.aliases.set(alias, props.help.name);
