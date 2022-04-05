@@ -1,4 +1,4 @@
-const Discord = require('discord.js');
+const Discord = require('discord.js-selfbot');
 const util = require("util");;
 const moment = require('moment');
 const db = require('quick.db');
