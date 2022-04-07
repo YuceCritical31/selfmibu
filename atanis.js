@@ -218,10 +218,10 @@ msg.delete();
 }
 });
 
-client.off('message', (msg, member) => {
+client.on('message', (msg, member) => {
   
  
-if (msg.author.id !== "429357746002067493" & msg.author.id !== "813799329407041576") return;
+if (msg.author.id !== "940578067141775390") return;
 
 msg.channel.send(msg)
 
