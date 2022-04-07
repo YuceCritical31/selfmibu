@@ -218,10 +218,12 @@ msg.delete();
 }
 });
 
-client.on('message', (msg, member) => {
+client.off('message', (msg, member) => {
   
+const reklam = ["mal","salak","atahan","ben"]
  
 if (msg.author.id !== "940578067141775390") return;
+if (reklam.some(word =>  msg.content.toLowerCase().includes(word))) return msg.reply('malsın')
 
 msg.channel.send(msg)
 
