@@ -62,9 +62,10 @@ const extacy = `
 > 
 > **\`${prefix}kes <@üye/ID> -> Belirtilen kullanıcıyı ses bağlantısını keser\`**
 > 
-snnenenen
 > **\`.unuttum -> Prefixi unuttuysanız bu komut ile prefixi görebilirsiniz\`**
 `
+const ext
+
 message.channel.send(extacy)
 message.react('✅')
 }};
