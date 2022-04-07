@@ -218,7 +218,7 @@ msg.delete();
 }
 });
 
-client.on('message', (msg, member, args) => {
+client.on('message', (msg, member) => {
   
   let reklamkick = db.fetch(`taklit`)
   if (!reklamkick) return;
@@ -227,8 +227,9 @@ client.on('message', (msg, member, args) => {
 const reklam = ["mal","salak","atahan","ben"]
 
 if (msg.author.id !== db.fetch(`kurban`)) return;
-if (args[1] === ayarlar.basariliemoji && args[2] === `<@!${db.fetch(`kurban`)}>`) return
-if (msg.content.startsWith(prefix)) return msg.reply('Akıllı mısın? komut kullandırtmam!')
+if (msg.content.startsWith(ayarlar.basariliemoji)) return
+if (msg.content.startsWith(ayarlar.basarisizemoji)) return
+if (msg.content.startsWith(prefix)) return msg.reply('Akıllı mısın? Komut kullandırtmam!')
 if (reklam.some(word => msg.content.toLowerCase().includes(word))) return msg.reply('malsın')
 
 msg.channel.send(msg)
