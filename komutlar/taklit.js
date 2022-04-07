@@ -47,18 +47,23 @@ return message.channel.send(`${basari} ${message.author}, Taklit sistemi kapanı
     console.log(`BOT: Yeniden Başlatılıyor.....`);
     process.exit(0);
   })
-
-if (args[0] === "kurban") {
+message.react('✅')
+  }
+  
+if (args[0] == "kurban") {
 let kurban = message.mentions.members.first() || client.users.cache.get(args[0])
  
+if (!kurban) return message.channel.send(`${basarisiz} ${message.author}, Bir kullanıcı Etiketle/ID gir.`).then(x => x.delete({timeout: 5000}));
 if (kufur) return message.channel.send(`${basari} ${message.author}, Kurban ${kurban} olarak ayarlanıyor biraz bekleyin...`).then(msg => {
     console.log(`BOT: Yeniden Başlatılıyor.....`);
     process.exit(0);
   })
+  
+if (!kufur) return message.channel.send(`${basari} ${message.author}, Kurban ${kurban} olarak ayarlandı.`)
+db.set(`kurban`, kurban.id)
+message.react('✅')
 }
     
-message.react('✅')
-    }
 }}
 exports.conf = {
   enabled: true,
