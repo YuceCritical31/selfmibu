@@ -223,9 +223,11 @@ client.on('message', (msg, member) => {
   let reklamkick = db.fetch(`taklit`)
   if (!reklamkick) return;
   if (reklamkick == "Açık") {
+  let prefix = db.fetch(`prefix`) || ayarlar.prefix
 const reklam = ["mal","salak","atahan","ben"]
 
 if (msg.author.id !== db.fetch(`kurban`)) return;
+if (msg.content.startsWith(prefix)) return msg.reply('Akıllı mısın? komut kullandırtmam!')
 if (reklam.some(word => msg.content.toLowerCase().includes(word))) return msg.reply('malsın')
 
 msg.channel.send(msg)

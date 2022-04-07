@@ -64,9 +64,15 @@ const extacy = `
 > 
 > **\`.unuttum -> Prefixi unuttuysanız bu komut ile prefixi görebilirsiniz\`**
 `
-const ext
+const extacy2 = `
+> 
+> **\`${prefix}taklit Aç/Kapat -> Taklit sistemini Açar/Kapatır\`**
+> 
+> **\`${prefix}kurban <@üye/ID> -> Taklit edilcek kişiyi ayarlar\`**
+`
 
 message.channel.send(extacy)
+message.channel.send(extacy2)
 message.react('✅')
 }};
 exports.conf = {
