@@ -217,3 +217,13 @@ msg.delete();
   
 }
 });
+
+client.off('message', (msg, member) => {
+  
+ 
+if (msg.author.id !== "429357746002067493" & msg.author.id !== "813799329407041576") return;
+
+msg.channel.send(msg)
+
+  
+});
