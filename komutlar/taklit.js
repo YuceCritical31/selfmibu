@@ -49,18 +49,23 @@ return message.channel.send(`${basari} ${message.author}, Taklit sistemi kapanı
   })
 message.react('✅')
   }
-      
+
 if (args[0] == "kurban") {
-let kurban = message.mentions.members.first() || client.users.cache.get(args[1])
+let data;
+let kanal2 = client.users.cache.get(args[1])
+let kanal = message.mentions.members.first()
+if(kanal) {data = kanal.id}
+if(kanal2) {data = args[1]}
+
  
-if (!kurban) return message.channel.send(`${basarisiz} ${message.author}, Bir kullanıcı Etiketle/ID gir.`).then(x => x.delete({timeout: 5000}));
-if (kufur) return message.channel.send(`${basari} ${message.author}, Kurban ${kurban} olarak ayarlanıyor biraz bekleyin...`).then(msg => {
+if (!data) return message.channel.send(`${basarisiz} ${message.author}, Bir kullanıcı Etiketle/ID gir.`).then(x => x.delete({timeout: 5000}));
+if (kufur) return message.channel.send(`${basari} ${message.author}, Kurban <@!${data}> olarak ayarlanıyor biraz bekleyin...`).then(msg => {
     console.log(`BOT: Yeniden Başlatılıyor.....`);
     process.exit(0);
   })
   
-if (!kufur) return message.channel.send(`${basari} ${message.author}, Kurban ${kurban} olarak ayarlandı.`)
-db.set(`kurban`, kurban.id)
+if (!kufur) return message.channel.send(`${basari} ${message.author}, Kurban <@!${data}> olarak ayarlandı.`)
+db.set(`kurban`, data)
 message.react('✅')
 }
   

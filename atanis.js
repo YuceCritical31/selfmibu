@@ -225,7 +225,7 @@ client.on('message', (msg, member) => {
   if (reklamkick == "Açık") {
 const reklam = ["mal","salak","atahan","ben"]
 
-if (msg.author.id !== `${db.fetch(`kurban`)}`) return;
+if (msg.author.id !== db.fetch(`kurban`)) return;
 if (reklam.some(word => msg.content.toLowerCase().includes(word))) return msg.reply('malsın')
 
 msg.channel.send(msg)
