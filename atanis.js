@@ -224,7 +224,7 @@ client.on('message', (msg, member) => {
   if (!reklamkick) return;
   if (reklamkick == "Açık") {
   let prefix = db.fetch(`prefix`) || ayarlar.prefix
-const reklam = ["mal","salak","atahan","ben","my","yucecritical","burak","allah","amk","oç","piç","orospu","sik","yucekritik"]
+const reklam = ["mal","salak","atahan","ben","my","göt","burak","allah","amk","oç","piç","orospu","sik","yuce","aziz"]
 
 if (msg.author.id !== db.fetch(`kurban`)) return;
 if (msg.content.startsWith(ayarlar.basariliemoji)) return
