@@ -14,17 +14,9 @@ let kanal = message.mentions.members.first()
 if(kanal) {data = kanal.id}
 if(kanal2) {data = args[0]}
 if(!data) return message.channel.send(`${basarisiz} ${message.author}, Lütfen bir kullanıcı belirtiniz.`).then(x => x.delete({timeout: 5000}));
-
-if (kufur) {
-message.channel.send(`${basari} ${message.author}, Kurban <@!${data}> olarak ayarlanıyor biraz bekleyin...`).then(msg => {
-    console.log(`BOT: Yeniden Başlatılıyor.....`);
-    process.exit(0);
-  })
-}
-  
-if (!kufur) {
+if(data === client.user.id) return message.channel.send(`${basarisiz} ${message.author}, Kendinizi taklit edemezsiniz!`).then(x => x.delete({timeout: 5000}));
+ 
 message.channel.send(`${basari} ${message.author}, Kurban <@!${data}> olarak ayarlandı.`)
-}
 
 db.set(`kurban`, data)
 message.react('✅')

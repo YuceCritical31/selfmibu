@@ -69,6 +69,8 @@ const extacy2 = `
 > **\`${prefix}taklit Aç/Kapat -> Taklit sistemini Açar/Kapatır\`**
 > 
 > **\`${prefix}kurban <@üye/ID> -> Taklit edilcek kişiyi ayarlar\`**
+> 
+> **\`${prefix}sa-as Aç/Kapat -> Sa-as sistemini Açar Kapatır\`**
 `
 
 message.channel.send(extacy)
