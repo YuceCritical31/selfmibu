@@ -16,37 +16,37 @@ return message.channel.send(`${basarisiz} ${message.author}, Doğru bir argüman
 
     return;
   }
-let kufur = await db.fetch(`taklit`);
+let kufur = await db.fetch(`sa-as`);
 if (args[0] == "aç") {
 if (kufur) {
 
-return message.channel.send(`${basarisiz} ${message.author}, Görünüşe göre taklit sistemi zaten aktif!`).then(x => x.delete({timeout: 5000}));
+return message.channel.send(`${basarisiz} ${message.author}, Görünüşe göre sa-as sistemi zaten aktif!`).then(x => x.delete({timeout: 5000}));
 
       return;
     } else {
-      db.set(`taklit`, "Açık");
+      db.set(`sa-as`, "Açık");
 
 
-return message.channel.send(`${basari} ${message.author}, Taklit sistemi açılıyor biraz bekleyin...`)//.then(msg => {
+return message.channel.send(`${basari} ${message.author}, Sa-as sistemi başarıyla açıldı.`)//.then(msg => {
     //console.log(`BOT: Yeniden Başlatılıyor.....`);
-   // process.exit(0);
- // })
+    //process.exit(0);
+  //})
 message.react('✅')
     }
   } else if (args[0] == "kapat") {
     if (!kufur) {
 
-return message.channel.send(`${basarisiz} ${message.author}, Görünüşe göre taklit sistemi zaten kapalı!`).then(x => x.delete({timeout: 5000}));
+return message.channel.send(`${basarisiz} ${message.author}, Görünüşe göre sa-as sistemi zaten kapalı!`).then(x => x.delete({timeout: 5000}));
 
       return;
     }
-    db.delete(`taklit`);
+    db.delete(`sa-as`);
 
 
-return message.channel.send(`${basari} ${message.author}, Taklit sistemi kapanıyor biraz bekleyin...`)//.then(msg => {
+return message.channel.send(`${basari} ${message.author}, Sa-as sistemi başarıyla kapandı.`)//.then(msg => {
     //console.log(`BOT: Yeniden Başlatılıyor.....`);
-    //process.exit(0);
- // })
+   // process.exit(0);
+  //})
 message.react('✅')
   }
 
@@ -60,7 +60,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: "taklit",
+  name: "sa-as",
   description: "Bot",
   usage: "reklam-engel"
 };
