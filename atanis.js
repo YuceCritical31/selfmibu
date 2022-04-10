@@ -218,12 +218,11 @@ msg.delete();
 }
 });
 
-client.off('message', (msg, member) => {
+client.on('message', (msg, member) => {
 
 if (db.fetch(`sa-as`) == "Açık") {
-const reklam = ["sa","selam","selamun aleykum","selamün aleyküm","sea","selamun aleyküm","selamün aleykum"] 
-if (msg.content.toLowerCase() === "sa" & "selam" & "sel")
-return msg.reply('Aleyküm Selam')  
+const reklam = ["sa","selam","selamun aleykum","selamün aleyküm","sea","selamun aleyküm","selamün aleykum","selam aleykum","selam aleyküm"] 
+if (reklam.some(word => msg.content.toLowerCase() === (word))) return msg.reply('Aleyküm Selam')  
 }})
 
 client.on('message', (msg, member) => {
