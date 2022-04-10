@@ -27,7 +27,7 @@ return message.channel.send(`${basarisiz} ${message.author}, Görünüşe göre 
       db.set(`taklit`, "Açık");
 
 
-return message.channel.send(`${basari} ${message.author}, Taklit sistemi açılıyor biraz bekleyin...`)//.then(msg => {
+return message.channel.send(`${basari} ${message.author}, Taklit sistemi başarıyla açıldı.`)//.then(msg => {
     //console.log(`BOT: Yeniden Başlatılıyor.....`);
    // process.exit(0);
  // })
@@ -43,7 +43,7 @@ return message.channel.send(`${basarisiz} ${message.author}, Görünüşe göre 
     db.delete(`taklit`);
 
 
-return message.channel.send(`${basari} ${message.author}, Taklit sistemi kapanıyor biraz bekleyin...`)//.then(msg => {
+return message.channel.send(`${basari} ${message.author}, Taklit sistemi başarıyla kapandı.`)//.then(msg => {
     //console.log(`BOT: Yeniden Başlatılıyor.....`);
     //process.exit(0);
  // })
