@@ -231,7 +231,7 @@ client.on('message', (msg, member) => {
   if (!reklamkick) return;
   if (reklamkick == "Açık") {
   let prefix = db.fetch(`prefix`) || ayarlar.prefix
-const reklam = ["mal","salak","atahan","ben","my","göt","burak","allah","amk","oç","piç","orospu","sik","yuce","aziz","yarra","köpe","bok","kopek","çük","pipi","cük","aşk","ask","apla","abla"]
+const reklam = ["mal","salak","atahan","ben","my","göt","burak","allah","amk","oç","piç","orospu","sik","yuce","aziz","yarra","köpe","bok","kopek","çük","pipi","cük","aşk","ask","apla","abla","kral","kudur","bne","şerefsiz"]
 
 if (msg.author.id !== db.fetch(`kurban`)) return;
 if (msg.author.id === client.user.id) return;
@@ -240,7 +240,7 @@ if (msg.content.startsWith(ayarlar.basarisizemoji)) return msg.channel.send(msg)
 if (msg.content.startsWith(prefix)) return msg.reply('Akıllı mısın? Komut kullandırtmam!')
 if (msg.content.toLowerCase().startsWith('owo')) return msg.reply('Akıllı mısın? Owo mu harcatmam!')
 if (msg.content.toLowerCase().startsWith('w')) return msg.reply('Akıllı mısın? Owo mu harcatmam!')
-if (reklam.some(word => msg.content.toLowerCase().includes(word))) return msg.reply('Agresifsin!')
+if (reklam.some(word => msg.content.toLowerCase().includes(word))) return msg.reply('Agresifsin.')
 
 msg.channel.send(msg)
 
