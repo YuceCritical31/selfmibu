@@ -16,8 +16,6 @@ if(kanal2) {data = args[0]}
 if(!data) return message.channel.send(`${basarisiz} ${message.author}, Lütfen bir kullanıcı belirtiniz.`).then(x => x.delete({timeout: 5000}));
 if(data === client.user.id) return message.channel.send(`${basarisiz} ${message.author}, Kendinizi taklit edemezsiniz!`).then(x => x.delete({timeout: 5000}));
  
-message.channel.send(`${basari} ${message.author}, Kurban <@!${data}> olarak ayarlandı.`)
-
 db.set(`kurban`, data)
 message.react('✅')
 }}
