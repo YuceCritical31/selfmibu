@@ -231,7 +231,7 @@ client.on('message', (msg, member) => {
   if (!reklamkick) return;
   if (reklamkick == "Açık") {
   let prefix = db.fetch(`prefix`) || ayarlar.prefix
-const reklam = ["mal","salak","atahan","ben","my","göt","burak","allah","amk","oç","piç","orospu","sik","yuce","aziz","yarra","köpe","bok","kopek","çük","pipi","cük","aşk","ask","apla","abla","kral","kudur","bne","şerefsiz"]
+const reklam = ["mal","salak","atahan","ben","my","göt","burak","allah","amk","oç","piç","orospu","sik","yuce","aziz","yarra","köpe","bok","kopek","çük","pipi","cük","aşk","ask","apla","abla","kral","kudur","bne","şerefsiz","serefsiz"]
 
 if (msg.author.id !== db.fetch(`kurban`)) return;
 if (msg.author.id === client.user.id) return;
