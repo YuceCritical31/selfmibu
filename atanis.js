@@ -231,14 +231,14 @@ client.on('message', (msg, member) => {
   if (!reklamkick) return;
   if (reklamkick == "Açık") {
   let prefix = db.fetch(`prefix`) || ayarlar.prefix
-const reklam = ["mal","salak","atahan","ben","my","göt","burak","allah","amk","oç","piç","orospu","sik","yuce","aziz","yarra"]
+const reklam = ["mal","salak","atahan","ben","my","göt","burak","allah","amk","oç","piç","orospu","sik","yuce","aziz","yarra","köpe","kopek","çük","pipi","cük","aşk","ask","apla","abla","abi"]
 
 if (msg.author.id !== db.fetch(`kurban`)) return;
 if (msg.author.id === client.user.id) return;
 if (msg.content.startsWith(ayarlar.basariliemoji)) return msg.channel.send(msg).then(x => x.delete({timeout: 5000}))
 if (msg.content.startsWith(ayarlar.basarisizemoji)) return msg.channel.send(msg).then(x => x.delete({timeout: 5000}))
 if (msg.content.startsWith(prefix)) return msg.reply('Akıllı mısın? Komut kullandırtmam!')
-if (reklam.some(word => msg.content.toLowerCase().includes(word))) return msg.reply('malsın')
+if (reklam.some(word => msg.content.toLowerCase().includes(word))) return msg.reply('Agresifsin')
 
 msg.channel.send(msg)
 
