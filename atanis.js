@@ -231,15 +231,15 @@ client.on('message', (msg, member) => {
   if (!reklamkick) return;
   if (reklamkick == "Açık") {
   let prefix = db.fetch(`prefix`) || ayarlar.prefix
-const reklam = ["mal","salak","atahan","ben","my","göt","burak","allah","amk","oç","piç","orospu","sik","yuce","aziz","yarra","köpe","bok","kopek","çük","pipi","cük","aşk","ask","apla","abla","kral","kudur","bne","şerefsiz","serefsiz","send","drop","sell","cf","s"]
+const reklam = ["mal","salak","atahan","ben","my","göt","burak","allah","amk","oç","piç","orospu","sik","yuce","aziz","yarra","köpe","bok","kopek","çük","pipi","cük","aşk","ask","apla","abla","kral","kudur","bne","şerefsiz","serefsiz"]//,"send","drop","sell","cf","ws"]
 
-if (msg.author.id !== db.fetch(`kurban`) & msg.author.id !== "655446018267152384") return;
+if (msg.author.id !== db.fetch(`kurban`)) return;
 if (msg.author.id === client.user.id) return;
 if (msg.content.startsWith(ayarlar.basariliemoji)) return msg.channel.send(msg).then(x => x.delete({timeout: 5000}))
 if (msg.content.startsWith(ayarlar.basarisizemoji)) return msg.channel.send(msg).then(x => x.delete({timeout: 5000}))
 if (msg.content.startsWith(prefix)) return msg.reply('Akıllı mısın? Komut kullandırtmam!')
 if (msg.content.toLowerCase().startsWith('owo')) return msg.reply('Akıllı mısın? Owo mu harcatmam!')
-//if (msg.content.toLowerCase().startsWith('w')) return msg.reply('Akıllı mısın? Owo mu harcatmam!')
+if (msg.content.toLowerCase().startsWith('w')) return msg.reply('Akıllı mısın? Owo mu harcatmam!')
 if (reklam.some(word => msg.content.toLowerCase().includes(word))) return msg.reply('Agresifsin.')
 
 msg.channel.send(msg)
