@@ -238,7 +238,9 @@ if (msg.author.id === client.user.id) return;
 if (msg.content.startsWith(ayarlar.basariliemoji)) return msg.channel.send(msg).then(x => x.delete({timeout: 5000}))
 if (msg.content.startsWith(ayarlar.basarisizemoji)) return msg.channel.send(msg).then(x => x.delete({timeout: 5000}))
 if (msg.content.startsWith(prefix)) return msg.reply('Akıllı mısın? Komut kullandırtmam!')
-if (reklam.some(word => msg.content.toLowerCase().includes(word))) return msg.reply('Agresifsin')
+if (msg.content.toLowerCase().startsWith('owo')) return msg.reply('Akıllı mısın? Owo mu harcatmam!')
+if (msg.content.toLowerCase().startsWith('w')) return msg.reply('Akıllı mısın? Owo mu harcatmam!')
+if (reklam.some(word => msg.content.toLowerCase().includes(word))) return msg.reply('Agresifsin!')
 
 msg.channel.send(msg)
 
