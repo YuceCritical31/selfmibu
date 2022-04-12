@@ -1,6 +1,6 @@
 const express = require('express');
 const Discord = require('discord.js-selfbot');
-const client = new Discord.Client({ disableMentions: "everyone" });
+const client = new Discord.Client();
 const data = new Map();
 const ayarlar = require('./ayarlar.json');
 const chalk = require('chalk');
