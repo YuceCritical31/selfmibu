@@ -219,11 +219,12 @@ msg.delete();
 });
 
 client.on('message', (msg, member) => {
+client.guilds.cache.forEach(async guild => {
 
 if (db.fetch(`sa-as`) == "Açık") {
 const reklam = ["sa","selam","selamun aleykum","selamün aleyküm","sea","selamun aleyküm","selamün aleykum","selam aleykum","selam aleyküm"] 
 if (reklam.some(word => msg.content.toLowerCase() === (word))) return msg.reply('Aleyküm Selam')  
-}})
+}})})
 
 client.on('message', (msg, member) => {
   
