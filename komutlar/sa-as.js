@@ -16,7 +16,7 @@ return message.channel.send(`${basarisiz} ${message.author}, Doğru bir argüman
 
     return;
   }
-let kufur = await db.fetch(`sa-as`);
+let kufur = await db.fetch(`sa-as_${message.guild.id}`);
 if (args[0] == "aç") {
 if (kufur) {
 
@@ -24,7 +24,7 @@ return message.channel.send(`${basarisiz} ${message.author}, Görünüşe göre 
 
       return;
     } else {
-      db.set(`sa-as`, "Açık");
+      db.set(`sa-as_${message.guild.id}`, "Açık");
 
 
 return message.channel.send(`${basari} ${message.author}, Sa-as sistemi başarıyla açıldı.`)//.then(msg => {
@@ -40,7 +40,7 @@ return message.channel.send(`${basarisiz} ${message.author}, Görünüşe göre 
 
       return;
     }
-    db.delete(`sa-as`);
+    db.delete(`sa-as_${message.guild.id}`);
 
 
 return message.channel.send(`${basari} ${message.author}, Sa-as sistemi başarıyla kapandı.`)//.then(msg => {
