@@ -6,7 +6,7 @@ if(message.author.id === ayarlar.sahip) {
 //Atahan Tarafından Yapılmıştır
 let basarisiz = ayarlar.basarisizemoji;
 let basari = ayarlar.basariliemoji;
-let Atahan = message.mentions.members.first();
+let Atahan = message.mentions.users.first();
 let userid;
 if(isNaN(args[0])){
   if(!Atahan){
@@ -18,7 +18,7 @@ if(isNaN(args[0])){
   userid = args[0];
 }
 try{
-let user = await message.guild.members.fetch(userid);
+let user = await client.users.fetch(userid);
   console.log(user)
 let avatar = user.displayAvatarURL({dynamic: true, size: 1024})
 if(avatar.endsWith(".gif?size=1024")) {
