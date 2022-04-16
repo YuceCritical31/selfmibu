@@ -19,6 +19,7 @@ if(isNaN(args[0])){
 }
 try{
 let user = await message.guild.members.fetch(userid);
+  console.log(user)
 let avatar = user.displayAvatarURL({dynamic: true, size: 1024})
 if(avatar.endsWith(".gif?size=1024")) {
 
