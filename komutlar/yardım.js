@@ -61,8 +61,6 @@ const extacy = `
 > **\`${prefix}çek <@üye/ID> -> Belirtilen kullanıcıyı ses odanıza çeker\`**
 > 
 > **\`${prefix}kes <@üye/ID> -> Belirtilen kullanıcıyı ses bağlantısını keser\`**
-> 
-> **\`.unuttum -> Prefixi unuttuysanız bu komut ile prefixi görebilirsiniz\`**
 `
 const extacy2 = `
 > 
@@ -70,7 +68,9 @@ const extacy2 = `
 > 
 > **\`${prefix}kurban <@üye/ID> -> Taklit edilcek kişiyi ayarlar\`**
 > 
-> **\`${prefix}sa-as Aç/Kapat -> Sa-as sistemini Açar Kapatır\`**
+> **\`${prefix}sa-as Aç/Kapat -> Sa-as sistemini Açar Kapatır (Her Sunucu İçin Ayrı)\`**
+> 
+> **\`.unuttum -> Prefixi unuttuysanız bu komut ile prefixi görebilirsiniz\`**
 `
 
 message.channel.send(extacy)
