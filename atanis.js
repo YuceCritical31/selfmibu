@@ -223,9 +223,15 @@ client.on('message', (msg, member) => {
 let data = db.fetch(`sa-as_${msg.guild.id}`)
 
 if (data == "Açık") {
-if (msg.author.id === client.user.id) return
-const reklam = ["sa","selam","selamun aleykum","selamün aleyküm","sea","selamun aleyküm","selamün aleykum","selam aleykum","selam aleyküm"] 
-if (reklam.some(word => msg.content.toLowerCase() === (word))) return msg.reply('Aleyküm Selam')  
+//if (msg.author.id === client.user.id) return
+const reklam4 = ["kötüyüm","kötü sen","çok kötüyüm","kötüyüm sen"]
+const reklam3 = ["iyiyim sen","iyi sen","iyiyim","iyiyim sağol","çok iyiyim"]
+const reklam2 = ["hb","hos bulduk","hos buldum","hoş buldum","hoş bulduk","h.b","hoşbuldum","hosbuldum"]
+const reklam = ["sa","selam","selamun aleykum","selamün aleyküm","sea","selamun aleyküm","selamün aleykum","selam aleykum","selam aleyküm","s.a"] 
+if (reklam.some(word => msg.content.toLowerCase() === (word))) return msg.reply('Aleyküm Selam Hoş Geldin')  
+if (reklam2.some(word => msg.content.toLowerCase() === (word))) return msg.reply('Nasılsın?') 
+if (reklam3.some(word => msg.content.toLowerCase() === (word))) return msg.reply('İyi olmana sevindim hep iyi ol') 
+smsnsnns
 }})
 
 client.on('message', (msg, member) => {
