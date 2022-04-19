@@ -4,18 +4,14 @@ const ayarlar = require('../ayarlar.json');
 let basarili = ayarlar.basariliemoji;
 let basarisiz = ayarlar.basarisizemoji;
 
-exports.run = async (client, message, emoji, args) => {
+exports.run = async (client, message, args) => {
   
 if (message.author.id === ayarlar.sahip) {
   
 if (!message.member.hasPermission("MOVE_MEMBERS")) return message.channel.send(`${basarisiz} ${message.author}, Kralım bu sunucuda \`ÜYELERİ TAŞI\` yetkiniz yok.`).then(x => x.delete({timeout: 5000}))
-  
-    let data
-    let uye = message.mentions.members.first() 
-    let uye2 = message.guild.members.cache.get(args[0])
-  
-  if (uye) {data = uye}
-  if (uye2) {data = uye2}
+
+    let data = message.mentions.members.first() || message.guild.members.cache.get(args[0])
+    
   if (!data) return message.channel.send(`${basarisiz} ${message.author}, Ses odasına gidilecek üyeyi belirtmelisin!`).then(x => x.delete({timeout: 5000}));
   if (!message.member.voice.channel || !data.voice.channel || message.member.voice.channelID == data.voice.channelID) return message.channel.send(`${basarisiz} ${message.author}, İkiniz veya ikinizden birisi ses kanalında değil!`).then(x => x.delete({timeout: 5000}));
   if (!message.member.voice.setChannel(data.voice.channelID)) return message.channel.send(`${basarisiz} ${message.author}, Bu kanala giriş yetkiniz yok!`).then(x => x.delete({timeout: 5000}))
