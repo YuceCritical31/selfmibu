@@ -14,11 +14,13 @@ if (!message.member.hasPermission("MOVE_MEMBERS")) return message.channel.send(`
     let uye = message.mentions.members.first() 
     let uye2 = message.guild.members.cache.get(args[0])
   
-  if (!args[0]) return message.channel.send(`${basarisiz} ${message.author}, Ses odasına gidilecek üyeyi belirtmelisin!`).then(x => x.delete({timeout: 5000}));
-  if (!message.member.voice.channel || !data.voice.channel || message.member.voice.channelID == uye.voice.channelID) return message.channel.send(`${basarisiz} ${message.author}, İkiniz veya ikinizden birisi ses kanalında değil!`).then(x => x.delete({timeout: 5000}));
-  if (!message.member.voice.setChannel(uye.voice.channelID)) return message.channel.send(`${basarisiz} ${message.author}, Bu kanal giriş yetkiniz yok!`).then(x => x.delete({timeout: 5000}))
+  if (uye) {data = uye}
+  if (uye2) {data = uye2}
+  if (!data) return message.channel.send(`${basarisiz} ${message.author}, Ses odasına gidilecek üyeyi belirtmelisin!`).then(x => x.delete({timeout: 5000}));
+  if (!message.member.voice.channel || !data.voice.channel || message.member.voice.channelID == data.voice.channelID) return message.channel.send(`${basarisiz} ${message.author}, İkiniz veya ikinizden birisi ses kanalında değil!`).then(x => x.delete({timeout: 5000}));
+  if (!message.member.voice.setChannel(data.voice.channelID)) return message.channel.send(`${basarisiz} ${message.author}, Bu kanala giriş yetkiniz yok!`).then(x => x.delete({timeout: 5000}))
   
-message.member.voice.setChannel(uye.voice.channelID)
+message.member.voice.setChannel(data.voice.channelID)
 message.react('✅')
   };
 };
