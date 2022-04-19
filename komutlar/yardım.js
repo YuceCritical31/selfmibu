@@ -30,7 +30,9 @@ const extacy = `
 > 
 > **\`${prefix}ping -> Botun pingini gösterir\`**
 > 
-> **\`${prefix}status <sayı> -> Botun durumunu belirler\`**
+> **\`${prefix}status <sayı> -> Durumunuzu belirler\`**
+> 
+> **\`${prefix}type <sayı> -> Durum şeklinizi belirler\`**
 > 
 > **\`${prefix}restart -> Botu yeniden başlatır\`**
 > 
@@ -63,6 +65,8 @@ const extacy = `
 > **\`${prefix}kes <@üye/ID> -> Belirtilen kullanıcıyı ses bağlantısını keser\`**
 `
 const extacy2 = `
+> 
+> **\`${prefix}taşı <@üye/ID> <@üye/#seskanal/ID>\`**
 > 
 > **\`${prefix}taklit Aç/Kapat -> Taklit sistemini Açar/Kapatır\`**
 > 
