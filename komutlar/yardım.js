@@ -58,7 +58,7 @@ const extacy = `
 > 
 > **\`${prefix}sil <sayı> -> Belirtilen sayıda kendi mesajlarınızı siler\`**
 > 
-> **\`${prefix}git <@üye/ID> -> Belirtilen kullanıcın ses odasına girer\`**
+> **\`${prefix}git <@üye/#seskanal/ID> -> Belirtilen kullanıcın ses odasına girer\`**
 > 
 > **\`${prefix}çek <@üye/ID> -> Belirtilen kullanıcıyı ses odanıza çeker\`**
 > 
