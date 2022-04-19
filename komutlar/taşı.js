@@ -19,7 +19,8 @@ if (!message.member.hasPermission("MOVE_MEMBERS")) return message.channel.send(`
                                                                                                                                                  
 if (uye2) {
 uye.voice.setChannel(uye2.voice.channelID)
-message.react('✅')}
+message.react('✅')
+}
   
 if (kanal) {
 uye.voice.setChannel(kanal.id)
