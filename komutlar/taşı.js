@@ -10,15 +10,23 @@ if (message.author.id === ayarlar.sahip) {
   
 if (!message.member.hasPermission("MOVE_MEMBERS")) return message.channel.send(`${basarisiz} ${message.author}, Kralım bu sunucuda \`ÜYELERİ TAŞI\` yetkiniz yok.`).then(x => x.delete({timeout: 5000}))
   
+  let kanal = message.mentions.channels.first() || client.channels.cache.get(args[1])
   let uye = message.mentions.users.first() || client.users.cache.get(args[0])
   let uye2 = message.mentions.users.first() || client.users.cache.get(args[1])
   
   if (!uye) return message.channel.send(`${basarisiz} ${message.author}, Taşınacak üyeyi belirtmelisin!`).then(x => x.delete({timeout: 5000}));
-  if (!args[1]) return message.channel.send(`${basarisiz} ${message.author}, Üyenin hangi kanala/ belirtmelisin!`).then(x => x.delete({timeout: 5000}));
+  if (!args[1]) return message.channel.send(`${basarisiz} ${message.author}, Üyenin hangi kanala gidiceğini belirtmelisin!`).then(x => x.delete({timeout: 5000}));
   if (!uye2.voice.channel || !uye.voice.channel || uye.voice.channelID == uye.voice.channelID) return message.channel.send(`${basarisiz} ${message.author}, İkiniz veya ikinizden birisi ses kanalında değil!`).then(x => x.delete({timeout: 5000}));
-  
+
+if (args[1] == uye2) {
 uye.voice.setChannel(uye2.voice.channelID)
+message.react('✅')}
+  
+if (kanal) {
+uye.voice.setChannel(kanal.id)
 message.react('✅')
+}
+  
   };
 };
 exports.conf = {
