@@ -16,11 +16,12 @@ if (!message.member.hasPermission("MOVE_MEMBERS")) return message.channel.send(`
   
   if (!uye) return message.channel.send(`${basarisiz} ${message.author}, Taşınacak üyeyi belirtmelisin!`).then(x => x.delete({timeout: 5000}));
   if (!args[1]) return message.channel.send(`${basarisiz} ${message.author}, Üyenin hangi kanala gidiceğini belirtmelisin!`).then(x => x.delete({timeout: 5000}))
-                                                                                                                                                 
+  
 if (uye2) {
+if (!uye.voice.channel || !uye2.voice.channel || uye.voice.channelID == uye2.voice.channelID) return message.channel.send(`${basarisiz} ${message.author}, 2 kullanıcıdan birisi ses kanalında değil!`).then(x => x.delete({timeout: 5000}));
 uye.voice.setChannel(uye2.voice.channelID)
 message.react('✅')
-}
+} 
   
 if (kanal) {
 uye.voice.setChannel(kanal.id)
