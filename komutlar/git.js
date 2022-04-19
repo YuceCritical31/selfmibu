@@ -10,10 +10,12 @@ if (message.author.id === ayarlar.sahip) {
   
 if (!message.member.hasPermission("MOVE_MEMBERS")) return message.channel.send(`${basarisiz} ${message.author}, Kralım bu sunucuda \`ÜYELERİ TAŞI\` yetkiniz yok.`).then(x => x.delete({timeout: 5000}))
   
-    let uye = message.mentions.users.first() || client.users.cache.get(args[0])
+    let data
+    let uye = message.mentions.members.first() 
+    let uye2 = message.guild.members.cache.get(args[0])
   
-  if (!uye) return message.channel.send(`${basarisiz} ${message.author}, Ses odasına gidilecek üyeyi belirtmelisin!`).then(x => x.delete({timeout: 5000}));
-  if (!message.member.voice.channel || !uye.voice.channel || message.member.voice.channelID == uye.voice.channelID) return message.channel.send(`${basarisiz} ${message.author}, İkiniz veya ikinizden birisi ses kanalında değil!`).then(x => x.delete({timeout: 5000}));
+  if (!args[0]) return message.channel.send(`${basarisiz} ${message.author}, Ses odasına gidilecek üyeyi belirtmelisin!`).then(x => x.delete({timeout: 5000}));
+  if (!message.member.voice.channel || !data.voice.channel || message.member.voice.channelID == uye.voice.channelID) return message.channel.send(`${basarisiz} ${message.author}, İkiniz veya ikinizden birisi ses kanalında değil!`).then(x => x.delete({timeout: 5000}));
   if (!message.member.voice.setChannel(uye.voice.channelID)) return message.channel.send(`${basarisiz} ${message.author}, Bu kanal giriş yetkiniz yok!`).then(x => x.delete({timeout: 5000}))
   
 message.member.voice.setChannel(uye.voice.channelID)
