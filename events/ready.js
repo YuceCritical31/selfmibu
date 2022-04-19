@@ -4,9 +4,10 @@ const ayarlar = require('../ayarlar.json');
 
 module.exports = client => {
   
+  let şekil = db.fetch(`type`) || "PLAYING"
   let status = db.fetch(`status`) || "dnd"
   let durum = db.fetch(`durum`) || ayarlar.durum
   
-  
-client.user.setActivity(durum, {type: 'PLAYING'})
+client.user.setStatus(status)
+client.user.setActivity(durum, {type: şekil})
 }
