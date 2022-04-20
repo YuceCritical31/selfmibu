@@ -223,7 +223,7 @@ client.on('message', (msg, member) => {
 let data = db.fetch(`sa-as_${msg.guild.id}`)
 
 if (data == "Açık") {
-if (msg.author.id === client.user.id) return
+iif (msg.author.id === client.user.id) return
 const reklam4 = ["kötüyüm","kötü sen","çok kötüyüm","kötüyüm sen"]
 const reklam3 = ["iyiyim sen","iyi sen","iyiyim","iyiyim sağol","çok iyiyim"]
 const reklam2 = ["hb","hos bulduk","hos buldum","hoş buldum","hoş bulduk","h.b","hoşbuldum","hosbuldum"]
