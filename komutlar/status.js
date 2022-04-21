@@ -3,7 +3,7 @@ const db = require("quick.db");
 const ayarlar = require("../ayarlar.json");
 let basari = ayarlar.basariliemoji;
 let basarisiz = ayarlar.basarisizemoji;
-exports.run = async (bot, message, args) => {
+exports.run = async (client, message, args) => {
   
 if (message.author.id === ayarlar.sahip) {
 let sayılar = ["1","2","3","4","5"]
