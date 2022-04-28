@@ -1,4 +1,5 @@
 const Discord = require('discord.js-selfbot');
+const db = require('quick.db')
 const ayarlar = require('../ayarlar.json')
 ///spammer by planta
  
@@ -8,7 +9,7 @@ exports.run = (client, message, args) => {
       let sayi = args[0];
       let mesaj = args.slice(1).join(' ');
 
-if (isNaN(sayi)) return message.channel.send(`${basarisiz} ${message.author}, .spam <sayı> <mesaj> şeklinde yazınız.`).then(x => x.delete({timeout: 5000}))
+if (isNaN(sayi)) return message.channel.send(`${basarisiz} ${message.author}, ${db.fetch(`prefix`) || ayarlar.prefix}spam <sayı> <mesaj> şeklinde yazınız.`).then(x => x.delete({timeout: 5000}))
 if (mesaj.length < 1) return message.channel.send(`${basarisiz} ${message.author}, Kralım Spamlamam İçin Bişe Yazmalısınız.`).then(x => x.delete({timeout: 5000}))
    message.delete();
 for (var i = 0; i < sayi; i++)
