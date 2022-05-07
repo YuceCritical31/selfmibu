@@ -223,22 +223,12 @@ client.on('message', async (msg, member) => {
 let data = db.fetch(`sa-as_${msg.guild.id}`)
 
 if (data == "Açık") {
-//if (msg.author.id === client.user.id) return
-let messages = await msg.reply('Aleyküm Selam Hoş Geldin').channel.awaitMessages((m) => m.author.id == msg.author.id && reklam2.some(cevap => m.content.toLowerCase() === (cevap)), {
-        max: 1,
-        time: 15000
-    })
-let reply = messages.firts()
+if (msg.author.id === client.user.id) return
 const reklam4 = ["kötüyüm","kötü sen","çok kötüyüm","kötüyüm sen"]
 const reklam3 = ["iyiyim sen","iyi sen","iyiyim","iyiyim sağol","çok iyiyim"]
 const reklam2 = ["hb","hos bulduk","hos buldum","hoş buldum","hoş bulduk","h.b","hoşbuldum","hosbuldum"]
 const reklam = ["sa","selam","selamun aleykum","selamün aleyküm","sea","selamun aleyküm","selamün aleykum","selam aleykum","selam aleyküm","s.a"] 
 if (reklam.some(word => msg.content.toLowerCase() === (word))) return msg.reply('Aleyküm Selam Hoş Geldin')
-  
-
-
-if (reply.content.toLocaleLowerCase() === (reklam2.some)) return msg.reply('Nasılsın?')
-
 if (reklam2.some(word => msg.content.toLowerCase() === (word))) return msg.reply('Nasılsın?') 
 if (reklam3.some(word => msg.content.toLowerCase() === (word))) return msg.reply('İyi olmana sevindim hep iyi ol') 
 if (reklam4.some(word => msg.content.toLowerCase() === (word))) return msg.reply('Senin için üzüldüm ne oldu?')
