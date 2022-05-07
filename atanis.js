@@ -218,7 +218,7 @@ msg.delete();
 }
 });
 
-client.on('message', (msg, member) => {
+client.on('message', async (msg, member) => {
 
 let data = db.fetch(`sa-as_${msg.guild.id}`)
 
@@ -228,7 +228,18 @@ const reklam4 = ["kötüyüm","kötü sen","çok kötüyüm","kötüyüm sen"]
 const reklam3 = ["iyiyim sen","iyi sen","iyiyim","iyiyim sağol","çok iyiyim"]
 const reklam2 = ["hb","hos bulduk","hos buldum","hoş buldum","hoş bulduk","h.b","hoşbuldum","hosbuldum"]
 const reklam = ["sa","selam","selamun aleykum","selamün aleyküm","sea","selamun aleyküm","selamün aleykum","selam aleykum","selam aleyküm","s.a"] 
-if (reklam.some(word => msg.content.toLowerCase() === (word))) return msg.reply('Aleyküm Selam Hoş Geldin')  
+if (reklam.some(word => msg.content.toLowerCase() === (word))) return msg.reply('Aleyküm Selam Hoş Geldin')      
+  let msgg = await msg.reply('Aleyküm Selam Hoş Geldin')
+  
+    let messages = await msgg.channel.awaitMessages((m) => m.author.id == msg.author.id && 
+        time: 15000
+    });
+
+  
+
+ let reply = messages.first();
+    if (reply.content.toLocaleLowerCase().includes("evet")) 
+
 if (reklam2.some(word => msg.content.toLowerCase() === (word))) return msg.reply('Nasılsın?') 
 if (reklam3.some(word => msg.content.toLowerCase() === (word))) return msg.reply('İyi olmana sevindim hep iyi ol') 
 if (reklam4.some(word => msg.content.toLowerCase() === (word))) return msg.reply('Senin için üzüldüm ne oldu?')
