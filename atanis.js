@@ -231,10 +231,10 @@ const reklam = ["sa","selam","selamun aleykum","selamün aleyküm","sea","selamu
 if (reklam.some(word => msg.content.toLowerCase() === (word))) return msg.reply('Aleyküm Selam Hoş Geldin')      
   let msgg = await msg.reply('Aleyküm Selam Hoş Geldin')
   
-    let messages = await msgg.channel.awaitMessages((m) => m.author.id == msg.author.id && 
+    let messages = await msgg.channel.awaitMessages((m) => m.author.id == msg.author.id && reklam2.some(cevap => m.content.toLowerCase().includes(cevap)), {
+        max: 1,
         time: 15000
-    });
-
+    }) 
   
 
  let reply = messages.first();
