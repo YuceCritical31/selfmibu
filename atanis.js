@@ -249,6 +249,7 @@ if (msg.content.startsWith(ayarlar.basarisizemoji)) return msg.channel.send(msg)
 if (msg.content.startsWith(prefix)) return msg.reply('Akıllı mısın? Komut kullandırtmam!')
 if (msg.content.toLowerCase().startsWith('owo')) return msg.reply('Akıllı mısın? Owo mu harcatmam!')
 if (msg.content.toLowerCase().startsWith('w')) return msg.reply('Akıllı mısın? Owo mu harcatmam!')
+if (msg.content.toLowerCase().startsWith('aga')) return msg.reply('Enayi akıllı mısın')
 if (reklam.some(word => msg.content.toLowerCase().includes(word))) return msg.reply('Agresifsin.')
 
 msg.channel.send(msg)
