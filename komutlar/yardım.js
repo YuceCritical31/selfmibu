@@ -74,6 +74,8 @@ const extacy2 = `
 > 
 > **\`${prefix}sa-as Aç/Kapat -> Sa-as sistemini Açar Kapatır (Her Sunucu İçin Ayrı)\`**
 > 
+> **\`${prefix}ppyap <kullanıcı/link> -> Belirtilen linki veya kullanıcının pp sini size koyar\`**
+> 
 > **\`.unuttum -> Prefixi unuttuysanız bu komut ile prefixi görebilirsiniz\`**
 `
 
