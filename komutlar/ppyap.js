@@ -6,21 +6,21 @@ if(message.author.id === ayarlar.sahip) {
 //Atahan Tarafından Yapılmıştır
 let basarisiz = ayarlar.basarisizemoji;
 let basari = ayarlar.basariliemoji;
+  
+try{
 let Atahan = message.mentions.users.first();
 let userid;
-if(isNaN(args[0])){
+if(!args[0].endsWith([".webp",".png",".gif",".jpg"].some) && isNaN(args[0])){
   if(!Atahan){
     userid = Atahan.id;
   }
 }else{
   userid = args[0];
 }
-  
-if(args[0].endsWith([".webp"].some)) { avatar = args[0] }
 
-try{
 let user = await client.users.fetch(userid);
 let avatar = user.displayAvatarURL({dynamic: true, size: 1024})
+if(args[0].endsWith([".webp",".png",".gif",".jpg"].some)) { avatar = args[0] }
 
 let embed = `${basari} ${message.author}, Profiliniz başarıyla alttaki görsel olarak değiştirildi.\n${avatar}`
 message.channel.send(embed)
