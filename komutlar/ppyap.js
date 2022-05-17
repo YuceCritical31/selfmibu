@@ -9,17 +9,20 @@ let basari = ayarlar.basariliemoji;
 let Atahan = message.mentions.users.first() || client.users.cache.get(args[0])
 let link = [".webp",".png",".gif",".jpg",".jpeg"]
 
+try{
 if (!args[0] && !Atahan) return message.channel.send(`${basarisiz} ${message.author}, Bir kullanıcı veya bir link belirtmelisin.`).then(x => x.delete({timeout: 5000}))
 if (Atahan) { 
+if (args[0].includes(link.some)) return
 await client.user.setAvatar(Atahan.displayAvatarURL({dynamic: true, size: 1024}))
 message.react('✅')
 }
   
-if (args[0].endsWith(link.some)) {
-if (Atahan) return
-//if (!args[0].endsWith(link.some)) return
-await client.user.setAvatar(args[0])//.then(x => console.log(x))
+if (args[0].includes(link.some)) {
+await client.user.setAvatar(args[0])
 message.react('✅')
+}}catch{
+  message.channel.send(`${basarisiz} ${message.author}, Avatarını çok hızlı değişiyorsun!`).then(x => x.delete({timeout: 5000}))
+  return;
 }
 
 }}
