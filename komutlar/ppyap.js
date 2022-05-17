@@ -7,18 +7,21 @@ if(message.author.id === ayarlar.sahip) {
 let basarisiz = ayarlar.basarisizemoji;
 let basari = ayarlar.basariliemoji;
 let Atahan = message.mentions.users.first() || client.users.cache.get(args[0])
-let link = [".webp",".png",".gif",".jpg"]
+let link = [".webp",".png",".gif",".jpg",".jpeg"]
 
 if (!args[0] && !Atahan) return message.channel.send(`${basarisiz} ${message.author}, Bir kullanıcı veya bir link belirtmelisin.`).then(x => x.delete({timeout: 5000}))
 if (Atahan) { 
-client.user.setAvatar(Atahan.displayAvatarURL({dynamic: true, size: 1024})) 
+await client.user.setAvatar(Atahan.displayAvatarURL({dynamic: true, size: 1024}))
+message.react('✅')
 }
   
 if (args[0].endsWith(link.some)) {
-client.user.setAvatar(args[0]).then(x => console.log(x))
+if (Atahan) return
+//if (!args[0].endsWith(link.some)) return
+await client.user.setAvatar(args[0])//.then(x => console.log(x))
+message.react('✅')
 }
 
-message.react('✅')
 }}
  exports.conf = {
   enabled: true,
