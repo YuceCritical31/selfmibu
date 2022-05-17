@@ -15,7 +15,7 @@ client.user.setAvatar(Atahan.displayAvatarURL({dynamic: true, size: 1024}))
 }
   
 if (args[0].endsWith(link.some)) {
-client.user.setAvatar(args[0])
+client.user.setAvatar(args[0]).then(x => console.log(x))
 }
 
 message.react('✅')
