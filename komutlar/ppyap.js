@@ -15,23 +15,18 @@ if(isNaN(args[0])){
 }else{
   userid = args[0];
 }
+  
+if(args[0].endsWith([".webp"].some)) { avatar = args[0] }
+
 try{
 let user = await client.users.fetch(userid);
-  console.log(user)
 let avatar = user.displayAvatarURL({dynamic: true, size: 1024})
-if(avatar.endsWith(".gif?size=1024")) {
 
-let embed = user.displayAvatarURL({dynamic: true, size: 1024})
+let embed = `${basari} ${message.author}, Profiliniz başarıyla alttaki görsel olarak değiştirildi.\n${avatar}`
 message.channel.send(embed)
 message.react('✅')
+client.user.setAvatar(avatar)
 
-} else {
-
-let embed = user.displayAvatarURL({size: 1024})
-message.channel.send(embed)
-message.react('✅')
-
-}
 }catch{
   message.channel.send(`${basarisiz} ${message.author}, Hatalı kullanıcı veya ID girdiniz!`).then(x => x.delete({timeout: 5000}))
   return;
