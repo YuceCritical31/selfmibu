@@ -202,7 +202,7 @@ message.reply(`Prefix: \`${db.fetch(`prefix`)}\``)
 
 })
 
-client.off('userUpdate', async (oldUser, newUser) => {
+client.on('userUpdate', async (oldUser, newUser) => {
 
 if (newUser.displayAvatarURL() !== oldUser.displayAvatarURL()) {
 if (newUser.id !== client.user.id) return
