@@ -14,13 +14,12 @@ message.react('✅')
 }
   
 if (args[0] === "ayarla") {
-if (args[1].endsWith[".webp",".jpg",".jpeg",".png",".gif"].some) {
 message.channel.send(`${basari} ${message.author}, Profil fotoğrafınız ayarlandı.`)  
 db.set(`avatar`, args[1])
 message.react('✅')
 }else{
 message.channel.send(`${basarisiz} ${message.author}, Bu link bir görsel linki değil!`).then(x => x.delete({timeout: 5000}))
-}}
+}
   
 if (args[0] === "sifirla") {
 message.channel.send(`${basari} ${message.author}, Profil fotoğrafınız ayarlanan foto ile değiştirildi.`)  
