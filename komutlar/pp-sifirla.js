@@ -28,7 +28,7 @@ message.channel.send(`${basarisiz} ${message.author}, Bu link bir görsel linki 
   
 if (args[0] === "sifirla") {
 try{
-//message.channel.send(`${basari} ${message.author}, Profil fotoğrafınız ayarlanan foto ile değiştirildi.`)
+if (!db.fetch(`avatar`)) return message.channel.send(`${basarisiz} ${message.author}, Profil fotoğrafı ayarlanmamış!`).then(x => x.delete({timeout: 5000}))
 await client.user.setAvatar(db.fetch(`avatar`))
 message.react('✅')
 }catch{

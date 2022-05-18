@@ -9,7 +9,8 @@ let basari = ayarlar.basariliemoji;
 let Atahan = message.mentions.users.first() || client.users.cache.get(args[0])
 
 if (!args[0]) return message.channel.send(`${basarisiz} ${message.author}, Bir link veya kullanıcı belirtmelisin.`).then(x => x.delete({timeout: 5000}))
-
+if (Atahan.id === client.user.id) return message.channel.send(`${basarisiz} ${message.author}, Bu komutu sadece diğer üyeler üzerinde kullanabilirsin.`).then(x => x.delete({timeout: 5000}))
+  
 try{
 if (Atahan) { 
 await client.user.setAvatar(Atahan.displayAvatarURL({dynamic: true, size: 1024}))
