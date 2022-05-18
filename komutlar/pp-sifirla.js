@@ -13,7 +13,7 @@ if(!komutlar.some(word => message.content.includes(word))) return message.channe
   
 if (args[0] === "sil") {
 message.channel.send(`${basari} ${message.author}, Profil fotoğrafınız silindi.`)  
-client.user.setAvatar(null)
+await client.user.setAvatar(null)
 message.react('✅')
 }
   
@@ -21,16 +21,20 @@ if (args[0] === "ayarla") {
 try{
 if (!linkler.some(word => message.content.endsWith(word))) return message.channel.send(`${basarisiz} ${message.author}, Bir link belirtmelisin`).then(x => x.delete({timeout: 5000}))
 message.channel.send(`${basari} ${message.author}, Profil fotoğrafınız ayarlandı.`)  
-db.set(`avatar`, args[1])
+await db.set(`avatar`, args[1])
 }catch{
 message.channel.send(`${basarisiz} ${message.author}, Bu link bir görsel linki değil!`).then(x => x.delete({timeout: 5000}))
 }}
   
 if (args[0] === "sifirla") {
-message.channel.send(`${basari} ${message.author}, Profil fotoğrafınız ayarlanan foto ile değiştirildi.`)  
-client.user.setAvatar(db.fetch(`avatar`))
+try{
+message.channel.send(`${basari} ${message.author}, Profil fotoğrafınız ayarlanan foto ile değiştirildi.`)
+await client.user.setAvatar(db.fetch(`avatar`))
 message.react('✅')
-} 
+}catch{
+message.channel.send(`${basarisiz} ${message.author}, Avatarını çok hızlı değişiyosun veya ayarlanan link hatalı!`).then(x => x.delete({timeout: 5000}))
+}}
+
 }};
 
 exports.conf = {
