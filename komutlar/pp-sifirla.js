@@ -8,8 +8,7 @@ exports.run = async (client, message, args) => {
 if (message.author.id === ayarlar.sahip) {
 
 let komutlar = ["sil","ayarla","sifirla"]
-if (!args[0]) return
-if(!komutlar.some(word => message.content.includes(word))) return message.channel.send(`${basarisiz} ${message.author}, Yanlış kullanım doğru kullanım şekli: ${db.fetch(`prefix`) || ayarlar.prefix}profil-foto <sil/ayarla/sifirla>`)
+if(!komutlar.some(word => message.content.includes(word))) return message.channel.send(`${basarisiz} ${message.author}, Yanlış kullanım doğru kullanım şekli: ${db.fetch(`prefix`) || ayarlar.prefix}profil-foto <sil/ayarla/sifirla>`).then(x => x.delete({timeout: 5000}))
   
 if (args[0] === "sil") {
 message.channel.send(`${basari} ${message.author}, Profil fotoğrafınız silindi.`)  
@@ -18,13 +17,13 @@ message.react('✅')
 }
   
 if (args[0] === "ayarla") {
+try{
 if (!args[1]) return message.channel.send(`${basarisiz} ${message.author}, Bir link belirtmelisin.`).then(x => x.delete({timeout: 5000}))
 message.channel.send(`${basari} ${message.author}, Profil fotoğrafınız ayarlandı.`)  
 db.set(`avatar`, args[1])
-message.react('✅')
-}else{
+}catch{
 message.channel.send(`${basarisiz} ${message.author}, Bu link bir görsel linki değil!`).then(x => x.delete({timeout: 5000}))
-}
+}}
   
 if (args[0] === "sifirla") {
 message.channel.send(`${basari} ${message.author}, Profil fotoğrafınız ayarlanan foto ile değiştirildi.`)  
