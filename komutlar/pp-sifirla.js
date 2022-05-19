@@ -22,6 +22,7 @@ try{
 if (!linkler.some(word => message.content.endsWith(word))) return message.channel.send(`${basarisiz} ${message.author}, Bir link belirtmelisin`).then(x => x.delete({timeout: 5000}))
 message.channel.send(`${basari} ${message.author}, Profil fotoğrafınız ayarlandı.`)  
 await db.set(`avatar`, args[1])
+message.channel.send(`${basari} ${message.author}, Başarıyla profil fotoğrafını sıfırlandım.`)
 }catch{
 message.channel.send(`${basarisiz} ${message.author}, Bu link bir görsel linki değil!`).then(x => x.delete({timeout: 5000}))
 }}
@@ -30,6 +31,7 @@ if (args[0] === "sifirla") {
 try{
 if (!db.fetch(`avatar`)) return message.channel.send(`${basarisiz} ${message.author}, Profil fotoğrafı ayarlanmamış!`).then(x => x.delete({timeout: 5000}))
 await client.user.setAvatar(db.fetch(`avatar`))
+message.channel.send(`${basari} ${message.author}, Başarıyla profil fotoğrafını sıfırlandım.`)
 message.react('✅')
 }catch{
 message.channel.send(`${basarisiz} ${message.author}, Avatarını çok hızlı değişiyosun veya ayarlanan link hatalı!`).then(x => x.delete({timeout: 5000}))
