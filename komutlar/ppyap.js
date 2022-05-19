@@ -10,10 +10,10 @@ let linkler = [".webp",".png",".jpeg",".gif",".jpg"]
 let Atahan = message.mentions.users.first() || client.users.cache.get(args[0])
 
 if (!args[0]) return message.channel.send(`${basarisiz} ${message.author}, Bir link veya kullanıcı belirtmelisin.`).then(x => x.delete({timeout: 5000}))
-if (Atahan.id === client.user.id) return message.channel.send(`${basarisiz} ${message.author}, Bu komutu sadece diğer üyeler üzerinde kullanabilirsin.`).then(x => x.delete({timeout: 5000}))
   
 try{
 if (Atahan) { 
+if (Atahan.id === client.user.id) return message.channel.send(`${basarisiz} ${message.author}, Bu komutu sadece diğer üyeler üzerinde kullanabilirsin.`).then(x => x.delete({timeout: 5000}))
 await client.user.setAvatar(Atahan.displayAvatarURL({dynamic: true, size: 1024}))
 message.channel.send(`${basari} ${message.author}, Başarıyla ${Atahan} adlı kullanıcının profil fotoğrafını kopyaladım.`)
 message.react('✅')

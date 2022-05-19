@@ -1,4 +1,4 @@
-const { Discord, MessageEmbed } = require("discord.js-selfbot");
+const Discord = require("discord.js-selfbot");
 const db = require("quick.db");
 const ayarlar = require("../ayarlar.json");
 let basari = ayarlar.basariliemoji;
@@ -12,7 +12,7 @@ let linkler = [".webp",".png",".jpeg",".gif",".jpg"]
 if(!komutlar.some(word => message.content.includes(word))) return message.channel.send(`${basarisiz} ${message.author}, Yanlış kullanım doğru kullanım şekli: ${db.fetch(`prefix`) || ayarlar.prefix}profil-foto <sil/ayarla/sifirla>`).then(x => x.delete({timeout: 5000}))
   
 if (args[0] === "sil") {
-message.channel.send(`${basari} ${message.author}, Profil fotoğrafınız silindi.`)  
+message.channel.send(`${basari} ${message.author}, Profil fotoğrafını sildim.`)  
 await client.user.setAvatar(null)
 message.react('✅')
 }
@@ -22,7 +22,7 @@ try{
 if (!linkler.some(word => message.content.endsWith(word))) return message.channel.send(`${basarisiz} ${message.author}, Bir link belirtmelisin`).then(x => x.delete({timeout: 5000}))
 message.channel.send(`${basari} ${message.author}, Profil fotoğrafınız ayarlandı.`)  
 await db.set(`avatar`, args[1])
-message.channel.send(`${basari} ${message.author}, Başarıyla profil fotoğrafını sıfırlandım.`)
+message.channel.send(`${basari} ${message.author}, Başarıyla profil fotoğrafını ${db.fetch(`avatar`)} olarak kaydettim.`)
 }catch{
 message.channel.send(`${basarisiz} ${message.author}, Bu link bir görsel linki değil!`).then(x => x.delete({timeout: 5000}))
 }}
