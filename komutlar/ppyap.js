@@ -14,9 +14,11 @@ if (Atahan.id === client.user.id) return message.channel.send(`${basarisiz} ${me
 try{
 if (Atahan) { 
 await client.user.setAvatar(Atahan.displayAvatarURL({dynamic: true, size: 1024}))
+message.channel.send(`${basari}`)
 message.react('✅')
 }else{
 await client.user.setAvatar(args[0])
+message.channel.send(`${basari}`)
 message.react('✅')
 }}catch{
   message.channel.send(`${basarisiz} ${message.author}, Avatarını çok hızlı değişiyorsun veya yanlış kullanıcı/link giriyosun!`).then(x => x.delete({timeout: 5000}))
