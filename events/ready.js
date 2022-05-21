@@ -8,5 +8,5 @@ module.exports = client => {
   let status = db.fetch(`status`) || "invisible"
   let durum = db.fetch(`durum`) || ayarlar.durum
   
-client.user.setPresence({ activity: { name: durum, type: şekil }, status: status})
+client.user.setPresence({ activity: { name: durum, type: şekil, timestamps: { start: Date.now(), }}, status: status})
 }
