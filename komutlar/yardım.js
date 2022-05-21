@@ -24,6 +24,8 @@ const extacy = `
 > 
 > **\`${prefix}durum <durum> -> Özel durumunuzu değişir\`**
 > 
+> **\`${prefix}dz Aç/Kapat -> Özel durumunuzun süresibi Açar/Kapatır\`**
+> 
 > **\`${prefix}durum-sifirla -> Özel durumunuzu sıfırlar\`**
 > 
 > **\`${prefix}prefix <prefix> -> Prefixinizi değişir\`**
