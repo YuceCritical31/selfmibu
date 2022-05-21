@@ -2,6 +2,7 @@ const express = require('express');
 const Discord = require('discord.js-selfbot');
 const client = new Discord.Client();
 const data = new Map();
+const client31 = new Discord.DMChannel(client, data)
 const ayarlar = require('./ayarlar.json');
 const chalk = require('chalk');
 const moment = require('moment');
@@ -173,6 +174,18 @@ const exampleEmbed = `Pingim: **${client.ws.ping}**ms`
 
 }
 }})
+
+client.off('message', async (message, member) => {
+{
+if (message.content.toLowerCase() === `${prefix}ping`){ 
+if(message.author.id !== ayarlar.sahip) return
+  
+const exampleEmbed = `Pingim: **${client.ws.ping}**ms`
+  message.channel.send(exampleEmbed).then(x => x.delete({timeout: 5000 }))
+
+}
+}})
+
 
 client.on('message', async (message, member) => {
 {
