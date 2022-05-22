@@ -19,15 +19,20 @@ message.react('✅')
   
 if (args[0] === "ayarla") {
 try{ 
-if (message.attachments.size > 0) {
-if (message.attachments.forEach(atach => atach.url.endsWith(linkler.some)))}
+if (message.attachments.size == 1) {
+message.attachments.forEach(x => {
+if (!x.url.endsWith(linkler.some)) return message.channel.send(`${basarisiz} ${message.author}, Bir görsel atmalısın.`).then(x => x.delete({timeout: 5000}))
+sösmmsnsnsmnssnnshs
+})
+}
 
-if (!linkler.some(word => message.content.endsWith(word))) return message.channel.send(`${basarisiz} ${message.author}, Bir link belirtmelisin`).then(x => x.delete({timeout: 5000}))
+if (args[1]) {
+if (!linkler.some(word => message.content.endsWith(word))) return message.channel.send(`${basarisiz} ${message.author}, Bir görsel linki belirtmelisin.`).then(x => x.delete({timeout: 5000}))
 message.channel.send(`${basari} ${message.author}, Profil fotoğrafınız ayarlandı.`)  
 await db.set(`avatar`, args[1])
 message.channel.send(`${basari} ${message.author}, Başarıyla profil fotoğrafını ${db.fetch(`avatar`)} olarak kaydettim.`)
-}catch{
-message.channel.send(`${basarisiz} ${message.author}, Bu link bir görsel linki değil!`).then(x => x.delete({timeout: 5000}))
+}}catch{
+message.channel.send(`${basarisiz} ${message.author}, Bu dosya/link bir görsel dosyası/linki değil!`).then(x => x.delete({timeout: 5000}))
 }}
   
 if (args[0] === "sifirla") {
