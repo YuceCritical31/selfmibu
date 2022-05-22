@@ -21,19 +21,21 @@ if (args[0] === "ayarla") {
 try{ 
 if (message.attachments.size === 1 && !args[1]) {
 message.attachments.forEach(x => {
-if (!x.url.endsWith(".jpg") || !x.url.endsWith(".gif") || !x.url.endsWith(".png") || !x.url.endsWith(".jpeg") || !x.url.endsWith(".webp")) return message.channel.send(`${basarisiz} ${message.author}, Bir görsel atmalısın.`).then(x => x.delete({timeout: 5000}))
+if (!x.url.endsWith(".jpg") & !x.url.endsWith(".gif") & !x.url.endsWith(".png") & !x.url.endsWith(".jpeg") & !x.url.endsWith(".webp")) return message.channel.send(`${basarisiz} ${message.author}, Bir görsel atmalısın.`).then(x => x.delete({timeout: 5000}))
 db.set(`avatar`, x.url)
-message.channel.send(`${basari} ${message.author}, Başarıyla profil fotoğrafını aşağıdaki görsel olarak kaydettim.`, new Discord.Attachment(db.fetch(`avatar`)))
+message.channel.send(`${basari} ${message.author}, Başarıyla profil fotoğrafını aşağıdaki görsel olarak kaydettim.`, new Discord.MessageAttachment(db.fetch(`avatar`)))
 })
-}//else if (!args[1]) {
-//message.channel.send(`${basarisiz} ${message.author}, En fazla 1 tane görsel belirtmelisin!`).then(x => x.delete({timeout: 5000}))
-//}
+}else if (!args[1]) {
+message.channel.send(`${basarisiz} ${message.author}, En fazla 1 tane görsel belirtmelisin!`).then(x => x.delete({timeout: 5000}))
+}
+  
+if (message.attachments.size === )
 
 if (args[1]) {
 if (!linkler.some(word => message.content.endsWith(word))) return message.channel.send(`${basarisiz} ${message.author}, Bir görsel linki belirtmelisin.`).then(x => x.delete({timeout: 5000}))
 message.channel.send(`${basari} ${message.author}, Profil fotoğrafınız ayarlandı.`)  
 await db.set(`avatar`, args[1])
-message.channel.send(`${basari} ${message.author}, Başarıyla profil fotoğrafını aşağıdaki görsel olarak kaydettim.`, new Discord.Attachment(db.fetch(`avatar`)))
+message.channel.send(`${basari} ${message.author}, Başarıyla profil fotoğrafını aşağıdaki görsel olarak kaydettim.`, new Discord.MessageAttachment(db.fetch(`avatar`)))
 }}catch{
 message.channel.send(`${basarisiz} ${message.author}, Bu dosya/link bir görsel dosyası/linki değil!`).then(x => x.delete({timeout: 5000}))
 }}
