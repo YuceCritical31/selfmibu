@@ -27,6 +27,8 @@ message.channel.send(`${basari} ${message.author}, Durum zamanınız açılıyor
 message.react('✅')
 }
   
+
+  
 if (status === "kapat"){
 if (!data2) return message.channel.send(`${basarisiz} ${message.author}, Durum zamanı zaten kapalı.`).then(x => x.delete({timeout: 5000}))
 await db.delete(`durum_süresi`)
