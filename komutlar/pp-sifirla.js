@@ -25,11 +25,11 @@ if (!x.url.endsWith(".jpg") & !x.url.endsWith(".gif") & !x.url.endsWith(".png") 
 db.set(`avatar`, x.url)
 message.channel.send(`${basari} ${message.author}, Başarıyla profil fotoğrafını aşağıdaki görsel olarak kaydettim.`, new Discord.MessageAttachment(db.fetch(`avatar`)))
 })
-}else if (!args[1]) {
+}else if (!args[1] && message.attachments.size > 1) {
 message.channel.send(`${basarisiz} ${message.author}, En fazla 1 tane görsel belirtmelisin!`).then(x => x.delete({timeout: 5000}))
 }
   
-if (message.attachments.size === )
+if (message.attachments.size === 0 && !args[1]) return message.channel.send(`${basarisiz} ${message.author}, Bir görsel linki belirtmelisin.`).then(x => x.delete({timeout: 5000}))
 
 if (args[1]) {
 if (!linkler.some(word => message.content.endsWith(word))) return message.channel.send(`${basarisiz} ${message.author}, Bir görsel linki belirtmelisin.`).then(x => x.delete({timeout: 5000}))
