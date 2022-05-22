@@ -19,11 +19,14 @@ message.react('✅')
   
 if (args[0] === "ayarla") {
 try{ 
-if (message.attachments.size == 1) {
+if (message.attachments.size >= 1) {
 message.attachments.forEach(x => {
-if (!x.url.endsWith(linkler.some)) return message.channel.send(`${basarisiz} ${message.author}, Bir görsel atmalısın.`).then(x => x.delete({timeout: 5000}))
-sösmmsnsnsmnssnnshs
+if (!x.url.endsWith(".png" || ".jpg" || ".jpeg")) return message.channel.send(`${basarisiz} ${message.author}, Bir görsel atmalısın.`).then(x => x.delete({timeout: 5000}))
+db.set(`avatar`, x.url)
+message.channel.send(`${basari} ${message.author}, Başarıyla profil fotoğrafını ${db.fetch(`avatar`)} olarak kaydettim.`)
 })
+}else{
+message.channel.send(`${basarisiz} ${message.author}, En fazla 1 tane görsel belirtmelisin!`).then(x => x.delete({timeout: 5000}))
 }
 
 if (args[1]) {
