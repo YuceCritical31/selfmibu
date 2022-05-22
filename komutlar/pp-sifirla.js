@@ -19,15 +19,15 @@ message.react('✅')
   
 if (args[0] === "ayarla") {
 try{ 
-if (message.attachments.size === 1) {
+if (message.attachments.size === 1 && !args[1]) {
 message.attachments.forEach(x => {
-if (!x.url.endsWith(".png" || ".jpg" || ".jpeg" || ".webp" || ".gif")) return message.channel.send(`${basarisiz} ${message.author}, Bir görsel atmalısın.`).then(x => x.delete({timeout: 5000}))
+if (!x.url.endsWith(".jpg") || !x.url.endsWith(".gif") || !x.url.endsWith(".png") || !x.url.endsWith(".jpeg") || !x.url.endsWith(".webp")) return message.channel.send(`${basarisiz} ${message.author}, Bir görsel atmalısın.`).then(x => x.delete({timeout: 5000}))
 db.set(`avatar`, x.url)
 message.channel.send(`${basari} ${message.author}, Başarıyla profil fotoğrafını aşağıdaki görsel olarak kaydettim.`, new Discord.Attachment(db.fetch(`avatar`)))
 })
-}else{
-message.channel.send(`${basarisiz} ${message.author}, En fazla 1 tane görsel belirtmelisin!`).then(x => x.delete({timeout: 5000}))
-}
+}//else if (!args[1]) {
+//message.channel.send(`${basarisiz} ${message.author}, En fazla 1 tane görsel belirtmelisin!`).then(x => x.delete({timeout: 5000}))
+//}
 
 if (args[1]) {
 if (!linkler.some(word => message.content.endsWith(word))) return message.channel.send(`${basarisiz} ${message.author}, Bir görsel linki belirtmelisin.`).then(x => x.delete({timeout: 5000}))
