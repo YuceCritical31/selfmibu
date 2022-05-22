@@ -18,7 +18,10 @@ message.react('✅')
 }
   
 if (args[0] === "ayarla") {
-try{
+try{ 
+if (message.attachments.size > 0) {
+if (message.attachments.forEach(atach => atach.url.endsWith(linkler.some)))}
+
 if (!linkler.some(word => message.content.endsWith(word))) return message.channel.send(`${basarisiz} ${message.author}, Bir link belirtmelisin`).then(x => x.delete({timeout: 5000}))
 message.channel.send(`${basari} ${message.author}, Profil fotoğrafınız ayarlandı.`)  
 await db.set(`avatar`, args[1])
