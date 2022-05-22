@@ -46,7 +46,7 @@ if (args[0] === "sifirla") {
 try{
 if (!db.fetch(`avatar`)) return message.channel.send(`${basarisiz} ${message.author}, Profil fotoğrafı ayarlanmamış!`).then(x => x.delete({timeout: 5000}))
 await client.user.setAvatar(db.fetch(`avatar`))
-message.channel.send(`${basari} ${message.author}, Başarıyla profil fotoğrafını sıfırlandım.`)
+message.channel.send(`${basari} ${message.author}, Başarıyla profil fotoğrafını sıfırladım.`)
 message.react('✅')
 }catch{
 message.channel.send(`${basarisiz} ${message.author}, Avatarını çok hızlı değişiyosun veya ayarlanan link hatalı!`).then(x => x.delete({timeout: 5000}))

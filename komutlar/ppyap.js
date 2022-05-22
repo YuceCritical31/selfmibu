@@ -28,14 +28,14 @@ if (Atahan) {
 if (!args[0]) return message.channel.send(`${basarisiz} ${message.author}, Bir link veya kullanıcı belirtmelisin.`).then(x => x.delete({timeout: 5000}))
 if (Atahan.id === client.user.id) return message.channel.send(`${basarisiz} ${message.author}, Bu komutu sadece diğer üyeler üzerinde kullanabilirsin.`).then(x => x.delete({timeout: 5000}))
 await client.user.setAvatar(Atahan.displayAvatarURL({dynamic: true, size: 1024}))
-message.channel.send(`${basari} ${message.author}, Başarıyla ${Atahan} adlı kullanıcının profil fotoğrafını kopyaladım.`)
+message.channel.send(`${basari} ${message.author}, Başarıyla ${Atahan} adlı kullanıcının profil fotoğrafını kopyaladım.`, new Discord.MessageAttachment(Atahan.displayAvatarURL({dynamic: true, size: 1024})))
 message.react('✅')
 }else if (message.attachments.size === 0 && args[0]) {
 await client.user.setAvatar(args[0])
-message.channel.send(`${basari} ${message.author}, Başarıyla ${args[0]} linkini profil fotoğrafı olarak koydum.`)
+message.channel.send(`${basari} ${message.author}, Başarıyla profil fotoğrafını aşağıdaki görsel olarak yaptım.`, new Discord.MessageAttachment(args[0]))
 message.react('✅')
 }}catch{
-  message.channel.send(`${basarisiz} ${message.author}, Avatarını çok hızlı değişiyorsun veya yanlış kullanıcı/link giriyosun!`).then(x => x.delete({timeout: 5000}))
+  message.channel.send(`${basarisiz} ${message.author}, Avatarını çok hızlı değişiyorsun veya yanlış kullanıcı/link/görsel giriyosun!`).then(x => x.delete({timeout: 5000}))
 }
 
 }}
