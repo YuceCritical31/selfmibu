@@ -8,22 +8,12 @@ exports.run = async(client, message, args) => {
       let sayi = args[0];
       let mesaj = args.slice(1).join(' ');
     
-    function sleep(milliseconds) {
-  var start = new Date().getTime();
-  for (var i = 0; i < 1e7; i++) {
-    if ((new Date().getTime() - start) > milliseconds){
-      break;  
-    }
-  }   
-}  
-
-
+    
 if (isNaN(sayi)) return message.channel.send(`${basarisiz} ${message.author}, .aga-spam <sayı> şeklinde yazınız.`).then(x => x.delete({timeout: 5000}))
 message.delete();
 for (var i = 0; i < sayi; i++)
 {
 message.channel.send('aga u-4 al')
-await sleep(10000)
 message.channel.send('aga u-4 aç')
 }  
 }};
