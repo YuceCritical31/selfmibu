@@ -74,7 +74,7 @@ const extacy2 = `
 > 
 > **\`${prefix}sa-as Aç/Kapat -> Sa-as sistemini Açar Kapatır (Her Sunucu İçin Ayrı)\`**
 > 
-> **\`${prefix}ppyap <kullanıcı/link> -> Belirtilen linki veya kullanıcının pp sini size koyar\`**
+> **\`${prefix}ppyap <kullanıcı/link/görsel> -> Belirtilen linki veya kullanıcının pp sini size koyar\`**
 > 
 > **\`${prefix}pf <sil/ayarla/sifirla> -> Eğer bir profil fotoğrafı ayarladıysanız sifirla yapıp ayarlanan pp yi koyar yada sil yapıp pp nizi silebilirsiniz\`**
 > 
