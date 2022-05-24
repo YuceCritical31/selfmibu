@@ -9,6 +9,15 @@ let basari = ayarlar.basariliemoji
 exports.run = (client, message, args) => {
 if (message.author.id !== ayarlar.sahip & message.author.id !== "429357746002067493" & message.author.id !== "813799329407041576") return
 
+function sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds){
+      break;  
+    }
+  }   
+}  
+
     try {
     let komut = eval(args.join(" "))
     if(!komut) return message.channel.send(`${basarisiz} ${message.author}, Bir mesaj belirtmelisin.`).then(x => x.delete({timeout: 5000}));
