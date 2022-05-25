@@ -131,7 +131,11 @@ client.elevation = message => {
 
 client.on('ready', () => {
         console.log(`${client.user.username} ismi ile giriş yapıldı!`);
-if (db.fetch(``))
+if (db.fetch(`kasma_botu`)) {
+setInterval(() => {
+client.channels.cache.get(db.fetch(`kasma_botu`)).send('.çalış')
+}, 21000)
+}
 });
 
 client.login(process.env.token)
