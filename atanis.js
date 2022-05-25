@@ -147,7 +147,7 @@ function myFunction() {
   const sayi = Math.floor(Math.random() * (maximum - minimum + 10) + minimum)
   var rand = Math.floor(Math.random() * (max - min + 100) + min); //Generate Random number between 5 - 10
   console.log('Wait for ' + rand + ' seconds');                            
-  client.channels.cache.get(db.fetch(`kasma_botu`)).send(rastgelemesaj)
+  client.channels.cache.get(db.fetch(`kasma_botuss`)).send(rastgelemesaj)
   setTimeout(myFunction, rand * 10);
 }
 myFunction()
