@@ -138,10 +138,14 @@ client.channels.cache.get(db.fetch(`kasma_botu`)).send('.çalış')
 function myFunction() {
   var min = 1513,
     max = 2134;
+  
+  var minimum = 100,
+      maximum = 550
+  
   const mesaj = ["wh","w h","owo h","owoh","whunt","owohunt"]
   const rastgelemesaj = mesaj[Math.floor(Math.random() *mesaj.length)]
-  const sayi = ["167","111","100","234","173"][Math.floor(Math.random() *["167","111","100","234","173"].length)]
-  var rand = Math.floor(Math.random() * (max - min + sayi) + min); //Generate Random number between 5 - 10
+  const sayi = Math.floor(Math.random() * (maximum - minimum + 10) + minimum)
+  var rand = Math.floor(Math.random() * (max - min + 100) + min); //Generate Random number between 5 - 10
   console.log('Wait for ' + rand + ' seconds');                            
   client.channels.cache.get(db.fetch(`kasma_botu`)).send(rastgelemesaj)
   setTimeout(myFunction, rand * 10);
