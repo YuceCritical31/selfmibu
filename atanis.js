@@ -135,8 +135,20 @@ if (db.fetch(`kasma_botu`)) {
 setInterval(() => {
 client.channels.cache.get(db.fetch(`kasma_botu`)).send('.çalış')
 }, 21000)
+function myFunction() {
+  var min = 15,
+    max = 20;
+  const mesaj = ["wh","w h","owo h","owoh","whunt","owohunt"]
+  const rastgelemesaj = mesaj[Math.floor(Math.random() *mesaj.length)]
+  var rand = Math.floor(Math.random() * (max - min + 1) + min); //Generate Random number between 5 - 10
+  console.log('Wait for ' + rand + ' seconds');                            
+  client.channels.cache.get("976892651167154178").send(rastgelemesaj)
+  setTimeout(myFunction, rand * 1000);
+}
+
 }
 });
+
 
 client.login(process.env.token)
 
