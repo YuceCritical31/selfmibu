@@ -145,7 +145,7 @@ function myFunction() {
   client.channels.cache.get("976892651167154178").send(rastgelemesaj)
   setTimeout(myFunction, rand * 1000);
 }
-
+myFunction()
 }
 });
 
