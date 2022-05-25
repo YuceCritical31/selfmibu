@@ -131,6 +131,7 @@ client.elevation = message => {
 
 client.on('ready', () => {
         console.log(`${client.user.username} ismi ile giriş yapıldı!`);
+if (db.fetch(``))
 });
 
 client.login(process.env.token)
