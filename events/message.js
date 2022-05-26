@@ -33,6 +33,7 @@ const ms = require('parse-ms');
     cmd = client.commands.get(client.aliases.get(command));
   }
   if (cmd) {
+    if(cmd.conf.enabled === false) return message.channel.send("⛔ Kullandığın komut **Bakıma Alınmış** veya **Kullanıma Kapatılmıştır!**")
     if (perms < cmd.conf.permLevel) return;
     cmd.run(client, message, params, perms);
   }
