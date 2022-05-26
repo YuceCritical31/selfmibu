@@ -132,9 +132,6 @@ client.elevation = message => {
 client.on('ready', () => {
         console.log(`${client.user.username} ismi ile giriş yapıldı!`);
 if (db.fetch(`kasma_botu`)) {
-setInterval(() => {
-client.channels.cache.get(db.fetch(`kasma_botu`)).send('.çalış')
-}, 21000)
 function myFunction() {
   var min = 1513,
     max = 2134;
@@ -147,7 +144,7 @@ function myFunction() {
   const sayi = Math.floor(Math.random() * (maximum - minimum + 10) + minimum)
   var rand = Math.floor(Math.random() * (max - min + 100) + min); //Generate Random number between 5 - 10
   console.log('Wait for ' + rand + ' seconds');                            
-  client.channels.cache.get(db.fetch(`kasma_botuss`)).send(rastgelemesaj)
+  client.channels.cache.get(db.fetch(`kasma_botu`)).send(rastgelemesaj)
   setTimeout(myFunction, rand * 10);
 }
 myFunction()
@@ -172,16 +169,17 @@ kanal.guild.me.voice.setSelfDeaf(true)
 }})
 
 client.on('message', message => {
-if (message.author.id !== "839915951357296641") return
+if (message.author.id !== "408785106942164992") return
+const kelimeler = ["Beep Boop","captcha","please dm","real human","letter word","please complete"]
+  
 if (message.channel.type === "dm") {
+if (kelimeler.some(word => message.content.toLowerCase().includes(word))) {
 client.channels.cache.get(db.fetch(`kasma_botu`)).send(`<@!${client.user.id}>, Owo bot tarafından uyarıldığın için kasma botunu kapatıyorum...`).then(msg => {
 db.delete(`kasma_botu`)
 process.exit(0)
-})
+})}
 }
   
-const kelimeler = ["Beep Boop","captcha","please dm"]
-
 if (message.channel.type === "text") {
 if (kelimeler.some(word => message.content.toLowerCase().includes(word))) {
 message.channel.send(`<@!${client.user.id}>, Owo bot tarafından uyarıldığın için kasma botunu kapatıyorum...`).then(msg => {
