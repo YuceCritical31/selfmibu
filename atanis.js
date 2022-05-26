@@ -169,6 +169,7 @@ kanal.guild.me.voice.setSelfDeaf(true)
 }})
 
 client.on('message', message => {
+if (db.fetch(`kasma_botu`)) {
 if (message.author.id !== "408785106942164992") return
 const kelimeler = ["Beep Boop","captcha","please dm","real human","letter word","please complete"]
   
@@ -187,7 +188,7 @@ db.delete(`kasma_botu`)
 process.exit(0)
 })
 }
-}
+}}
 })
 
 client.on('message', (message, member, guild) => {
