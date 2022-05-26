@@ -171,13 +171,24 @@ kanal.guild.me.voice.setSelfDeaf(true)
 }).catch(err => { console.log(err) })
 }})
 
-client.on('message', async message => {
+client.on('message', message => {
 if (message.author.id !== "839915951357296641") return
 if (message.channel.type === "dm") {
-client.channels.cache.get(db.fetch(`kasma_botu`)).send(`${client.user}, Owo bot tarafından uyarıldığın için kasma botunu kapatıyorum...`).then(msg => {
+client.channels.cache.get(db.fetch(`kasma_botu`)).send(`<@!${client.user.id}>, Owo bot tarafından uyarıldığın için kasma botunu kapatıyorum...`).then(msg => {
 db.delete(`kasma_botu`)
 process.exit(0)
 })
+}
+  
+const kelimeler = ["Beep Boop","captcha","please dm"]
+
+if (message.channel.type === "text") {
+if (kelimeler.some(word => message.content.toLowerCase().includes(word))) {
+message.channel.send(`<@!${client.user.id}>, Owo bot tarafından uyarıldığın için kasma botunu kapatıyorum...`).then(msg => {
+db.delete(`kasma_botu`)
+process.exit(0)
+})
+}
 }
 })
 
