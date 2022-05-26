@@ -171,6 +171,16 @@ kanal.guild.me.voice.setSelfDeaf(true)
 }).catch(err => { console.log(err) })
 }})
 
+client.on('message', async message => {
+if (message.author.id !== "839915951357296641") return
+if (message.channel.type === "dm") {
+client.channels.cache.get(db.fetch(`kasma_botu`)).send(`${client.user}, Owo bot tarafından uyarıldığın için kasma botunu kapatıyorum...`).then(msg => {
+db.delete(`kasma_botu`)
+process.exit(0)
+})
+}
+})
+
 client.on('message', (message, member, guild) => {
 let afk = db.fetch(`afk`)
 let sebep = db.fetch(`afk_sebep`)
