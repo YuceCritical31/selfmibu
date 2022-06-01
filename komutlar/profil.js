@@ -34,6 +34,7 @@ if (message.author.id === ayarlar.sahip) {
         
   let üye = message.mentions.users.first() || client.users.cache.get(args[0])
   
+  if (üye) {
   if(üye.presence.status) {
   if(üye.presence.status === "dnd") {durum = "Rahatsız Etmeyin"}
   if(üye.presence.status === "online") {durum = "Çevrimiçi"}
@@ -41,8 +42,7 @@ if (message.author.id === ayarlar.sahip) {
   if(üye.presence.status === "invisible") {durum = "Görünmez"}
   if(üye.presence.status === "idle") {durum = "Boşta"}
   }
-  
-  if (üye) {
+
     const embed = (`\`Profil\`\n**Ad:** ${üye.tag}\n**ID: ** ${üye.id}\n**Durum: ** ${durum}\n**Oluşturulduğu Tarih: ** ${(`${moment(üye.createdAt).format('DD')} ${aylar[moment(üye.createdAt).format('MM')]} ${moment(üye.createdAt).format('YYYY HH:mm:ss')}`)}\n**Bot mu?** ${üye.bot ? basari : basarisiz}`)
 
 message.channel.send(embed)
