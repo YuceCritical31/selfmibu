@@ -9,5 +9,5 @@ module.exports = client => {
   let süre = db.fetch(`durum_süresi`) || null
   let durum = db.fetch(`durum`) || ayarlar.durum
   
-//client.user.setPresence({ activity: { name: "VALORANT", type: "PLAYING", state: null, timestamps: {start: süre}}, status: status})
+client.user.setPresence({ activity: { name: "Spotify", type: "LISTENING", state: null, assets: {largeImage: client.user.avatarURL(), largeText: "deneme"}, syncID: "58ge6dfP91o9oXMzq3XkIS?si=t0YQrajxRNm1e-uyoFo8BQ"}, status: status})
 }
