@@ -32,7 +32,10 @@ if (message.author.id === ayarlar.sahip) {
   let durum     
   let durum2
         
-  let üye = message.mentions.users.first() || client.users.cache.get(args[0])
+  let üye 
+  
+  if(message.mentions.users.first() || client.users.cache.get(args[0])) {üye = message.mentions.users.first() || client.users.cache.get(args[0])}
+  if(message.mentions.members.first() || message.guild.members.cache.get(args[0])) {üye = message.mentions.members.first() || message.guild.members.cache.get(args[0])}
   
   if (üye) {
   if(üye.presence.status) {
