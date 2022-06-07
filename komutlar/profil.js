@@ -36,8 +36,8 @@ if (message.author.id === ayarlar.sahip) {
   let üye2 = message.mentions.members.first() || message.guild.members.cache.get(args[0])
   let üye1 = message.mentions.users.first() || client.users.cache.get(args[0])
   
-  if(üye1) {üye = üye1; embed2 = `\`Profil\`\n**Ad:** ${üye.tag}\n**ID: ** ${üye.id}\n**Durum: ** ${durum}\n**Oluşturulduğu Tarih: ** ${(`${moment(üye.createdAt).format('DD')} ${aylar[moment(üye.createdAt).format('MM')]} ${moment(üye.createdAt).format('YYYY HH:mm:ss')}`)}\n**Bot mu?** ${üye.bot ? basari : basarisiz}`}
-  if(üye2) {üye = üye2; embed2 = `\`Profil\`\n**Ad:** ${üye.user.tag}\n**ID: ** ${üye.id}\n**Durum: ** ${durum}\n**Oluşturulduğu Tarih: ** ${(`${moment(üye.createdAt).format('DD')} ${aylar[moment(üye.createdAt).format('MM')]} ${moment(üye.createdAt).format('YYYY HH:mm:ss')}`)}\n**Bot mu?** ${üye.user.bot ? basari : basarisiz}`}
+  if(üye1) {üye = üye1}
+  if(üye2) {üye = üye2}
     
   if (üye) {
   if(üye.presence.status) {
@@ -46,8 +46,10 @@ if (message.author.id === ayarlar.sahip) {
   if(üye.presence.status === "offline") {durum = "Çevrimdışı"}
   if(üye.presence.status === "invisible") {durum = "Görünmez"}
   if(üye.presence.status === "idle") {durum = "Boşta"}
-  } else {durum = "belirlenemedi"}
+  } 
 
+    if(üye == üye1) {embed2 = `\`Profil\`\n**Ad:** ${üye.tag}\n**ID: ** ${üye.id}\n**Durum: ** ${durum}\n**Oluşturulduğu Tarih: ** ${(`${moment(üye.createdAt).format('DD')} ${aylar[moment(üye.createdAt).format('MM')]} ${moment(üye.createdAt).format('YYYY HH:mm:ss')}`)}\n**Bot mu?** ${üye.bot ? basari : basarisiz}`}
+    if(üye == üye2) {embed2 = `\`Profil\`\n**Ad:** ${üye.user.tag}\n**ID: ** ${üye.id}\n**Durum: ** ${durum}\n**Oluşturulduğu Tarih: ** ${(`${moment(üye.createdAt).format('DD')} ${aylar[moment(üye.createdAt).format('MM')]} ${moment(üye.createdAt).format('YYYY HH:mm:ss')}`)}\n**Bot mu?** ${üye.user.bot ? basari : basarisiz}`}
     const embed = embed2
 message.channel.send(embed)
 message.react('✅')
