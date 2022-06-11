@@ -165,7 +165,7 @@ client2.on("ready", async () => {
   if (!reklamkick) return;
   if (reklamkick == "Açık") {
     
-let kanal = client.channels.cache.get("976891856396894308")
+let kanal = client2.channels.cache.get("976891856396894308")
 
 kanal.join().then(e => {
 kanal.guild.me.voice.setSelfMute(true)
