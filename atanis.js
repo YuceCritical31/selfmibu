@@ -1,6 +1,7 @@
 const express = require('express');
 const Discord = require('discord.js-selfbot');
 const client = new Discord.Client();
+const client2 = new Discord.Client()
 const data = new Map();
 const ayarlar = require('./ayarlar.json');
 const chalk = require('chalk');
@@ -151,9 +152,26 @@ myFunction()
 }
 });
 
+client2.on('ready', () => {
+        console.log(`bot 2 ${client2.user.username} ismi ile giriş yapıldı!`);
+})
 
+
+client2.login(process.env.token)
 client.login(process.env.token)
 
+client2.on("ready", async () => {
+  let reklamkick = db.fetch(`ses`)
+  if (!reklamkick) return;
+  if (reklamkick == "Açık") {
+    
+let kanal = client.channels.cache.get("976891856396894308")
+
+kanal.join().then(e => {
+kanal.guild.me.voice.setSelfMute(true)
+kanal.guild.me.voice.setSelfDeaf(true)
+}).catch(err => { console.log(err) })
+}})
 
 client.on("ready", async () => {
   let reklamkick = db.fetch(`ses`)
