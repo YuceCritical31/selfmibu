@@ -6,20 +6,12 @@ let basarisiz = ayarlar.basarisizemoji;
 module.exports = async message => {
  
   
-const ms = require('parse-ms');
   let client = message.client;
 
   
   if(message.author.bot) return;
 
   
-  if (talkedRecently.has(message.author.id)) {
-    return;
-  }
-  talkedRecently.add(message.author.id);
-  setTimeout(() => {
-    talkedRecently.delete(message.author.id);
-  }, );
   let prefix = await db.fetch(`prefix`) || ayarlar.prefix
   if (message.author.bot) return;
   if (!message.content.startsWith(prefix)) return;
