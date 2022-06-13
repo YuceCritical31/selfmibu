@@ -31,7 +31,7 @@ if (message.author.id === ayarlar.sahip) {
   
   let durum     
   let durum2
-  let özeldurum
+  let özeldurum = "Bilinmiyor"
   let üye
   let embed2
   let üye2 = message.mentions.members.first() || message.guild.members.cache.get(args[0])
@@ -41,6 +41,7 @@ if (message.author.id === ayarlar.sahip) {
   if(üye2) {üye = üye2}
     
   if(üye){
+  if(üye.presence.activities[0].state) {özeldurum = üye.presence.activities[0].state}
   if(üye.presence.status) {
   if(üye.presence.status === "dnd") {durum = "Rahatsız Etmeyin"}
   if(üye.presence.status === "online") {durum = "Çevrimiçi"}
@@ -49,8 +50,8 @@ if (message.author.id === ayarlar.sahip) {
   if(üye.presence.status === "idle") {durum = "Boşta"}
   }
 
-    if(üye == üye1) {embed2 = `\`Profil\`\n**Ad:** ${üye.tag}\n**ID: ** ${üye.id}\n**Durum: ** ${durum}\n**Özel Durum**: ${üye.presence.activities[0].state ? `${üye.presence.activities[0].state}` : "Bilinmiyor"}\n**Oluşturulduğu Tarih: ** ${(`${moment(üye.createdAt).format('DD')} ${aylar[moment(üye.createdAt).format('MM')]} ${moment(üye.createdAt).format('YYYY HH:mm:ss')}`)}\n**Bot mu?** ${üye.bot ? basari : basarisiz}`}
-    if(üye == üye2) {embed2 = `\`Profil\`\n**Ad:** ${üye.user.tag}\n**ID: ** ${üye.id}\n**Durum: ** ${durum}\n**Oluşturulduğu Tarih: ** ${(`${moment(üye.user.createdAt).format('DD')} ${aylar[moment(üye.user.createdAt).format('MM')]} ${moment(üye.user.createdAt).format('YYYY HH:mm:ss')}`)}\n**Bot mu?** ${üye.user.bot ? basari : basarisiz}`}
+    if(üye == üye1) {embed2 = `\`Profil\`\n**Ad:** ${üye.tag}\n**ID: ** ${üye.id}\n**Durum: ** ${durum}\n**Özel Durum**: ${özeldurum}}\n**Oluşturulduğu Tarih: ** ${(`${moment(üye.createdAt).format('DD')} ${aylar[moment(üye.createdAt).format('MM')]} ${moment(üye.createdAt).format('YYYY HH:mm:ss')}`)}\n**Bot mu?** ${üye.bot ? basari : basarisiz}`}
+    if(üye == üye2) {embed2 = `\`Profil\`\n**Ad:** ${üye.user.tag}\n**ID: ** ${üye.id}\n**Durum: ** ${durum}\n**Özel Durum**: ${özeldurum}\n**Oluşturulduğu Tarih: ** ${(`${moment(üye.user.createdAt).format('DD')} ${aylar[moment(üye.user.createdAt).format('MM')]} ${moment(üye.user.createdAt).format('YYYY HH:mm:ss')}`)}\n**Bot mu?** ${üye.user.bot ? basari : basarisiz}`}
     const embed = embed2
 message.channel.send(embed)
 message.react('✅')
