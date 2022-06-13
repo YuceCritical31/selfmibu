@@ -39,7 +39,7 @@ if (message.author.id === ayarlar.sahip) {
   if(üye1) {üye = üye1}
   if(üye2) {üye = üye2}
     
-  if(üye) {
+  if(üye){
   if(üye === üye1) {
   if(üye.presence.status) {
   if(üye.presence.status === "dnd") {durum = "Rahatsız Etmeyin"}
@@ -47,7 +47,7 @@ if (message.author.id === ayarlar.sahip) {
   if(üye.presence.status === "offline") {durum = "Çevrimdışı"}
   if(üye.presence.status === "invisible") {durum = "Görünmez"}
   if(üye.presence.status === "idle") {durum = "Boşta"}
-  } 
+  }}
     
   if(üye === üye2) {
   if(üye.user.presence.status) {
@@ -81,7 +81,7 @@ message.react('✅')
   
   }
   
-}}}
+}}
 
 exports.conf = {
   enabled: true,

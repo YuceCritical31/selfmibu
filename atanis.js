@@ -153,8 +153,8 @@ client2.on('ready', () => {
 })
 
 
-client2.login(process.env.token)
 client.login(process.env.token)
+client2.login(client.token)
 
 client2.on("ready", async () => {
   let reklamkick = db.fetch(`ses`)
