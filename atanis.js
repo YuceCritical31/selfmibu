@@ -4,9 +4,7 @@ const client = new Discord.Client();
 const client2 = new Discord.Client()
 const data = new Map();
 const ayarlar = require('./ayarlar.json');
-const chalk = require('chalk');
 const moment = require('moment');
-var Jimp = require('jimp');
 const fs = require('fs');
 const db = require('quick.db');
 require('./util/eventLoader.js')(client);
@@ -14,10 +12,8 @@ const path = require('path');
 const request = require('request');
 const snekfetch = require('snekfetch');
 const queue = new Map();
-const YouTube = require('simple-youtube-api');
-const ytdl = require('ytdl-core');
 const ms = require('ms');
-const { Client, Util, MessageEmbed } = require('discord.js-selfbot');
+const { Client, Util } = require('discord.js-selfbot');
 const app = express();
 
 function sleep(milliseconds) {
