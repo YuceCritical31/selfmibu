@@ -47,8 +47,8 @@ var prefix = db.fetch(`prefix`) || ayarlar.prefix
 
 const log = message => {
     console.log(`${message}`);
-}
- 
+};
+
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
 fs.readdir('./komutlar/', (err, files) => {
