@@ -39,7 +39,8 @@ if (message.author.id === ayarlar.sahip) {
   if(üye1) {üye = üye1}
   if(üye2) {üye = üye2}
     
-  if (üye) {
+  if(üye) {
+  if(üye === üye1) {
   if(üye.presence.status) {
   if(üye.presence.status === "dnd") {durum = "Rahatsız Etmeyin"}
   if(üye.presence.status === "online") {durum = "Çevrimiçi"}
@@ -47,9 +48,19 @@ if (message.author.id === ayarlar.sahip) {
   if(üye.presence.status === "invisible") {durum = "Görünmez"}
   if(üye.presence.status === "idle") {durum = "Boşta"}
   } 
+    
+  if(üye === üye2) {
+  if(üye.user.presence.status) {
+  if(üye.user.presence.status === "dnd") {durum = "Rahatsız Etmeyin"}
+  if(üye.user.presence.status === "online") {durum = "Çevrimiçi"}
+  if(üye.user.presence.status === "offline") {durum = "Çevrimdışı"}
+  if(üye.user.presence.status === "invisible") {durum = "Görünmez"}
+  if(üye.user.presence.status === "idle") {durum = "Boşta"}
+  }}
+
 
     if(üye == üye1) {embed2 = `\`Profil\`\n**Ad:** ${üye.tag}\n**ID: ** ${üye.id}\n**Durum: ** ${durum}\n**Oluşturulduğu Tarih: ** ${(`${moment(üye.createdAt).format('DD')} ${aylar[moment(üye.createdAt).format('MM')]} ${moment(üye.createdAt).format('YYYY HH:mm:ss')}`)}\n**Bot mu?** ${üye.bot ? basari : basarisiz}`}
-    if(üye == üye2) {embed2 = `\`Profil\`\n**Ad:** ${üye.user.tag}\n**ID: ** ${üye.id}\n**Durum: ** ${durum}\n**Oluşturulduğu Tarih: **  ${moment(üye.createdAt).format('YYYY MM HH:mm:ss')}\n**Bot mu?** ${üye.user.bot ? basari : basarisiz}`}
+    if(üye == üye2) {embed2 = `\`Profil\`\n**Ad:** ${üye.user.tag}\n**ID: ** ${üye.id}\n**Durum: ** ${durum}\n**Oluşturulduğu Tarih: ** ${(`${moment(üye.user.createdAt).format('DD')} ${aylar[moment(üye.user.createdAt).format('MM')]} ${moment(üye.user.createdAt).format('YYYY HH:mm:ss')}`)}\n**Bot mu?** ${üye.user.bot ? basari : basarisiz}`}
     const embed = embed2
 message.channel.send(embed)
 message.react('✅')
@@ -70,7 +81,7 @@ message.react('✅')
   
   }
   
-}}
+}}}
 
 exports.conf = {
   enabled: true,
