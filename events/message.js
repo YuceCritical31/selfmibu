@@ -1,7 +1,6 @@
 const Discord = require('discord.js-selfbot');
 const ayarlar = require('../ayarlar.json');
 const db = require("quick.db");
-let talkedRecently = new Set();
 let basarisiz = ayarlar.basarisizemoji;
 module.exports = async message => {
  

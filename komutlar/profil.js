@@ -41,8 +41,7 @@ if (message.author.id === ayarlar.sahip) {
   if(üye2) {üye = üye2}
     
   if(üye){
-  if(üye.presence.activities[0].state) {özeldurum = üye.presence.activities[0].state}
-  if(üye.presence.status) {
+    if(üye.presence.status) {
   if(üye.presence.status === "dnd") {durum = "Rahatsız Etmeyin"}
   if(üye.presence.status === "online") {durum = "Çevrimiçi"}
   if(üye.presence.status === "offline") {durum = "Çevrimdışı"}
