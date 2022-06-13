@@ -11,7 +11,6 @@ require('./util/eventLoader.js')(client);
 const path = require('path');
 const request = require('request');
 const snekfetch = require('snekfetch');
-const queue = new Map();
 const ms = require('ms');
 const { Client, Util } = require('discord.js-selfbot');
 const app = express();
