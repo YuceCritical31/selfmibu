@@ -40,31 +40,14 @@ if (message.author.id === ayarlar.sahip) {
   if(üye1) {üye = üye1}
   if(üye2) {üye = üye2}
     
-  if(üye){
-    if(üye.presence.status) {
-  if(üye.presence.status === "dnd") {durum = "Rahatsız Etmeyin"}
-  if(üye.presence.status === "online") {durum = "Çevrimiçi"}
-  if(üye.presence.status === "offline") {durum = "Çevrimdışı"}
-  if(üye.presence.status === "invisible") {durum = "Görünmez"}
-  if(üye.presence.status === "idle") {durum = "Boşta"}
-  }
-
-    if(üye == üye1) {embed2 = `\`Profil\`\n**Ad:** ${üye.tag}\n**ID: ** ${üye.id}\n**Durum: ** ${durum}\n**Özel Durum**: ${özeldurum}}\n**Oluşturulduğu Tarih: ** ${(`${moment(üye.createdAt).format('DD')} ${aylar[moment(üye.createdAt).format('MM')]} ${moment(üye.createdAt).format('YYYY HH:mm:ss')}`)}\n**Bot mu?** ${üye.bot ? basari : basarisiz}`}
-    if(üye == üye2) {embed2 = `\`Profil\`\n**Ad:** ${üye.user.tag}\n**ID: ** ${üye.id}\n**Durum: ** ${durum}\n**Özel Durum**: ${özeldurum}\n**Oluşturulduğu Tarih: ** ${(`${moment(üye.user.createdAt).format('DD')} ${aylar[moment(üye.user.createdAt).format('MM')]} ${moment(üye.user.createdAt).format('YYYY HH:mm:ss')}`)}\n**Bot mu?** ${üye.user.bot ? basari : basarisiz}`}
+  
+    if(üye == üye1) {embed2 = `\`Profil\`\n**Ad:** ${üye.tag}\n**ID: ** ${üye.id}\n**Oluşturulduğu Tarih: ** ${(`${moment(üye.createdAt).format('DD')} ${aylar[moment(üye.createdAt).format('MM')]} ${moment(üye.createdAt).format('YYYY HH:mm:ss')}`)}\n**Bot mu?** ${üye.bot ? basari : basarisiz}`}
+    if(üye == üye2) {embed2 = `\`Profil\`\n**Ad:** ${üye.user.tag}\n**ID: ** ${üye.id}\n**Oluşturulduğu Tarih: ** ${(`${moment(üye.user.createdAt).format('DD')} ${aylar[moment(üye.user.createdAt).format('MM')]} ${moment(üye.user.createdAt).format('YYYY HH:mm:ss')}`)}\n**Bot mu?** ${üye.user.bot ? basari : basarisiz}`}
     const embed = embed2
 message.channel.send(embed)
 message.react('✅')
-  } else {
-    
-  if(message.author.presence.status) {
-  if(message.author.presence.status === "dnd") {durum2 = "Rahatsız Etmeyin"}
-  if(message.author.presence.status === "online") {durum2 = "Çevrimiçi"}
-  if(message.author.presence.status === "offline") {durum2 = "Çevrimdışı"}
-  if(message.author.presence.status === "invisible") {durum2 = "Görünmez"}
-  if(message.author.presence.status === "idle") {durum2 = "Boşta"}
-  }
 
-const embed = (`\`Profil\`\n**Ad:** ${message.author.tag}\n**ID: ** ${message.author.id}\n**Durum: ** ${durum2}\n**Oluşturulduğu Tarih: ** ${(`${moment(message.author.createdAt).format('DD')} ${aylar[moment(message.author.createdAt).format('MM')]} ${moment(message.author.createdAt).format('YYYY HH:mm:ss')}`)}\n**Bot mu?** ${message.author.bot ? basari : basarisiz}`)
+const embed = (`\`Profil\`\n**Ad:** ${message.author.tag}\n**ID: ** ${message.author.id}\n**Oluşturulduğu Tarih: ** ${(`${moment(message.author.createdAt).format('DD')} ${aylar[moment(message.author.createdAt).format('MM')]} ${moment(message.author.createdAt).format('YYYY HH:mm:ss')}`)}\n**Bot mu?** ${message.author.bot ? basari : basarisiz}`)
 
 message.channel.send(embed)
 message.react('✅')
