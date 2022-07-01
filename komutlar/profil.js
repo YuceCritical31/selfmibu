@@ -29,9 +29,6 @@ if (message.author.id === ayarlar.sahip) {
     var duration = moment.duration(client.uptime).format(" D [gün] H [saat] m [dakika] s [saniye]")
   
   
-  let durum     
-  let durum2
-  let özeldurum = "Bilinmiyor"
   let üye
   let embed2
   let üye2 = message.mentions.members.first() || message.guild.members.cache.get(args[0])
