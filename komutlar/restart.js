@@ -1,4 +1,5 @@
 const Discord = require('discord.js-selfbot');
+const db = require('quick.db')
 const bot = new Discord.Client();
 const ayarlar = require("../ayarlar.json");
 let basari = ayarlar.basariliemoji;
@@ -9,6 +10,7 @@ module.exports.run = async (bot, message, args) => {
       
     message.channel.send(`${basari} ${message.author}, Bot yeniden başlatılıyor...`).then(msg => {
     console.log(`BOT: Yeniden Başlatılıyor.....`);
+    db.set(`restart_id`, msg.id)
     process.exit(0);
   })
     

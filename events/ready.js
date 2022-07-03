@@ -9,6 +9,9 @@ module.exports = client => {
   let status = db.fetch(`status`) || "invisible"
   let süre = db.fetch(`durum_süresi`) || null
   let durum = db.fetch(`durum`) || ayarlar.durum
+  let restart = db.fetch(`restart_id`)
+  
+  if(restart) {client.messages.fetch(restart).then(x => x.edit(`${ayarlar.basariliemoji}, Bot yeniden başlatıldı.`))}
 
     var oyun = [
     `deneme`,
