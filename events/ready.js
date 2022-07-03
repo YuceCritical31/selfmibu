@@ -9,14 +9,7 @@ module.exports = client => {
   let status = db.fetch(`status`) || "invisible"
   let süre = db.fetch(`durum_süresi`) || null
   let durum = db.fetch(`durum`) || ayarlar.durum
-  let restart = db.fetch(`restart_id`)
-  let restartch = db.fetch(`restart_chid`)
   
-  if(restart && restartch) {client.channels.cache.get(restartch).messages.fetch(restart).then(x => x.edit(`${ayarlar.basariliemoji}, Bot başarıyla yeniden başlatıldı.`).then(x => x.delete({timeout: 5000}))) 
-                           db.delete(`restart_id`)
-                           db.delete(`restart_chid`)
-                           }
-
     var oyun = [
     `deneme`,
     `#kulakgözaajyok`
