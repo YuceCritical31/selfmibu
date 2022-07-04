@@ -3,10 +3,8 @@ const ayarlar = require('../ayarlar.json');
 const db = require("quick.db");
 let basarisiz = ayarlar.basarisizemoji;
 module.exports = async message => {
- 
-  
-  let client = message.client;
 
+  let client = message.client
   
   if(message.author.bot) return;
 
