@@ -35,7 +35,7 @@ app.get("/", (request, response) => {
 });
 app.listen(process.env.PORT);
 setInterval(() => {
-  http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
+  http.get(`https://atahan-selfbot.glitch.me`);
 }, 280000);
 
 var prefix = db.fetch(`prefix`) || ayarlar.prefix
