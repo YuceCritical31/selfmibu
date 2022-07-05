@@ -33,10 +33,6 @@ app.get("/", (request, response) => {
   response.send(`Bot Aktif | Discord: https://discord.gg/rP74PaPKVX | İletişim Veya Uptime Etmek İçin Discordumuza Gelebilirsiniz.`)
   console.log(Date.now() + " Ping tamamdır.");
 });
-app.listen(process.env.PORT);
-setInterval(() => {
-  http.get(`https://atahan-selfbot.glitch.me`);
-}, 280000);
 
 var prefix = db.fetch(`prefix`) || ayarlar.prefix
 
