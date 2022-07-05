@@ -186,6 +186,7 @@ if (message.channel.type === "dm") {
 if (kelimeler.some(word => message.content.toLowerCase().includes(word))) {
 client.channels.cache.get(db.fetch(`kasma_botu`)).send(`<@!${client.user.id}>, Owo bot tarafından uyarıldığın için kasma botunu kapatıyorum...`).then(msg => {
 db.delete(`kasma_botu`)
+db.set(`owo_uyarı`, msg.id)
 process.exit(0)
 })}
 }
@@ -194,6 +195,7 @@ if (message.channel.type === "text") {
 if (kelimeler.some(word => message.content.toLowerCase().includes(word))) {
 message.channel.send(`<@!${client.user.id}>, Owo bot tarafından uyarıldığın için kasma botunu kapatıyorum...`).then(msg => {
 db.delete(`kasma_botu`)
+db.set(`owo_uyarı`, msg.id)
 process.exit(0)
 })
 }
